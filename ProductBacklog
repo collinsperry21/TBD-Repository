@@ -12,3 +12,4 @@ TO-DO LIST
   4a.)I want all items to have an itemName, itemDesc, and itemType.
 5.) As a user I want a detailed page of spells. Some that are preset and some that are customizable.
   5a.) I want each spell to have a spellName, spellEffect, spellLevel, and spellType.
+6.) As a user that is new to D&D, I want basic help buttons to help guide my first time.
