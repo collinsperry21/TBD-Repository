@@ -9,5 +9,6 @@ TO-DO LIST
   3a.) I want to sort by race, class, or level(exp)
   3b.)
 4.) As a user I want a page to store inventory of items collected throughout the campaign
+  4a.)I want all items to have an itemName, itemDesc, and itemType.
 5.) As a user I want a detailed page of spells. Some that are preset and some that are customizable.
-  5a.)
+  5a.) I want each spell to have a spellName, spellEffect, spellLevel, and spellType.
