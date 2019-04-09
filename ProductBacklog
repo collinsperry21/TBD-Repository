@@ -1,0 +1,16 @@
+TO-DO LIST
+--------------------------------------------------------------------------------------------------------------------------------------
+1.) As a first time user I want to be able to navigate to all parts of the app. 
+(Character creation as well as loading previous ones)
+2.) As a first time user I want to be able to create a new character
+  2a.) I want to be able to select Race and Classes from a set of presets.
+  2b.) I want to be able to randomize stat rolls as well as set them myself.
+  2c.) I want to have a wizard like setup per each character I create
+3.) As a user who has created a character I want to be able to see all the characters I have in a list.
+  3a.) I want to sort this list by race, class, or level(exp)
+4.) As a user I want a page to store inventory of items collected throughout the campaign
+  4a.)I want all items to have an itemName, itemDesc, and itemType.
+5.) As a user I want a detailed page of spells. Some that are preset and some that are customizable.
+  5a.) I want each spell to have a spellName, spellEffect, spellLevel, and spellType.
+6.) As a user that is new to D&D, I want basic help buttons to help guide my first time through the character creation.
+
