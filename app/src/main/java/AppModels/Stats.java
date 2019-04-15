@@ -2,7 +2,6 @@ package AppModels;
 
 public class Stats {
 
-
     private int hitpoints;
     private int speed;
     private int strength=8;

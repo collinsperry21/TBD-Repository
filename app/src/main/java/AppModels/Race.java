@@ -5,6 +5,7 @@ public class Race {
     private String raceName;
     private int statMod;
     private String primaryStat;
+    private boolean hasSubrace;
 
     public String getPrimaryStat() {
         return primaryStat;
