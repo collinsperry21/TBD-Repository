@@ -6,25 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class BeginCAC extends AppCompatActivity {
 
-    private Button navigate_to_CAC;
+    private Button navigate_next_CAC;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_begin_cac);
 
-        navigate_to_CAC = findViewById(R.id.Start_CAC);
-        navigate_to_CAC.setOnClickListener(new View.OnClickListener()
+        navigate_next_CAC = findViewById(R.id.NextCAC01);
+        navigate_next_CAC.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(MainActivity.this,BeginCAC.class);
+                Intent intent = new Intent(BeginCAC.this, BeginCAC.class);
                 startActivity(intent);
             }
         });
-
     }
 }
