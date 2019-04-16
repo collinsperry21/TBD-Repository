@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
-//if we want to use URL
+//converting this to use the local json
 
 public class JSON
 {
