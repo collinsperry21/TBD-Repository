@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Spinner
-        android:id="@+id/RaceSpinner"
+        android:id="@+id/race_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/newCharName" />
 
     <Spinner
-        android:id="@+id/SubraceSpinner"
+        android:id="@+id/subrace_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -54,10 +54,10 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RaceSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/race_spinner" />
 
     <Spinner
-        android:id="@+id/ClassSpinner"
+        android:id="@+id/class_spinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -65,7 +65,7 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SubraceSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/subrace_spinner" />
 
     <TextView
         android:id="@+id/LvlText"
@@ -75,7 +75,7 @@
         android:layout_marginTop="16dp"
         android:text="Lvl : 1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ClassSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/class_spinner" />
 
     <TextView
         android:id="@+id/ExpText"
@@ -85,5 +85,5 @@
         android:layout_marginEnd="24dp"
         android:text="Exp : 0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ClassSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/class_spinner" />
 </android.support.constraint.ConstraintLayout>

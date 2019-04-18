@@ -9,50 +9,39 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.Button;
+import android.widget.Spinner;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import static com.android.volley.toolbox.Volley.newRequestQueue;
+
 
 public class BeginCAC extends AppCompatActivity {
 
     private Button navigate_next_CAC;
-    Spinner raceSpinner;
-    Spinner subraceSpinner;
-    Spinner classSpinner;
-
-
-    String[] races = //Replace with a function to call for a list of races
-    {
-        "Choose One",
-        "Dragonborn",
-        "Dwarf",
-        "Elf",
-        "etc..."
-    };
-
-    String[] subraces = //Replace with a function to call for a list of
-                        // subraces with a check to see if list is empty
-    {
-        "Choose One",
-        "None"
-    };
-
-    String[] classes = //Replace with a function to call for a list of classes
-    {
-        "Choose One",
-        "Barbarian",
-        "Bard",
-        "Cleric",
-        "etc..."
-    };
+    
+    private RequestQueue mQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_begin_cac);
 
-        // Get references from layout/main_activity.xml
-        raceSpinner =(Spinner)findViewById(R.id.RaceSpinner);
-        subraceSpinner = (Spinner)findViewById(R.id.SubraceSpinner);
-        classSpinner = (Spinner)findViewById(R.id.ClassSpinner);
+
+
         navigate_next_CAC = findViewById(R.id.NextCAC01);
 
         //Set Array Adaptor
@@ -60,67 +49,10 @@ public class BeginCAC extends AppCompatActivity {
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.
                 R.layout.simple_spinner_dropdown_item ,races);
         raceSpinner.setAdapter(adapter);
-        raceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id)
-            {
-                // Get select item
-                int sid = raceSpinner.getSelectedItemPosition();
-                Toast.makeText(getBaseContext(), "You have selected Race : " + races[sid],
-                        Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-                // TODO Auto-generated method stub
-            }
-        });
+        
 
-        //Subrace
-        adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item, subraces);
-        subraceSpinner.setAdapter(adapter);
-        subraceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id)
-            {
-                // Get select item
-                int sid = subraceSpinner.getSelectedItemPosition();
-                Toast.makeText(getBaseContext(), "You have selected Subrace : " + subraces[sid],
-                        Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-                // TODO Auto-generated method stub
-            }
-        });
+        
 
-        //Class
-        adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item, classes);
-        classSpinner.setAdapter(adapter);
-        classSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-        {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id)
-            {
-                // Get select item
-                int sid = classSpinner.getSelectedItemPosition();
-                Toast.makeText(getBaseContext(), "You have selected Class : " + classes[sid],
-                        Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent)
-            {
-                // TODO Auto-generated method stub
-            }
-        });
 
         //Code for navigating to next page
         navigate_next_CAC.setOnClickListener(new View.OnClickListener()
@@ -132,5 +64,172 @@ public class BeginCAC extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        mQueue = newRequestQueue( this);
+        jsonParse();
+    }
+
+    //Will move to separate class
+    private void jsonParse() {
+        String url = "http://www.dnd5eapi.co/api/races";
+        String url2 = "http://dnd5eapi.co/api/subraces";
+        String url3 = "http://dnd5eapi.co/api/classes";
+        String url4 = "http://dnd5eapi.co/api/subclasses";
+
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            ArrayList<String> raceSpinnerArrayList = new ArrayList<String>();
+
+                            JSONArray jsonArray = response.getJSONArray("results");
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject races = jsonArray.getJSONObject(i);
+                                String firstname = races.getString("name");
+                                String urlz = races.getString("url");
+
+                                raceSpinnerArrayList.add(firstname);
+
+                            }
+
+                            Spinner raceSpinner = (Spinner) findViewById(R.id.race_spinner);
+
+                            ArrayAdapter<String> adapter =
+                                    new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, raceSpinnerArrayList);
+                            adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+
+                            raceSpinner.setAdapter(adapter);
+
+                            raceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+                            {
+                                @Override
+                                public void onItemSelected(AdapterView<?> parent, View view,
+                                                        int position, long id)
+                                {
+                                    // Get select item
+                                    int sid = raceSpinner.getSelectedItemPosition();
+                                    Toast.makeText(getBaseContext(), "You have selected Race : " + races[sid],
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                                @Override
+                                public void onNothingSelected(AdapterView<?> parent)
+                                {
+                                    // TODO Auto-generated method stub
+                                }
+                            });
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        JsonObjectRequest request2 = new JsonObjectRequest(Request.Method.GET, url2, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+
+                            ArrayList<String> subraceSpinnerArrayList = new ArrayList<String>();
+                            subraceSpinnerArrayList.add("None");
+
+                            JSONArray jsonArray = response.getJSONArray("results");
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject classes = jsonArray.getJSONObject(i);
+                                String firstname = classes.getString("name");
+                                String urlz = classes.getString("url");
+
+                                subraceSpinnerArrayList.add(firstname);
+
+                            }
+                            Spinner subraceSpinner = (Spinner) findViewById(R.id.subrace_spinner);
+
+                            ArrayAdapter<String> adapter =
+                                    new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, subraceSpinnerArrayList);
+                            adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+
+                            subraceSpinner.setAdapter(adapter);
+                            subraceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+                            {
+                                @Override
+                                 public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id)
+                                    {
+                                    // Get select item
+                                        int sid = subraceSpinner.getSelectedItemPosition();
+                                        Toast.makeText(getBaseContext(), "You have selected Subrace : " + subraces[sid],
+                                        Toast.LENGTH_SHORT).show();
+                                        }
+            
+                            });
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+        JsonObjectRequest request3 = new JsonObjectRequest(Request.Method.GET, url3, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            ArrayList<String> classSpinnerArrayList = new ArrayList<String>();
+                            JSONArray jsonArray = response.getJSONArray("results");
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject classes = jsonArray.getJSONObject(i);
+                                String firstname = classes.getString("name");
+                                String urlz = classes.getString("url");
+
+                                classSpinnerArrayList.add(firstname);
+
+                            }
+                            Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
+
+                            ArrayAdapter<String> adapter =
+                                    new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, classSpinnerArrayList);
+                            adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+
+                            classSpinner.setAdapter(adapter);
+
+                            classSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+                            {
+
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id)
+                            {
+                             // Get select item
+                            int sid = classSpinner.getSelectedItemPosition();
+                            Toast.makeText(getBaseContext(), "You have selected Class : " + classes[sid],
+                            Toast.LENGTH_SHORT).show();
+                             }
+                            });
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        });
+
+        
+        mQueue.add(request);
+        mQueue.add(request2);
+        mQueue.add(request3);
+        mQueue.add(request4);
     }
 }
