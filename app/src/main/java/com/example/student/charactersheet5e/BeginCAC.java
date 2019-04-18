@@ -44,14 +44,6 @@ public class BeginCAC extends AppCompatActivity {
 
         navigate_next_CAC = findViewById(R.id.NextCAC01);
 
-        //Set Array Adaptor
-        //Race
-        ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.
-                R.layout.simple_spinner_dropdown_item ,races);
-        raceSpinner.setAdapter(adapter);
-        
-
-        
 
 
         //Code for navigating to next page
@@ -94,7 +86,7 @@ public class BeginCAC extends AppCompatActivity {
 
                             }
 
-                            Spinner raceSpinner = (Spinner) findViewById(R.id.race_spinner);
+                            final Spinner raceSpinner = (Spinner) findViewById(R.id.race_spinner);
 
                             ArrayAdapter<String> adapter =
                                     new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, raceSpinnerArrayList);
@@ -109,8 +101,8 @@ public class BeginCAC extends AppCompatActivity {
                                                         int position, long id)
                                 {
                                     // Get select item
-                                    int sid = raceSpinner.getSelectedItemPosition();
-                                    Toast.makeText(getBaseContext(), "You have selected Race : " + races[sid],
+                                    String sid = raceSpinner.getSelectedItem().toString();
+                                    Toast.makeText(getBaseContext(), "You have selected Race : " + sid,
                                             Toast.LENGTH_SHORT).show();
                                 }
                                 @Override
@@ -148,7 +140,7 @@ public class BeginCAC extends AppCompatActivity {
                                 subraceSpinnerArrayList.add(firstname);
 
                             }
-                            Spinner subraceSpinner = (Spinner) findViewById(R.id.subrace_spinner);
+                            final Spinner subraceSpinner = (Spinner) findViewById(R.id.subrace_spinner);
 
                             ArrayAdapter<String> adapter =
                                     new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, subraceSpinnerArrayList);
@@ -162,11 +154,16 @@ public class BeginCAC extends AppCompatActivity {
                                        int position, long id)
                                     {
                                     // Get select item
-                                        int sid = subraceSpinner.getSelectedItemPosition();
-                                        Toast.makeText(getBaseContext(), "You have selected Subrace : " + subraces[sid],
+                                        String sid = subraceSpinner.getSelectedItem().toString();
+                                        Toast.makeText(getBaseContext(), "You have selected Subrace : " + sid,
                                         Toast.LENGTH_SHORT).show();
                                         }
-            
+
+                                @Override
+                                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                                }
+
                             });
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -193,7 +190,7 @@ public class BeginCAC extends AppCompatActivity {
                                 classSpinnerArrayList.add(firstname);
 
                             }
-                            Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
+                            final Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
 
                             ArrayAdapter<String> adapter =
                                     new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, classSpinnerArrayList);
@@ -209,10 +206,15 @@ public class BeginCAC extends AppCompatActivity {
                                        int position, long id)
                             {
                              // Get select item
-                            int sid = classSpinner.getSelectedItemPosition();
-                            Toast.makeText(getBaseContext(), "You have selected Class : " + classes[sid],
+                            String sid = classSpinner.getSelectedItem().toString();
+                            Toast.makeText(getBaseContext(), "You have selected Class : " + sid,
                             Toast.LENGTH_SHORT).show();
                              }
+
+                                @Override
+                                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                                }
                             });
 
                         } catch (JSONException e) {
@@ -230,6 +232,6 @@ public class BeginCAC extends AppCompatActivity {
         mQueue.add(request);
         mQueue.add(request2);
         mQueue.add(request3);
-        mQueue.add(request4);
+
     }
 }
