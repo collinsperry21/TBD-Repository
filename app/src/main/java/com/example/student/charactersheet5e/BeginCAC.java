@@ -28,86 +28,85 @@ import static com.android.volley.toolbox.Volley.newRequestQueue;
 
 
 public class BeginCAC extends AppCompatActivity {
-
-    private Button navigate_next_CAC;
-    
+    //?
     private RequestQueue mQueue;
+    //next page
+    private Button navigate_next_CAC;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_begin_cac);
 
-
-
         navigate_next_CAC = findViewById(R.id.NextCAC01);
 
+        mQueue = newRequestQueue(this);
+
+        //Create Race Spinner
+        Spinner raceSpinner = (Spinner) findViewById(R.id.race_spinner);
+        jsonParse("http://www.dnd5eapi.co/api/races", "name", raceSpinner);
+        //Create subRaceSpinner
+        Spinner subraceSpinner = (Spinner) findViewById(R.id.subrace_spinner);
+        jsonParse("http://dnd5eapi.co/api/subraces", "name", subraceSpinner);
+        //Create Class Spinner
+        Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
+        jsonParse("http://dnd5eapi.co/api/classes", "name", classSpinner);
 
 
         //Code for navigating to next page
-        navigate_next_CAC.setOnClickListener(new View.OnClickListener()
-        {
+        navigate_next_CAC.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
                 startActivity(intent);
             }
         });
 
-        mQueue = newRequestQueue( this);
-        jsonParse();
     }
 
-    //Will move to separate class
-    private void jsonParse() {
-        String url = "http://www.dnd5eapi.co/api/races";
-        String url2 = "http://dnd5eapi.co/api/subraces";
-        String url3 = "http://dnd5eapi.co/api/classes";
-        String url4 = "http://dnd5eapi.co/api/subclasses";
-
-
+    private void jsonParse(String url, final String searchTerm, final Spinner currentSpinner)
+    {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            ArrayList<String> raceSpinnerArrayList = new ArrayList<String>();
+                            //Create string array to hold list, add "Choose One as the first option"
+                            ArrayList<String> SpinnerArrayList = new ArrayList<String>();
+                            SpinnerArrayList.add("Choose One");
 
+                            //Step through JSON object and add the rest of the list
                             JSONArray jsonArray = response.getJSONArray("results");
                             for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject races = jsonArray.getJSONObject(i);
-                                String firstname = races.getString("name");
-                                String urlz = races.getString("url");
-
-                                raceSpinnerArrayList.add(firstname);
-
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                String listEntry = jsonObject.getString(searchTerm);
+                                String urlz = jsonObject.getString("url");
+                                SpinnerArrayList.add(listEntry);
                             }
 
-                            final Spinner raceSpinner = (Spinner) findViewById(R.id.race_spinner);
+                            //Assign array of strings to adapter and assign Android layout style
+                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                                    android.R.layout.simple_spinner_dropdown_item, SpinnerArrayList);
+                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-                            ArrayAdapter<String> adapter =
-                                    new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, raceSpinnerArrayList);
-                            adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+                            final Spinner finalSpinner = currentSpinner;
+                            //Assign adapter to spinner
+                            finalSpinner.setAdapter(adapter);
 
-                            raceSpinner.setAdapter(adapter);
-
-                            raceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-                            {
+                            //Add Toast popup to page
+                            finalSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                 @Override
                                 public void onItemSelected(AdapterView<?> parent, View view,
-                                                        int position, long id)
-                                {
+                                                           int position, long id) {
                                     // Get select item
-                                    String sid = raceSpinner.getSelectedItem().toString();
-                                    Toast.makeText(getBaseContext(), "You have selected Race : " + sid,
+                                    String sid = finalSpinner.getSelectedItem().toString();
+                                    Toast.makeText(getBaseContext(), "You have selected: " + sid,
                                             Toast.LENGTH_SHORT).show();
                                 }
+
                                 @Override
-                                public void onNothingSelected(AdapterView<?> parent)
-                                {
+                                public void onNothingSelected(AdapterView<?> parent) {
                                     // TODO Auto-generated method stub
                                 }
                             });
@@ -122,116 +121,7 @@ public class BeginCAC extends AppCompatActivity {
                 error.printStackTrace();
             }
         });
-        JsonObjectRequest request2 = new JsonObjectRequest(Request.Method.GET, url2, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
 
-                            ArrayList<String> subraceSpinnerArrayList = new ArrayList<String>();
-                            subraceSpinnerArrayList.add("None");
-
-                            JSONArray jsonArray = response.getJSONArray("results");
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject classes = jsonArray.getJSONObject(i);
-                                String firstname = classes.getString("name");
-                                String urlz = classes.getString("url");
-
-                                subraceSpinnerArrayList.add(firstname);
-
-                            }
-                            final Spinner subraceSpinner = (Spinner) findViewById(R.id.subrace_spinner);
-
-                            ArrayAdapter<String> adapter =
-                                    new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, subraceSpinnerArrayList);
-                            adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
-
-                            subraceSpinner.setAdapter(adapter);
-                            subraceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-                            {
-                                @Override
-                                 public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id)
-                                    {
-                                    // Get select item
-                                        String sid = subraceSpinner.getSelectedItem().toString();
-                                        Toast.makeText(getBaseContext(), "You have selected Subrace : " + sid,
-                                        Toast.LENGTH_SHORT).show();
-                                        }
-
-                                @Override
-                                public void onNothingSelected(AdapterView<?> adapterView) {
-
-                                }
-
-                            });
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-        JsonObjectRequest request3 = new JsonObjectRequest(Request.Method.GET, url3, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            ArrayList<String> classSpinnerArrayList = new ArrayList<String>();
-                            JSONArray jsonArray = response.getJSONArray("results");
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject classes = jsonArray.getJSONObject(i);
-                                String firstname = classes.getString("name");
-                                String urlz = classes.getString("url");
-
-                                classSpinnerArrayList.add(firstname);
-
-                            }
-                            final Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
-
-                            ArrayAdapter<String> adapter =
-                                    new ArrayAdapter<String>(getApplicationContext(),  android.R.layout.simple_spinner_dropdown_item, classSpinnerArrayList);
-                            adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
-
-                            classSpinner.setAdapter(adapter);
-
-                            classSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
-                            {
-
-                            @Override
-                            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id)
-                            {
-                             // Get select item
-                            String sid = classSpinner.getSelectedItem().toString();
-                            Toast.makeText(getBaseContext(), "You have selected Class : " + sid,
-                            Toast.LENGTH_SHORT).show();
-                             }
-
-                                @Override
-                                public void onNothingSelected(AdapterView<?> adapterView) {
-
-                                }
-                            });
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-
-        
         mQueue.add(request);
-        mQueue.add(request2);
-        mQueue.add(request3);
-
     }
 }
