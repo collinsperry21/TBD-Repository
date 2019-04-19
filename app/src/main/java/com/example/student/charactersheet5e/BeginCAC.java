@@ -101,8 +101,10 @@ public class BeginCAC extends AppCompatActivity {
                                                            int position, long id) {
                                     // Get select item
                                     String sid = finalSpinner.getSelectedItem().toString();
-                                    Toast.makeText(getBaseContext(), "You have selected: " + sid,
-                                            Toast.LENGTH_SHORT).show();
+                                    if (!sid.equals("Choose One")) {
+                                        Toast.makeText(getBaseContext(), "You have selected: " + sid,
+                                                Toast.LENGTH_SHORT).show();
+                                    }
                                 }
 
                                 @Override
