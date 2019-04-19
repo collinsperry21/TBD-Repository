@@ -13,27 +13,6 @@ public class Character implements Serializable
     private String charClass,subclass;
 
 
-
-    public String getSubrace() {
-        return subrace;
-    }
-
-    public String getCharClass() {
-        return charClass;
-    }
-
-    public void setCharClass(String charClass) {
-        this.charClass = charClass;
-    }
-
-    public String getSubclass() {
-        return subclass;
-    }
-
-    public void setSubclass(String subclass) {
-        this.subclass = subclass;
-    }
-
     public String getName() {
         return name;
     }
@@ -50,7 +29,27 @@ public class Character implements Serializable
         this.race = race;
     }
 
+    public String getSubrace() {
+        return subrace;
+    }
+
     public void setSubrace(String subrace) {
         this.subrace = subrace;
+    }
+
+    public String getCharClass() {
+        return charClass;
+    }
+
+    public void setCharClass(String charClass) {
+        this.charClass = charClass;
+    }
+
+    public String getSubclass() {
+        return subclass;
+    }
+
+    public void setSubclass(String subclass) {
+        this.subclass = subclass;
     }
 }

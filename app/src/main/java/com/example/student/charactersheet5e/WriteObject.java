@@ -1,30 +1,42 @@
 package com.example.student.charactersheet5e;
 
+import android.content.Context;
+import android.widget.Toast;
+
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.util.Formatter;
+
 
 public class WriteObject {
-    public static void main(String args[]) {
 
-        WriteObject obj = new WriteObject();
+    //need context to access file path
+    private Context context;
 
-        Character character = new Character();
-
+    //constructor for context
+    public WriteObject(Context context){
+        this.context=context;
     }
 
-    public void serializeAddress(Character character) {
+
+    public void serializeCharacter(Character character) {
 
         FileOutputStream fout = null;
         ObjectOutputStream oos = null;
 
+        String path =  context.getFilesDir().getAbsolutePath();
+        String fileName = character.getName() + ".ser";
+        File characterFile = new File(path + "/" + fileName);
+
         try {
 
-            fout = new FileOutputStream("c:\\temp\\address.ser");
+            fout = new FileOutputStream(characterFile);
             oos = new ObjectOutputStream(fout);
             oos.writeObject(character);
+            Toast.makeText(context.getApplicationContext(), path, Toast.LENGTH_LONG).show();
 
-            System.out.println("Done");
 
         } catch (Exception ex) {
 
