@@ -1,6 +1,6 @@
 package AppModels;
 
-public class Class {
+public class CharClass {
     private String className;
 
 

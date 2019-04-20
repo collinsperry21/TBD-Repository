@@ -23,7 +23,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import AppModels.Character;
+import AppModels.Race;
+import AppModels.CharClass;
+import AppModels.CharSheet;
 
 import static com.android.volley.toolbox.Volley.newRequestQueue;
 
@@ -35,8 +37,11 @@ public class BeginCAC extends AppCompatActivity {
     private Button navigate_next_CAC;
     private TextInputEditText charName;
 
-    WriteObject obj = new WriteObject(this);
-    Character character = new Character();
+    //WriteObject obj = new WriteObject(this);
+    //Move to end
+    Race raceClass =  new Race();
+    CharClass charClass = new CharClass();
+    CharSheet charSheet = new CharSheet();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +61,7 @@ public class BeginCAC extends AppCompatActivity {
         //Create subRaceSpinner
         final Spinner subraceSpinner = (Spinner) findViewById(R.id.subrace_spinner);
         jsonParse("http://dnd5eapi.co/api/subraces", "name", subraceSpinner);
-        //Create Class Spinner
+        //Create CharClass Spinner
         final Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
         jsonParse("http://dnd5eapi.co/api/classes", "name", classSpinner);
 
@@ -66,11 +71,13 @@ public class BeginCAC extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //sending the information to the character object
+
                 setCharacter(charName.getText().toString(), raceSpinner.getSelectedItem().toString(), subraceSpinner.getSelectedItem().toString(), classSpinner.getSelectedItem().toString());
-                obj.serializeCharacter(character);
+
 
 
                 Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
+                intent.putExtra("charSheet",charSheet);
                 startActivity(intent);
             }
         });
@@ -79,11 +86,14 @@ public class BeginCAC extends AppCompatActivity {
 
     private void setCharacter(String name, String race, String subrace, String c)
     {
+        raceClass.setCharacterName(name);
+        raceClass.setRaceName(race);
+        raceClass.setSubraceName(subrace);
+        charClass.setClassName(c);
 
-        character.setName(name);
-        character.setRace(race);
-        character.setSubrace(subrace);
-        character.setCharClass(c);
+        charSheet.setCharRace(raceClass);
+        charSheet.setCharClass(charClass);
+
     }
 
     private void jsonParse(String url, final String searchTerm, final Spinner currentSpinner)

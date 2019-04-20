@@ -1,22 +1,32 @@
+package AppModels;
+
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+import AppModels.CharClass;
 import AppModels.Race;
-import AppModels.Class;
 import AppModels.Stats;
 
-public class charSheet {
+public class CharSheet implements Serializable {
     private Race charRace;
-    private Class charClass;
+    private CharClass charClass;
     private int charLevel;
     private int charExp;
     private Stats charStats;
 
-    public charSheet(Race race, Class cClass ,int level,int xp, Stats stats )
+    public CharSheet(Race race, CharClass cCharClass, int level, int xp, Stats stats )
     {
         setCharRace(race);
-        setCharClass(cClass);
+        setCharClass(cCharClass);
         setCharLevel(1);
         setCharExp(0);
         setCharStats(stats);
 
+
+    }
+    public CharSheet()
+    {
 
     }
 
@@ -52,11 +62,11 @@ public class charSheet {
         this.charRace = charRace;
     }
 
-        public Class getCharClass () {
+        public CharClass getCharClass () {
         return charClass;
     }
 
-        public void setCharClass (Class charClass){
+        public void setCharClass (CharClass charClass){
         this.charClass = charClass;
     }
 

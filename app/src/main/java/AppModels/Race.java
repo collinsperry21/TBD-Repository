@@ -3,6 +3,8 @@ package AppModels;
 public class Race {
 
     private String raceName;
+    private String subraceName;
+    private String characterName;
     private int statMod;
     private String primaryStat;
     private boolean hasSubrace;
@@ -33,5 +35,19 @@ public class Race {
     }
 
 
+    public String getCharacterName() {
+        return characterName;
+    }
 
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
+    }
+
+    public String getSubraceName() {
+        return subraceName;
+    }
+
+    public void setSubraceName(String subraceName) {
+        this.subraceName = subraceName;
+    }
 }
