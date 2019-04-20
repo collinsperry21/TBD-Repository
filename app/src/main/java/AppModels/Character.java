@@ -1,4 +1,4 @@
-package com.example.student.charactersheet5e;
+package AppModels;
 
 import java.io.Serializable;
 

@@ -7,7 +7,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.Formatter;
+
+import AppModels.Character;
 
 
 public class WriteObject {
@@ -27,7 +28,7 @@ public class WriteObject {
         ObjectOutputStream oos = null;
 
         String path =  context.getFilesDir().getAbsolutePath();
-        String fileName = character.getName() + ".ser";
+        String fileName = character.getName() +"_"+  character.getRace() + "_" + character.getCharClass()+ ".ser";
         File characterFile = new File(path + "/" + fileName);
 
         try {

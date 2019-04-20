@@ -2,5 +2,6 @@
 <resources>
     <color name="colorPrimary">#F47236</color>
     <color name="colorPrimaryDark">#E2630E</color>
+    <color name="colorLoadPopup">#2f333f</color>
     <color name="colorAccent">#135AE9</color>
 </resources>
