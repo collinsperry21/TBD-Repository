@@ -44,28 +44,40 @@ public class BeginCAC extends AppCompatActivity {
         mQueue = newRequestQueue(this);
 
         //Create Race Spinner
-        Spinner raceSpinner = (Spinner) findViewById(R.id.race_spinner);
-        jsonParse("http://www.dnd5eapi.co/api/races", "name", raceSpinner);
+        final String raceUrl = "http://www.dnd5eapi.co/api/races";
+        final Spinner raceSpinner = (Spinner) findViewById(R.id.race_spinner);
+        jsonParse(raceUrl, "name", raceSpinner);
         //Create subRaceSpinner
-        Spinner subraceSpinner = (Spinner) findViewById(R.id.subrace_spinner);
-        jsonParse("http://dnd5eapi.co/api/subraces", "name", subraceSpinner);
+        final String subraceUrl = "http://www.dnd5eapi.co/api/subraces";
+        final Spinner subraceSpinner = (Spinner) findViewById(R.id.subrace_spinner);
+        jsonParse(subraceUrl, "name", subraceSpinner);
         //Create Class Spinner
-        Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
-        jsonParse("http://dnd5eapi.co/api/classes", "name", classSpinner);
+        final String classUrl = "http://www.dnd5eapi.co/api/classes";
+        final Spinner classSpinner = (Spinner) findViewById(R.id.class_spinner);
+        jsonParse(classUrl, "name", classSpinner);
 
 
         //Code for navigating to next page
         navigate_next_CAC.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
-                startActivity(intent);
+            public void onClick(View view)
+            {
+                String race = raceSpinner.getSelectedItem().toString();
+                String subRace = subraceSpinner.getSelectedItem().toString();
+                String Class = classSpinner.getSelectedItem().toString();
+
+                Boolean selectionsMade = CheckUserSelection(race, subRace, Class);
+                if (selectionsMade)
+                {
+                    Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
+                    startActivity(intent);
+                }
             }
         });
 
     }
 
-    private void jsonParse(String url, final String searchTerm, final Spinner currentSpinner)
+    private void jsonParse(final String url, final String searchTerm, final Spinner currentSpinner)
     {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
@@ -75,6 +87,10 @@ public class BeginCAC extends AppCompatActivity {
                             //Create string array to hold list, add "Choose One as the first option"
                             ArrayList<String> SpinnerArrayList = new ArrayList<String>();
                             SpinnerArrayList.add("Choose One");
+                            if (url.equals("http://dnd5eapi.co/api/subraces"))
+                            {
+                                SpinnerArrayList.add("None");
+                            }
 
                             //Step through JSON object and add the rest of the list
                             JSONArray jsonArray = response.getJSONArray("results");
@@ -126,4 +142,50 @@ public class BeginCAC extends AppCompatActivity {
 
         mQueue.add(request);
     }
+    private Boolean CheckUserSelection(String race, String subRace, String Class)
+    {
+        Boolean acceptChoices = true;
+
+        //Check users choices
+        if (race.equals("Choose One"))
+        {
+            acceptChoices = false;
+            Toast.makeText(getBaseContext(), "You must choose a Race" ,
+                    Toast.LENGTH_SHORT).show();
+        }
+        else if (Class.equals("Choose One"))
+        {
+            acceptChoices = false;
+            Toast.makeText(getBaseContext(), "You must choose a Class" ,
+                    Toast.LENGTH_SHORT).show();
+        }
+        else if (race.equals("Elf") || race.equals("Dwarf") || race.equals("Halfling"))
+        {
+            String[] subRaceParts = subRace.split(" ");
+            //Ensure race and subrace are compatible
+            acceptChoices = false;
+            for (int i = 0; i < subRaceParts.length; i++)
+            {
+                if (subRaceParts[i].equals(race))
+                {
+                    acceptChoices = true;
+                }
+            }
+            if (!acceptChoices)
+            {
+                if(subRace.equals("Choose One"))
+                {
+                    Toast.makeText(getBaseContext(), "you must choose a Subrace" ,
+                            Toast.LENGTH_SHORT).show();
+                }else
+                {
+                    Toast.makeText(getBaseContext(), subRace + " is incompatible with " + race,
+                            Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+
+        return acceptChoices;
+    }
 }
+
