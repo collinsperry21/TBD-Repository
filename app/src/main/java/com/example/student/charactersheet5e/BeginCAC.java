@@ -70,13 +70,12 @@ public class BeginCAC extends AppCompatActivity {
         navigate_next_CAC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //sending the information to the character object
 
+                //sending the information to the character sheet object
                 setCharacter(charName.getText().toString(), raceSpinner.getSelectedItem().toString(), subraceSpinner.getSelectedItem().toString(), classSpinner.getSelectedItem().toString());
 
-
-
                 Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
+                 //send the character sheet to the next activity
                 intent.putExtra("charSheet",charSheet);
                 startActivity(intent);
             }
@@ -84,6 +83,7 @@ public class BeginCAC extends AppCompatActivity {
 
     }
 
+    //Set the data models with the race and class info
     private void setCharacter(String name, String race, String subrace, String c)
     {
         raceClass.setCharacterName(name);
@@ -93,6 +93,8 @@ public class BeginCAC extends AppCompatActivity {
 
         charSheet.setCharRace(raceClass);
         charSheet.setCharClass(charClass);
+        charSheet.setCharLevel(1);
+        charSheet.setCharExp(0);
 
     }
 

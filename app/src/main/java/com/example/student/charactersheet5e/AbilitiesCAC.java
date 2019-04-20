@@ -16,9 +16,11 @@ public class AbilitiesCAC extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abilities_cac);
 
+        //Set a new character sheet from the old one ( may be a better way to do this?? )
         CharSheet charSheet = (CharSheet) (getIntent().getSerializableExtra("charSheet"));
 
         charName = findViewById(R.id.character_name_text);
+        //Set the text to the name of the character
         charName.setText(charSheet.getCharRace().getCharacterName());
 
     }

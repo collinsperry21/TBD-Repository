@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-import AppModels.Character;
+import AppModels.CharSheet;
 
 
 public class WriteObject {
@@ -22,13 +22,13 @@ public class WriteObject {
     }
 
 
-    public void serializeCharacter(Character character) {
+    public void serializeCharacter(CharSheet character) {
 
         FileOutputStream fout = null;
         ObjectOutputStream oos = null;
 
         String path =  context.getFilesDir().getAbsolutePath();
-        String fileName = character.getName() +"_"+  character.getRace() + "_" + character.getCharClass()+ ".ser";
+        String fileName = (character.getCharRace().getCharacterName()).replaceAll(" ", "_") + ".ser";
         File characterFile = new File(path + "/" + fileName);
 
         try {
