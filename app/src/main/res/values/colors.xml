@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#E2630E</color>
     <color name="colorLoadPopup">#2f333f</color>
     <color name="colorAccent">#135AE9</color>
+    <color name="homePage">#020005</color>
 </resources>
