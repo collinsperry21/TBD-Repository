@@ -36,7 +36,6 @@ public class WriteObject {
             fout = new FileOutputStream(characterFile);
             oos = new ObjectOutputStream(fout);
             oos.writeObject(character);
-            Toast.makeText(context.getApplicationContext(), path, Toast.LENGTH_LONG).show();
 
 
         } catch (Exception ex) {

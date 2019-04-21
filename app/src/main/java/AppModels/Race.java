@@ -52,4 +52,12 @@ public class Race implements Serializable {
     public void setSubraceName(String subraceName) {
         this.subraceName = subraceName;
     }
+
+    public boolean getHasSubrace() {
+        return hasSubrace;
+    }
+
+    public void setHasSubrace(boolean hasSubrace) {
+        this.hasSubrace = hasSubrace;
+    }
 }
