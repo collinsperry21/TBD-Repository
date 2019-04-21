@@ -86,13 +86,15 @@ public class BeginCAC extends AppCompatActivity {
                     //sending the information to the character sheet object
                     setCharacter(charName.getText().toString(), raceSpinner.getSelectedItem().toString(), subraceSpinner.getSelectedItem().toString(), classSpinner.getSelectedItem().toString());
 
-                    //Testing to see if reading object is working
+                    //Testing to see if reading object is working, this is only temporarily here for demo
                     obj.serializeCharacter(characterSheet);
 
 
                     Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
-                    //send the character sheet to the next activity
+
+                    //send the character sheet to the next activity to add scores
                     intent.putExtra("characterSheet", characterSheet);
+
                     startActivity(intent);
                 }
             }
