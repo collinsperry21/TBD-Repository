@@ -3,6 +3,6 @@
     <color name="colorPrimary">#447E2E</color>
     <color name="colorPrimaryDark">#125C14</color>
     <color name="colorLoadPopup">#2f333f</color>
-    <color name="colorAccent">#135AE9</color>
-    <color name="homePage">#020005</color>
+    <color name="colorAccent">#FDB833</color>
+    <color name="colorGray">#A2A1A1</color>
 </resources>

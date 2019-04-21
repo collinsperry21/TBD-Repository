@@ -4,19 +4,29 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/dndapplogo"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Pop"
-            android:theme="@style/AppTheme.CustomTheme"
-            ></activity>
-        <activity android:name=".AbilitiesCAC"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".Pop_Help_Activity"
+            android:theme="@style/AppTheme.CustomPopTheme">
+        </activity>
+
+        <activity
+            android:name=".Pop"
+            android:theme="@style/AppTheme.CustomPopTheme" />
+
+        <activity android:name=".AbilitiesCAC" />
+
         <activity android:name=".BeginCAC" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
