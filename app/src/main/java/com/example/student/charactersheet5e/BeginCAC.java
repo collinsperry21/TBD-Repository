@@ -37,11 +37,13 @@ public class BeginCAC extends AppCompatActivity {
     private Button navigate_next_CAC;
     private TextInputEditText charName;
 
-    //WriteObject obj = new WriteObject(this);
+    //Testing for reading file
+    WriteObject obj = new WriteObject(this);
     //Move to end
+
     Race raceClass =  new Race();
     CharClass charClass = new CharClass();
-    CharSheet charSheet = new CharSheet();
+    CharSheet characterSheet = new CharSheet();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,9 +86,13 @@ public class BeginCAC extends AppCompatActivity {
                     //sending the information to the character sheet object
                     setCharacter(charName.getText().toString(), raceSpinner.getSelectedItem().toString(), subraceSpinner.getSelectedItem().toString(), classSpinner.getSelectedItem().toString());
 
+                    //Testing to see if reading object is working
+                    obj.serializeCharacter(characterSheet);
+
+
                     Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
                     //send the character sheet to the next activity
-                    intent.putExtra("charSheet",charSheet);
+                    intent.putExtra("characterSheet", characterSheet);
                     startActivity(intent);
                 }
             }
@@ -99,13 +105,14 @@ public class BeginCAC extends AppCompatActivity {
     {
         raceClass.setCharacterName(name);
         raceClass.setRaceName(race);
+        //If the subrace is not selected
         raceClass.setSubraceName(subrace);
         charClass.setClassName(c);
 
-        charSheet.setCharRace(raceClass);
-        charSheet.setCharClass(charClass);
-        charSheet.setCharLevel(1);
-        charSheet.setCharExp(0);
+        characterSheet.setCharRace(raceClass);
+        characterSheet.setCharClass(charClass);
+        characterSheet.setCharLevel(1);
+        characterSheet.setCharExp(0);
 
     }
 

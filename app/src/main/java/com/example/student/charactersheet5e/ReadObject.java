@@ -1,6 +1,7 @@
 package com.example.student.charactersheet5e;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class ReadObject {
 
     //need context to access file path
     private Context context;
+
 
     //constructor for context
     public ReadObject(Context context){
@@ -27,8 +29,7 @@ public class ReadObject {
         ObjectInputStream ois = null;
 
         try {
-
-            fin = new FileInputStream(filename);
+            fin = new FileInputStream(context.getFilesDir().getAbsolutePath() + "/" + filename );
             ois = new ObjectInputStream(fin);
             character = (CharSheet) ois.readObject();
 
