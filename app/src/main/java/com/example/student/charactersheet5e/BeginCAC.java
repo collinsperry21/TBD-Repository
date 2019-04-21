@@ -88,7 +88,6 @@ public class BeginCAC extends AppCompatActivity {
                     //send the character sheet to the next activity
                     intent.putExtra("charSheet",charSheet);
                     startActivity(intent);
-                    startActivity(intent);
                 }
             }
         });
