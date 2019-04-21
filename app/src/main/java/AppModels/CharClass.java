@@ -1,6 +1,8 @@
 package AppModels;
 
-public class Class {
+import java.io.Serializable;
+
+public class CharClass implements Serializable {
     private String className;
 
 

@@ -1,6 +1,7 @@
 package com.example.student.charactersheet5e;
 
 import android.content.Intent;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.widget.Button;
-import android.widget.Spinner;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,6 +23,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import AppModels.Race;
+import AppModels.CharClass;
+import AppModels.CharSheet;
+
 import static com.android.volley.toolbox.Volley.newRequestQueue;
 
 
@@ -32,6 +35,13 @@ public class BeginCAC extends AppCompatActivity {
     private RequestQueue mQueue;
     //next page
     private Button navigate_next_CAC;
+    private TextInputEditText charName;
+
+    //WriteObject obj = new WriteObject(this);
+    //Move to end
+    Race raceClass =  new Race();
+    CharClass charClass = new CharClass();
+    CharSheet charSheet = new CharSheet();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +50,8 @@ public class BeginCAC extends AppCompatActivity {
         setContentView(R.layout.activity_begin_cac);
 
         navigate_next_CAC = findViewById(R.id.NextCAC01);
+
+        charName = findViewById(R.id.char_name);
 
         mQueue = newRequestQueue(this);
 
@@ -69,7 +81,13 @@ public class BeginCAC extends AppCompatActivity {
                 Boolean selectionsMade = CheckUserSelection(race, subRace, Class);
                 if (selectionsMade)
                 {
+                    //sending the information to the character sheet object
+                    setCharacter(charName.getText().toString(), raceSpinner.getSelectedItem().toString(), subraceSpinner.getSelectedItem().toString(), classSpinner.getSelectedItem().toString());
+
                     Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
+                    //send the character sheet to the next activity
+                    intent.putExtra("charSheet",charSheet);
+                    startActivity(intent);
                     startActivity(intent);
                 }
             }
@@ -77,7 +95,22 @@ public class BeginCAC extends AppCompatActivity {
 
     }
 
-    private void jsonParse(final String url, final String searchTerm, final Spinner currentSpinner)
+    //Set the data models with the race and class info
+    private void setCharacter(String name, String race, String subrace, String c)
+    {
+        raceClass.setCharacterName(name);
+        raceClass.setRaceName(race);
+        raceClass.setSubraceName(subrace);
+        charClass.setClassName(c);
+
+        charSheet.setCharRace(raceClass);
+        charSheet.setCharClass(charClass);
+        charSheet.setCharLevel(1);
+        charSheet.setCharExp(0);
+
+    }
+
+    private void jsonParse(String url, final String searchTerm, final Spinner currentSpinner)
     {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {

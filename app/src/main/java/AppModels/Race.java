@@ -1,8 +1,12 @@
 package AppModels;
 
-public class Race {
+import java.io.Serializable;
+
+public class Race implements Serializable {
 
     private String raceName;
+    private String subraceName;
+    private String characterName;
     private int statMod;
     private String primaryStat;
     private boolean hasSubrace;
@@ -33,5 +37,19 @@ public class Race {
     }
 
 
+    public String getCharacterName() {
+        return characterName;
+    }
 
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
+    }
+
+    public String getSubraceName() {
+        return subraceName;
+    }
+
+    public void setSubraceName(String subraceName) {
+        this.subraceName = subraceName;
+    }
 }
