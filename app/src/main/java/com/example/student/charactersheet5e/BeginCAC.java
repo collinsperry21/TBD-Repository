@@ -110,7 +110,7 @@ public class BeginCAC extends AppCompatActivity {
 
     }
 
-    private void jsonParse(String url, final String searchTerm, final Spinner currentSpinner)
+    private void jsonParse(final String url, final String searchTerm, final Spinner currentSpinner)
     {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
