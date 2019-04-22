@@ -128,7 +128,7 @@ public class BeginCAC extends AppCompatActivity {
                             //Create string array to hold list, add "Choose One as the first option"
                             ArrayList<String> SpinnerArrayList = new ArrayList<String>();
                             SpinnerArrayList.add("Choose One");
-                            if (url.equals("http://dnd5eapi.co/api/subraces"))
+                            if (url.contains("subrace"))
                             {
                                 SpinnerArrayList.add("None");
                             }
@@ -207,7 +207,7 @@ public class BeginCAC extends AppCompatActivity {
             acceptChoices = false;
             for (int i = 0; i < subRaceParts.length; i++)
             {
-                if (subRaceParts[i].equals(race))
+                if (subRaceParts[i].equals(race)|| subRace.equals("None"))
                 {
                     acceptChoices = true;
                 }

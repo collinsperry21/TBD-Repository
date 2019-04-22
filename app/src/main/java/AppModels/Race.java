@@ -10,6 +10,7 @@ public class Race implements Serializable {
     private int statMod;
     private String primaryStat;
     private boolean hasSubrace;
+    private String raceUrl;
 
     public String getPrimaryStat() {
         return primaryStat;
@@ -59,5 +60,13 @@ public class Race implements Serializable {
 
     public void setHasSubrace(boolean hasSubrace) {
         this.hasSubrace = hasSubrace;
+    }
+
+    public String getRaceUrl() {
+        return raceUrl;
+    }
+
+    public void setRaceUrl(String raceUrl) {
+        this.raceUrl = raceUrl;
     }
 }
