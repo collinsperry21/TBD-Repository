@@ -183,7 +183,7 @@
         app:layout_constraintTop_toBottomOf="@+id/strength_mod_disp_text" />
 
     <TextView
-        android:id="@+id/Intelligence_score_text"
+        android:id="@+id/intelligence_score_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -199,10 +199,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text=" "
-        app:layout_constraintEnd_toEndOf="@+id/Intelligence_score_text"
+        app:layout_constraintEnd_toEndOf="@+id/intelligence_score_text"
         app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="@+id/Intelligence_score_text"
-        app:layout_constraintTop_toBottomOf="@+id/Intelligence_score_text" />
+        app:layout_constraintStart_toStartOf="@+id/intelligence_score_text"
+        app:layout_constraintTop_toBottomOf="@+id/intelligence_score_text" />
 
     <TextView
         android:id="@+id/textView14"
