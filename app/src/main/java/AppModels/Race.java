@@ -4,15 +4,16 @@ public class Race {
 
     private String raceName;
     private int statMod;
-    private String primaryStat;
+    private int baseSpeed;
     private boolean hasSubrace;
 
-    public String getPrimaryStat() {
-        return primaryStat;
+
+    public void setBaseSpeed(int baseSpeed){
+        this.baseSpeed = baseSpeed;
     }
 
-    public void setPrimaryStat(String primaryStat) {
-        this.primaryStat = primaryStat;
+    public int getBaseSpeed() {
+        return baseSpeed;
     }
 
 

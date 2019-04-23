@@ -2,8 +2,16 @@ package AppModels;
 
 public class Class {
     private String className;
+    private String primaryStat;
 
 
+    public String getPrimaryStat() {
+        return primaryStat;
+    }
+
+    public void setPrimaryStat(String primaryStat) {
+        this.primaryStat = primaryStat;
+    }
 
     public String getClassName() {
         return className;

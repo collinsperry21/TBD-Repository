@@ -60,6 +60,9 @@ public class charSheet {
         this.charClass = charClass;
     }
 
+    public void modStats(){
+        
+    }
 
 
 
