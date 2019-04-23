@@ -100,7 +100,7 @@ public class AbilitiesCAC extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 if(CheckUserSelection(inputTestArray)) {
-                    charSheet = setCharacter(inputTestArray,charSheet);
+                    //charSheet = setCharacter(inputTestArray,charSheet);
                     Intent intent = new Intent(getApplicationContext(), ReviewCAC.class);
                     //send the character sheet to the next activity to add scores
                     intent.putExtra("characterSheet", charSheet);
@@ -136,13 +136,7 @@ public class AbilitiesCAC extends AppCompatActivity
                         Toast.LENGTH_SHORT).show();
                 return false;
             }
-            //grab an int version of the input value and see in its between 3 and 18
-            else if( Integer.valueOf(inputTest.get(i).getText().toString()) <= 2 || Integer.valueOf(inputTest.get(i).getText().toString()) >= 19)
-            {
-                Toast.makeText(getBaseContext(), "Ability scores must be between 3 and 18",
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
+
 
         }
         //If it passes the loop
