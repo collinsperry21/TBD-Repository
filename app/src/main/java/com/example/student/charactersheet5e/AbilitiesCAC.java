@@ -23,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import AppModels.CharSheet;
 
@@ -42,8 +43,6 @@ public class AbilitiesCAC extends AppCompatActivity
     private EditText wisButton;
     private EditText chaButton;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +61,11 @@ public class AbilitiesCAC extends AppCompatActivity
         intButton = findViewById(R.id.IntelligenceInput);
         wisButton = findViewById(R.id.WisdomInput);
         chaButton = findViewById(R.id.CharismaInput);
+
+        //Set array list for checking inputs
+        final ArrayList <EditText> inputTestArray = new ArrayList<EditText>(
+                Arrays.asList(strButton,dexButton,conButton,intButton,wisButton,chaButton));
+
 
 
 
@@ -94,13 +98,41 @@ public class AbilitiesCAC extends AppCompatActivity
         navigateToNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ReviewCAC.class);
-                //send the character sheet to the next activity to add scores
-                intent.putExtra("characterSheet", charSheet);
-                startActivity(intent);
+                if(CheckUserSelection(inputTestArray)) {
+                    Intent intent = new Intent(getApplicationContext(), ReviewCAC.class);
+                    //send the character sheet to the next activity to add scores
+                    intent.putExtra("characterSheet", charSheet);
+                    startActivity(intent);
+                }
             }
         });
 
+    }
+
+    private Boolean CheckUserSelection(ArrayList<EditText> inputTest)
+    {
+        //For every EditText in the array
+        int i = 0;
+        while( i < inputTest.size() ) {
+
+            //If there is no input
+            if(inputTest.get(i).getText().toString().equals(""))
+            {
+                Toast.makeText(getBaseContext(), "You must complete all Ability Scores",
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            //grab an int version of the input value and see in its between 3 and 18
+            else if( Integer.valueOf(inputTest.get(i).getText().toString()) >= 2 || Integer.valueOf(inputTest.get(i).getText().toString()) <= 19)
+            {
+                Toast.makeText(getBaseContext(), "Ability scores must be between 3 and 18",
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+        }
+        //If it passes the loop
+        return true;
     }
 
     public void AutoGenerate(String charClass){
