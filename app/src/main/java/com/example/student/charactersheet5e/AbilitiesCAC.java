@@ -101,7 +101,7 @@ public class AbilitiesCAC extends AppCompatActivity
                     obj.serializeCharacter(charSheet);
 
                     startActivity(intent);
-                
+                }
             }
         });
 
