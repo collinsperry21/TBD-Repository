@@ -4,76 +4,104 @@ public class Stats {
 
     private int hitpoints;
     private int speed;
-    private int strength=8;
-    private int intelligence=8;
-    private int dexterity=8;
-    private int wisdom=8;
-    private int constitution=8;
-    private int charisma=8;
+    private int strength;
+    private int intelligence;
+    private int dexterity;
+    private int wisdom;
+    private int constitution;
+    private int charisma;
+    private int modStrength;
+    private int modIntelligence;
+    private int modDexterity;
+    private int modWisdom;
+    private int modConstitution;
+    private int modCharisma;
 
-    public int getSpeed() {
-        return speed;
+    public Stats(int typeStats)
+    {
+
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
+
+    public int getModStrength() {
+        return modStrength;
     }
 
-    public int getHitpoints() {
-        return hitpoints;
+    public void setModStrength(int modStrength) {
+        this.modStrength = modStrength;
     }
 
-    public void setHitpoints(int hitpoints) {
-        this.hitpoints = hitpoints;
+    public int getModIntelligence() {
+        return modIntelligence;
     }
 
-    public int getStrength() {
-        return strength;
+    public void setModIntelligence(int modIntelligence) {
+        this.modIntelligence = modIntelligence;
     }
 
-    public void setStrength(int strength) {
-        this.strength = strength;
+    public int getModDexterity() {
+        return modDexterity;
     }
 
-    public int getIntelligence() {
-        return intelligence;
+    public void setModDexterity(int modDexterity) {
+        this.modDexterity = modDexterity;
     }
 
-    public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
+    public int getModWisdom() {
+        return modWisdom;
     }
 
-    public int getDexterity() {
-        return dexterity;
+    public void setModWisdom(int modWisdom) {
+        this.modWisdom = modWisdom;
     }
 
-    public void setDexterity(int dexterity) {
-        this.dexterity = dexterity;
+    public int getModConstitution() {
+        return modConstitution;
     }
 
-    public int getWisdom() {
-        return wisdom;
+    public void setModConstitution(int modConstitution) {
+        this.modConstitution = modConstitution;
     }
 
-    public void setWisdom(int wisdom) {
-        this.wisdom = wisdom;
+    public int getModCharisma() {
+        return modCharisma;
     }
 
-    public int getConstitution() {
-        return constitution;
+    public void setModCharisma(int modCharisma) {
+        this.modCharisma = modCharisma;
     }
 
-    public void setConstitution(int constitution) {
-        this.constitution = constitution;
-    }
+    public int getSpeed() { return speed; }
 
-    public int getCharisma() {
-        return charisma;
-    }
+    public void setSpeed(int speed) { this.speed = speed; }
 
-    public void setCharisma(int charisma) {
-        this.charisma = charisma;
-    }
+    public int getHitpoints() { return hitpoints; }
+
+    public void setHitpoints(int hitpoints) { this.hitpoints = hitpoints; }
+
+    public int getStrength() { return strength; }
+
+    public void setStrength(int strength) { this.strength = strength; }
+
+    public int getIntelligence() { return intelligence; }
+
+    public void setIntelligence(int intelligence) { this.intelligence = intelligence; }
+
+    public int getDexterity() { return dexterity; }
+
+    public void setDexterity(int dexterity) { this.dexterity = dexterity; }
+
+    public int getWisdom() { return wisdom; }
+
+    public void setWisdom(int wisdom) { this.wisdom = wisdom; }
+
+    public int getConstitution() { return constitution; }
+
+    public void setConstitution(int constitution) { this.constitution = constitution; }
+
+    public int getCharisma() { return charisma; }
+
+    public void setCharisma(int charisma) { this.charisma = charisma; }
 
 
 }
