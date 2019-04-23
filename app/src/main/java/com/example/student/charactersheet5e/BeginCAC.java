@@ -37,10 +37,6 @@ public class BeginCAC extends AppCompatActivity {
     private Button navigate_next_CAC;
     private TextInputEditText charName;
 
-    //Testing for reading file
-    WriteObject obj = new WriteObject(this);
-    //Move to end
-
     Race raceClass =  new Race();
     CharClass charClass = new CharClass();
     CharSheet characterSheet = new CharSheet();
@@ -85,10 +81,6 @@ public class BeginCAC extends AppCompatActivity {
                 {
                     //sending the information to the character sheet object
                     setCharacter(charName.getText().toString(), raceSpinner.getSelectedItem().toString(), subraceSpinner.getSelectedItem().toString(), classSpinner.getSelectedItem().toString());
-
-                    //Testing to see if reading object is working, this is only temporarily here for demo
-                    obj.serializeCharacter(characterSheet);
-
 
                     Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
 
