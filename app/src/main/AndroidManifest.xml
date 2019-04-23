@@ -13,20 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
+        <activity android:name=".ReviewCAC"></activity>
         <activity
             android:name=".Pop_Help_Activity"
-            android:theme="@style/AppTheme.CustomPopTheme">
-        </activity>
-
+            android:theme="@style/AppTheme.CustomPopTheme"></activity>
         <activity
             android:name=".Pop"
             android:theme="@style/AppTheme.CustomPopTheme" />
-
         <activity android:name=".AbilitiesCAC" />
-
         <activity android:name=".BeginCAC" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -33,6 +33,7 @@ public class AbilitiesCAC extends AppCompatActivity
     private TextView charName;
     private Button helpButton;
     private Button autoGen;
+    private Button navigateToNext;
     //score fields
     private EditText strButton;
     private EditText dexButton;
@@ -52,6 +53,7 @@ public class AbilitiesCAC extends AppCompatActivity
         charName = findViewById(R.id.character_name_text);
         helpButton = findViewById(R.id.help_Button);
         autoGen = findViewById(R.id.auto_button);
+        navigateToNext = findViewById(R.id.navigate_review_CAC);
 
         //Ability score text inputs
         strButton = findViewById(R.id.StrengthInput);
@@ -66,10 +68,8 @@ public class AbilitiesCAC extends AppCompatActivity
         //Set a new character sheet from the old one ( may be a better way to do this?? )
         final CharSheet charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
 
-
         //Set the text to the name of the character
         charName.setText(charSheet.getCharRace().getCharacterName());
-
 
         //Help button
         helpButton.setOnClickListener(new View.OnClickListener()
@@ -77,10 +77,8 @@ public class AbilitiesCAC extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-
                 Intent i = new Intent(getApplicationContext(), Pop_Help_Activity.class);
                 startActivity(i);
-
             }
         });
 
@@ -89,6 +87,17 @@ public class AbilitiesCAC extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 AutoGenerate(charSheet.getCharClass().getClassName());
+            }
+        });
+
+        //Next Button
+        navigateToNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ReviewCAC.class);
+                //send the character sheet to the next activity to add scores
+                intent.putExtra("characterSheet", charSheet);
+                startActivity(intent);
             }
         });
 
@@ -110,7 +119,7 @@ public class AbilitiesCAC extends AppCompatActivity
                 strButton.setText("10");
                 conButton.setText("13");
                 dexButton.setText("14");
-                intButton.setText("10");
+                intButton.setText("12");
                 wisButton.setText("8");
                 chaButton.setText("15");
                 break;
@@ -195,6 +204,8 @@ public class AbilitiesCAC extends AppCompatActivity
                 chaButton.setText("10");
                 break;
         }
+        Toast.makeText(getBaseContext(), "Ability scores assigned based on " + charClass + " Class" ,
+                Toast.LENGTH_SHORT).show();
 
     }
 
