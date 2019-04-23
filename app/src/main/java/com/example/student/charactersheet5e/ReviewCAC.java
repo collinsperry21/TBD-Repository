@@ -48,7 +48,7 @@ public class ReviewCAC extends AppCompatActivity
 
     private String GetModsList(String raceName)
     {
-        String modsList = "\n";
+        String modsList = new String();
         try
         {
             InputStream inStream = getAssets().open("races_5e.json");
@@ -71,7 +71,11 @@ public class ReviewCAC extends AppCompatActivity
                     {
                         JSONObject attributeObj = attributeJsonArray.getJSONObject(index);
                         modsList += attributeObj.getString("name") + " (+" +
-                                attributeObj.getString("bonus") + ")\n";
+                                attributeObj.getString("bonus") + ")\t\t";
+                        if ((index + 1)%3 == 0)
+                        {
+                            modsList += "\n";
+                        }
                     }
                 }
             }
