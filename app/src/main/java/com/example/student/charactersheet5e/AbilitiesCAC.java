@@ -4,30 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import AppModels.CharSheet;
+import AppModels.Stats;
 
-import static com.android.volley.toolbox.Volley.newRequestQueue;
 
 public class AbilitiesCAC extends AppCompatActivity
 {
@@ -42,7 +29,9 @@ public class AbilitiesCAC extends AppCompatActivity
     private EditText intButton;
     private EditText wisButton;
     private EditText chaButton;
-    private CharSheet charSheet;
+
+    //Testing for writing file
+    WriteObject obj = new WriteObject(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +60,9 @@ public class AbilitiesCAC extends AppCompatActivity
 
 
         //Set a new character sheet from the old one ( may be a better way to do this?? )
-        charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
+        final CharSheet charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
+        //Stats model
+        final Stats scoreStats = new Stats();
 
         //Set the text to the name of the character
         charName.setText(charSheet.getCharRace().getCharacterName());
@@ -99,11 +90,16 @@ public class AbilitiesCAC extends AppCompatActivity
         navigateToNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //if all inputs check out
                 if(CheckUserSelection(inputTestArray)) {
-                    //charSheet = setCharacter(inputTestArray,charSheet);
+                    //add stats to character sheet
+                    charSheet.setCharStats(setCharacter(inputTestArray, scoreStats));
                     Intent intent = new Intent(getApplicationContext(), ReviewCAC.class);
                     //send the character sheet to the next activity to add scores
                     intent.putExtra("characterSheet", charSheet);
+                    //Testing to see if reading object is working, this is only temporarily here for demo
+                    obj.serializeCharacter(charSheet);
+
                     startActivity(intent);
                 }
             }
@@ -111,16 +107,16 @@ public class AbilitiesCAC extends AppCompatActivity
 
     }
 
-    private CharSheet setCharacter(ArrayList<EditText> input, CharSheet charSheet){
+    private Stats setCharacter(ArrayList<EditText> input, Stats stats){
         //Set the values to each Stat in CharSheet
-        charSheet.getCharStats().setStrength( Integer.valueOf( input.get(0).getText().toString() ) );
-        charSheet.getCharStats().setDexterity( Integer.valueOf( input.get(1).getText().toString() ) );
-        charSheet.getCharStats().setConstitution( Integer.valueOf( input.get(2).getText().toString() ) );
-        charSheet.getCharStats().setIntelligence( Integer.valueOf( input.get(3).getText().toString() ) );
-        charSheet.getCharStats().setWisdom( Integer.valueOf( input.get(4).getText().toString() ) );
-        charSheet.getCharStats().setCharisma( Integer.valueOf( input.get(5).getText().toString() ) );
+        stats.setStrength( Integer.valueOf( input.get(0).getText().toString() ) );
+        stats.setDexterity( Integer.valueOf( input.get(1).getText().toString() ) );
+        stats.setConstitution( Integer.valueOf( input.get(2).getText().toString() ) );
+        stats.setIntelligence( Integer.valueOf( input.get(3).getText().toString() ) );
+        stats.setWisdom( Integer.valueOf( input.get(4).getText().toString() ) );
+        stats.setCharisma( Integer.valueOf( input.get(5).getText().toString() ) );
 
-        return charSheet;
+        return stats;
     }
 
     private Boolean CheckUserSelection(ArrayList<EditText> inputTest)
@@ -136,8 +132,14 @@ public class AbilitiesCAC extends AppCompatActivity
                         Toast.LENGTH_SHORT).show();
                 return false;
             }
+            else if (Integer.valueOf(inputTest.get(i).getText().toString()) <=2 || Integer.valueOf(inputTest.get(i).getText().toString()) >= 19)
+            {
+                Toast.makeText(getBaseContext(), "Ability Scores must be between 3 and 18",
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
 
-
+            i++;
         }
         //If it passes the loop
         return true;
