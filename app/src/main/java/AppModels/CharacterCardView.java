@@ -1,4 +1,4 @@
-package com.example.student.charactersheet5e;
+package AppModels;
 
 public class CharacterCardView {
     private int mPortrait;
@@ -10,6 +10,10 @@ public class CharacterCardView {
         mPortrait = portrait;
         mName = name;
         mRace = race;
+
+    }
+    public void changeName(String text){
+        mName = text;
 
     }
 

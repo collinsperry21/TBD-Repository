@@ -1,4 +1,4 @@
-package com.example.student.charactersheet5e;
+package IO;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -6,26 +6,53 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.student.charactersheet5e.R;
 
 import java.util.ArrayList;
 
+import AppModels.CharacterCardView;
+
 public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewHolder> {
     private ArrayList<CharacterCardView> mCharacetrList;
+    private OnItemClickListener myListener;
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener)
+    {
+        myListener = listener;
+
+    }
 
     public static class CharacterViewHolder extends RecyclerView.ViewHolder{
         public ImageView mPortraitImageView;
         public TextView mNameTextView;
         public TextView mRaceTextView;
+        public RelativeLayout viewBackground, viewForeground;
 
 
-        public CharacterViewHolder(@NonNull View itemView) {
+        public CharacterViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
             super(itemView);
             mPortraitImageView = itemView.findViewById(R.id.character_portrait);
             mNameTextView = itemView.findViewById(R.id.character_name);
             mRaceTextView = itemView.findViewById(R.id.character_race);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    if(listener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -40,7 +67,7 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewH
     public CharacterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.character_item, parent, false);
-        CharacterViewHolder cvh = new CharacterViewHolder(v);
+        CharacterViewHolder cvh = new CharacterViewHolder(v, myListener);
 
         return cvh;
     }
@@ -59,4 +86,5 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewH
     public int getItemCount() {
         return mCharacetrList.size();
     }
+
 }
