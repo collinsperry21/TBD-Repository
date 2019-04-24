@@ -6,6 +6,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import AppModels.CharSheet;
 import AppModels.CharacterCardView;
 import IO.LoadAdapter;
 import IO.ReadObject;
+import IO.SwipeToDeleteCallback;
 
 //Need to clean this whole thing up
 public class Pop_Load extends AppCompatActivity {
@@ -54,6 +56,31 @@ public class Pop_Load extends AppCompatActivity {
         //set the window to 80% on both w and h
         getWindow().setLayout((int)(width*.9),(int)(height*.8));
 
+
+
+        //Array list for cards
+        characterCardViews = new ArrayList<>();
+
+        setUpView();
+
+        mAdapter.setOnItemClickListener(new LoadAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                changeItem(position, "Clicked");            }
+        });
+
+
+
+
+    }
+
+    private void setUpView() {
+        setUpNameList();
+        setUpRecyclerView();
+    }
+
+    private void setUpNameList() {
+
         CharSheet character = new CharSheet();
 
         //Array for list of filenames
@@ -61,13 +88,6 @@ public class Pop_Load extends AppCompatActivity {
 
         //Fin all files with .ser
         File[] serFiles = finder(this.getFilesDir().getAbsolutePath());
-
-        //Array list for cards
-        characterCardViews = new ArrayList<>();
-
-
-
-
 
         for( File file : serFiles)
         {
@@ -84,7 +104,9 @@ public class Pop_Load extends AppCompatActivity {
                         character.getCharRace().getCharacterName(),
                         character.getCharRace().getRaceName(),
                         character.getCharClass().getClassName(),
-                        Integer.toString(character.getCharLevel())));
+                        Integer.toString(character.getCharLevel()),
+                        nameList.get(i)
+                ));
             }
         }
         else{
@@ -92,24 +114,15 @@ public class Pop_Load extends AppCompatActivity {
             mRecyclerView.setVisibility(View.INVISIBLE);
 
         }
-
-
-        mAdapter = new LoadAdapter(characterCardViews);
+    }
+    private void setUpRecyclerView() {
+        mAdapter = new LoadAdapter(characterCardViews,this);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-
-       // ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new RecyclerItemTouchHelper(0, ItemTouchHelper.LEFT, this);
-       // new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(mRecyclerView);
-
-        mAdapter.setOnItemClickListener(new LoadAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                changeItem(position, "Clicked");            }
-        });
-
-
-
+        ItemTouchHelper itemTouchHelper = new
+                ItemTouchHelper(new SwipeToDeleteCallback(mAdapter));
+        itemTouchHelper.attachToRecyclerView(mRecyclerView);
 
     }
 
@@ -156,12 +169,6 @@ public class Pop_Load extends AppCompatActivity {
         return R.drawable.ic_android;
     }
 
-    public void removeItem(int position)
-    {
-        characterCardViews.remove(position);
-        mAdapter.notifyDataSetChanged();
-    }
-
     public void changeItem(int position, String text){
         characterCardViews.get(position).changeName(text);
         mAdapter.notifyItemChanged(position);
@@ -179,4 +186,5 @@ public class Pop_Load extends AppCompatActivity {
             }
         });
     }
+
 }

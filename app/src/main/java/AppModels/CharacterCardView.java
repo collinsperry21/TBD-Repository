@@ -1,19 +1,23 @@
 package AppModels;
 
+import java.io.File;
+
 public class CharacterCardView {
     private int mPortrait;
     private String mRace;
     private String mName;
     private String mClass;
     private String mLvl;
+    private String mFilename;
 
-    public CharacterCardView( int portrait, String name, String race, String charClass, String lvl)
+    public CharacterCardView( int portrait, String name, String race, String charClass, String lvl, String file)
     {
         mPortrait = portrait;
         mName = name;
         mRace = race;
         mClass = charClass;
         mLvl = lvl;
+        mFilename = file;
 
     }
     public void changeName(String text){
@@ -59,5 +63,17 @@ public class CharacterCardView {
 
     public void setmLvl(String mLvl) {
         this.mLvl = mLvl;
+    }
+
+    public String getmFilename() {
+        return mFilename;
+    }
+
+    public void setmFilename(String mFilename) {
+        this.mFilename = mFilename;
+    }
+
+    public void deleteFile() {
+
     }
 }

@@ -1,18 +1,18 @@
 package IO;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.student.charactersheet5e.R;
 
-import org.w3c.dom.Text;
-
+import java.io.File;
 import java.util.ArrayList;
 
 import AppModels.CharacterCardView;
@@ -20,6 +20,34 @@ import AppModels.CharacterCardView;
 public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewHolder> {
     private ArrayList<CharacterCardView> mCharacetrList;
     private OnItemClickListener myListener;
+    private CharacterCardView mRecentlyDeletedItem;
+    private int mRecentlyDeletedItemPosition;
+
+    private Context mContext;
+
+    public LoadAdapter(ArrayList<CharacterCardView> characterList, Context context)
+    {
+        mCharacetrList = characterList;
+        this.mContext = context;
+
+    }
+
+    public void deleteItem(int position) {
+        mRecentlyDeletedItem = mCharacetrList.get(position);
+        mRecentlyDeletedItemPosition = position;
+        mCharacetrList.remove(position);
+        notifyItemRemoved(position);
+
+
+        File dir = getmContext().getFilesDir();
+        File file = new File(dir, mRecentlyDeletedItem.getmFilename());
+        boolean deleted = file.delete();
+    }
+
+    public Context getmContext() {
+        return mContext;
+    }
+
 
     public interface OnItemClickListener{
         void onItemClick(int position);
@@ -32,11 +60,14 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewH
     }
 
     public static class CharacterViewHolder extends RecyclerView.ViewHolder{
+
         public ImageView mPortraitImageView;
         public TextView mNameTextView;
         public TextView mRaceTextView;
         public TextView mClassTextView;
         public TextView mLvlTextView;
+
+
 
 
 
@@ -62,11 +93,7 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewH
         }
     }
 
-    public LoadAdapter(ArrayList<CharacterCardView> characterList)
-    {
-        mCharacetrList = characterList;
 
-    }
 
     @NonNull
     @Override
@@ -77,6 +104,7 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewH
 
         return cvh;
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull CharacterViewHolder characterViewHolder, int i) {
