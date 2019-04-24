@@ -1,0 +1,498 @@
+[
+	{
+		"_id":"5bce90ff5b7768e792017cf3",
+		"index":1,
+		"name":"Barbarian",
+		"hit_die":12,
+		"proficiency_choices":[
+			{
+				"from":[
+					{
+						"name":"Skill: Animal Handling",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/106"
+					},
+					{
+						"name":"Skill: Athletics",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/108"
+					},
+					{
+						"name":"Skill: Intimidation",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/112"
+					},
+					{
+						"name":"Skill: Nature",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/115"
+					},
+					{
+						"name":"Skill: Perception",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/116"
+					},
+					{
+						"name":"Skill: Survival",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/122"
+					}
+				],
+				"type":"proficiencies",
+				"choose":2
+			}
+		],
+		"proficiencies":[
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/1",
+				"name":"Light armor"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/2",
+				"name":"Medium armor"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/18",
+				"name":"Shields"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/19",
+				"name":"Simple weapons"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/20",
+				"name":"Martial weapons"
+			}
+		],
+		"saving_throws":[
+			{
+				"url":"http://www.dnd5eapi.co/api/ability-scores/1",
+				"name":"STR"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/ability-scores/3",
+				"name":"CON"
+			}
+		],
+		"starting_equipment":
+		{
+			"url":"http://www.dnd5eapi.co/api/startingequipment/1",
+			"class":"Barbarian"
+		},
+		"class_levels":
+		{
+			"url":"http://www.dnd5eapi.co/api/classes/Barbarian/levels",
+			"class":"Barbarian"
+		},
+		"subclasses":
+		[
+			{
+				"name":"Berserker",
+				"url":"http://www.dnd5eapi.co/api/subclasses/1"
+			}
+		],
+		"url":"http://www.dnd5eapi.co/api/classes/1"
+	},
+	{
+		"_id":"5bce90ff5b7768e792017cf6",
+		"index":2,
+		"name":"Bard",
+		"hit_die":8,
+		"proficiency_choices":
+		[
+			{
+				"from":[
+					{
+						"name":"Skill: Acrobatics",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/105"
+					},
+					{
+						"name":"Skill: Animal Handling",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/106"
+					},
+					{
+						"name":"Skill: Arcana",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/107"
+					},
+					{
+						"name":"Skill: Athletics",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/108"
+					},
+					{
+						"name":"Skill: Deception",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/109"
+					},
+					{
+						"name":"Skill: History",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/110"
+					},
+					{
+						"name":"Skill: Insight",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/111"
+					},
+					{
+						"name":"Skill: Intimidation",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/112"
+					},
+					{
+						"name":"Skill: Investigation",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/113"
+					},
+					{
+						"name":"Skill: Medicine",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/114"
+					},
+					{
+						"name":"Skill: Nature",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/115"
+					},
+					{
+						"name":"Skill: Perception",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/116"
+					},
+					{
+						"name":"Skill: Performance",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/117"
+					},
+					{
+						"name":"Skill: Persuasion",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/118"
+					},
+					{
+						"name":"Skill: Religion",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/119"
+					},
+					{
+						"name":"Skill: Sleight of Hand",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/120"
+					},
+					{
+						"name":"Skill: Stealth",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/121"
+					},
+					{
+						"name":"Skill: Survival",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/122"
+					}
+				],
+				"type":"proficiencies",
+				"choose":3
+			},
+			{
+				"from":[
+					{
+						"name":"Bagpipes",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/81"
+					},
+					{
+						"name":"Drum",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/82"
+					},
+					{
+						"name":"Dulcimer",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/83"
+					},
+					{
+						"name":"Flute",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/84"
+					},
+					{
+						"name":"Lute",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/85"
+					},
+					{
+						"name":"Lyre",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/86"
+					},
+					{
+						"name":"Horn",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/87"
+					},
+					{
+						"name":"Pan flute",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/88"
+					},
+					{
+						"name":"Shawm",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/89"
+					},
+					{
+						"name":"Viol",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/90"
+					}
+				],
+				"type":"proficiencies",
+				"choose":3
+			}
+		],
+		"proficiencies":[
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/1",
+				"name":"Light armor"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/19",
+				"name":"Simple weapons"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/42",
+				"name":"Longswords"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/46",
+				"name":"Rapiers"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/48",
+				"name":"Shortswords"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/54",
+				"name":"Crossbows, hand"
+			}
+		],
+		"saving_throws":[
+			{
+				"url":"http://www.dnd5eapi.co/api/ability-scores/2",
+				"name":"DEX"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/ability-scores/6",
+				"name":"CHA"
+			}
+		],
+		"starting_equipment":
+		{
+			"url":"http://www.dnd5eapi.co/api/startingequipment/2",
+			"class":"Bard"
+		},
+		"class_levels":
+		{
+			"url":"http://www.dnd5eapi.co/api/classes/Bard/levels",
+			"class":"Bard"
+		},
+		"subclasses":[
+			{
+				"name":"Lore",
+				"url":"http://www.dnd5eapi.co/api/subclasses/2"
+			}
+		],
+		"spellcasting":
+		{
+			"url":"http://www.dnd5eapi.co/api/spellcasting/1",
+			"class":"Bard"
+		},
+		"url":"http://www.dnd5eapi.co/api/classes/2"
+	},
+	{
+		"_id":"5bce90ff5b7768e792017cf4",
+		"index":3,
+		"name":"Cleric",
+		"hit_die":8,
+		"proficiency_choices":[
+			{
+				"from":[
+					{
+						"name":"Skill: History",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/110"
+					},
+					{
+						"name":"Skill: Insight",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/111"
+					},
+					{
+						"name":"Skill: Medicine",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/114"
+					},
+					{
+						"name":"Skill: Persuasion",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/118"
+					},
+					{
+						"name":"Skill: Religion",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/119"}
+				],
+				"type":"proficiencies",
+				"choose":2
+			}
+		],
+		"proficiencies":[
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/1",
+				"name":"Light armor"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/2",
+				"name":"Medium armor"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/18",
+				"name":"Shields"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/19",
+				"name":"Simple weapons"
+			}
+		],
+		"saving_throws":[
+			{
+				"url":"http://www.dnd5eapi.co/api/ability-scores/5",
+				"name":"WIS"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/ability-scores/6",
+				"name":"CHA"
+			}
+		],
+		"starting_equipment":
+		{
+			"url":"http://www.dnd5eapi.co/api/startingequipment/3",
+			"class":"Cleric"
+		},
+		"class_levels":
+		{
+			"url":"http://www.dnd5eapi.co/api/classes/Cleric/levels",
+			"class":"Cleric"
+		},
+		"subclasses":[
+			{
+				"name":"Life",
+				"url":"http://www.dnd5eapi.co/api/subclasses/3"
+			}
+		],
+		"spellcasting":
+		{
+			"url":"http://www.dnd5eapi.co/api/spellcasting/2",
+			"class":"Cleric"
+		},
+		"url":"http://www.dnd5eapi.co/api/classes/3"
+	},
+	{
+		"_id":"5bce90ff5b7768e792017cfa",
+		"index":4,
+		"name":"Druid",
+		"hit_die":8,
+		"proficiency_choices":[
+			{
+				"from":[
+					{
+						"name":"Skill: Animal Handling",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/106"
+					},
+					{
+						"name":"Skill: Arcana",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/107"
+					},
+					{
+						"name":"Skill: Insight",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/111"
+					},
+					{
+						"name":"Skill: Medicine",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/114"
+					},
+					{
+						"name":"Skill: Nature",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/115"
+					},
+					{
+						"name":"Skill: Perception",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/116"
+					},
+					{
+						"name":"Skill: Religion",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/119"
+					},
+					{
+						"name":"Skill: Survival",
+						"url":"http://www.dnd5eapi.co/api/proficiencies/122"
+					}
+				],
+				"type":"proficiencies",
+				"choose":2
+			}
+		],
+		"proficiencies":[
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/1",
+				"name":"Light armor"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/2",
+				"name":"Medium armor"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/18",
+				"name":"Shields"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/21",
+				"name":"Clubs"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/22",
+				"name":"Daggers"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/25",
+				"name":"Javelins"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/27",
+				"name":"Maces"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/28",
+				"name":"Quarterstaffs"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/29",
+				"name":"Sickles"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/30",
+				"name":"Spears"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/32",
+				"name":"Darts"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/34",
+				"name":"Slings"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/47",
+				"name":"Scimitars"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/proficiencies/93",
+				"name":"Herbalism Kit"
+			}
+		],
+		"saving_throws":[
+			{"url":"http://www.dnd5eapi.co/api/ability-scores/4",
+				"name":"INT"
+			},
+			{
+				"url":"http://www.dnd5eapi.co/api/ability-scores/5",
+				"name":"WIS"
+			}
+		],
+		"starting_equipment":
+		{
+			"url":"http://www.dnd5eapi.co/api/startingequipment/4",
+			"class":"Druid"
+		},
+		"class_levels":
+		{
+			"url":"http://www.dnd5eapi.co/api/classes/Druid/levels",
+			"class":"Druid"
+		},
+		"subclasses":[
+			{
+				"name":"Land",
+				"url":"http://www.dnd5eapi.co/api/subclasses/4"
+			}],
+		"spellcasting":
+		{
+			"url":"http://www.dnd5eapi.co/api/spellcasting/3",
+			"class":"Druid"
+		},
+		"url":"http://www.dnd5eapi.co/api/classes/4"
+	}
+]
