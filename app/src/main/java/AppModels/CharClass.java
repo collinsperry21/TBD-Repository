@@ -2,7 +2,8 @@ package AppModels;
 
 import java.io.Serializable;
 
-public class CharClass implements Serializable {
+public class CharClass implements Serializable
+{
     private String className;
     private String subclassName;
 
