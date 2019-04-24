@@ -16,6 +16,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/subraceModsDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/raceModsListText" />
+
     <Button
         android:id="@+id/reviewHelpButton"
         android:layout_width="wrap_content"
@@ -36,6 +45,15 @@
         app:layout_constraintTop_toBottomOf="@+id/raceModsDescriptionText" />
 
     <TextView
+        android:id="@+id/subraceModsListText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsDescriptionText" />
+
+    <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +61,7 @@
         android:text="Strength"
         app:layout_constraintEnd_toEndOf="@+id/Strength"
         app:layout_constraintStart_toStartOf="@+id/Strength"
-        app:layout_constraintTop_toBottomOf="@+id/raceModsListText" />
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
 
     <TextView
         android:id="@+id/textView2"
@@ -53,7 +71,7 @@
         android:text="Dexterity"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
-        app:layout_constraintTop_toBottomOf="@+id/raceModsListText" />
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
 
     <TextView
         android:id="@+id/textView3"
@@ -63,7 +81,7 @@
         android:text="Constitution"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toStartOf="@+id/Constitution"
-        app:layout_constraintTop_toBottomOf="@+id/raceModsListText" />
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
 
     <TextView
         android:id="@+id/strength_score_text"
@@ -136,39 +154,39 @@
         android:layout_width="1dp"
         android:layout_height="200dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:visibility="visible"
         app:constraint_referenced_ids="textView,strength_score_text,strength_mod_disp_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/raceModsListText" />
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
 
     <android.support.constraint.Group
         android:id="@+id/Dexterity"
         android:layout_width="wrap_content"
         android:layout_height="194dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:visibility="visible"
         app:constraint_referenced_ids="textView2,dexterity_score_text,strength_mod_disp_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Constitution"
-        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toEndOf="@+id/Strength"
-        app:layout_constraintTop_toBottomOf="@+id/raceModsListText"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsListText"
+        app:layout_constraintVertical_bias="0.004" />
 
     <android.support.constraint.Group
         android:id="@+id/Constitution"
         android:layout_width="0dp"
         android:layout_height="188dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="80dp"
         android:visibility="visible"
         app:constraint_referenced_ids="textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/raceModsListText" />
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
 
     <TextView
         android:id="@+id/textView11"
@@ -183,7 +201,7 @@
         app:layout_constraintTop_toBottomOf="@+id/strength_mod_disp_text" />
 
     <TextView
-        android:id="@+id/Intelligence_score_text"
+        android:id="@+id/intelligence_score_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -199,10 +217,10 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text=" "
-        app:layout_constraintEnd_toEndOf="@+id/Intelligence_score_text"
+        app:layout_constraintEnd_toEndOf="@+id/intelligence_score_text"
         app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="@+id/Intelligence_score_text"
-        app:layout_constraintTop_toBottomOf="@+id/Intelligence_score_text" />
+        app:layout_constraintStart_toStartOf="@+id/intelligence_score_text"
+        app:layout_constraintTop_toBottomOf="@+id/intelligence_score_text" />
 
     <TextView
         android:id="@+id/textView14"

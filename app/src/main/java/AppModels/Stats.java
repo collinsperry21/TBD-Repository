@@ -1,6 +1,8 @@
 package AppModels;
 
-public class Stats {
+import java.io.Serializable;
+
+public class Stats implements Serializable {
 
     private int hitpoints;
     private int speed;

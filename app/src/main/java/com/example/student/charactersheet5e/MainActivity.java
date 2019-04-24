@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Pop.class);
+                Intent intent = new Intent(MainActivity.this, Pop_Load.class);
                 startActivity(intent);
             }
         });

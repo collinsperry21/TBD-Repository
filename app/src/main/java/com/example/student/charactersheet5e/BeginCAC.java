@@ -52,11 +52,13 @@ public class BeginCAC extends AppCompatActivity
     //?
     //private RequestQueue mQueue;
 
+
     //Testing for reading file
     WriteObject obj = new WriteObject(this);
     //Move to end
 
     //?
+
     Race raceClass =  new Race();
     CharClass charClass = new CharClass();
     CharSheet characterSheet = new CharSheet();
@@ -175,10 +177,6 @@ public class BeginCAC extends AppCompatActivity
                     setCharacter(charName.getText().toString(), raceSpinner.getSelectedItem().toString(),
                             subraceSpinner.getSelectedItem().toString(), classSpinner.getSelectedItem().toString(),
                             subclassSpinner.getSelectedItem().toString());
-
-                    //Testing to see if reading object is working, this is only temporarily here for demo
-                    obj.serializeCharacter(characterSheet);
-
 
                     Intent intent = new Intent(BeginCAC.this, AbilitiesCAC.class);
 

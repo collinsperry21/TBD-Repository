@@ -5,4 +5,6 @@
     <color name="colorLoadPopup">#2f333f</color>
     <color name="colorAccent">#FDB833</color>
     <color name="colorGray">#A2A1A1</color>
+    <color name="test">#F0AD01</color>
+
 </resources>
