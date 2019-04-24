@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.example.student.charactersheet5e.R;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import AppModels.CharacterCardView;
@@ -33,7 +35,9 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewH
         public ImageView mPortraitImageView;
         public TextView mNameTextView;
         public TextView mRaceTextView;
-        public RelativeLayout viewBackground, viewForeground;
+        public TextView mClassTextView;
+        public TextView mLvlTextView;
+
 
 
         public CharacterViewHolder(@NonNull View itemView, final OnItemClickListener listener) {
@@ -41,6 +45,8 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewH
             mPortraitImageView = itemView.findViewById(R.id.character_portrait);
             mNameTextView = itemView.findViewById(R.id.character_name);
             mRaceTextView = itemView.findViewById(R.id.character_race);
+            mClassTextView = itemView.findViewById(R.id.character_class);
+            mLvlTextView = itemView.findViewById(R.id.character_level);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -79,6 +85,8 @@ public class LoadAdapter extends RecyclerView.Adapter<LoadAdapter.CharacterViewH
         characterViewHolder.mPortraitImageView.setImageResource(currentItem.getPortrait());
         characterViewHolder.mNameTextView.setText(currentItem.getName());
         characterViewHolder.mRaceTextView.setText(currentItem.getRace());
+        characterViewHolder.mClassTextView.setText(currentItem.getmClass());
+        characterViewHolder.mLvlTextView.setText(currentItem.getmLvl());
 
     }
 

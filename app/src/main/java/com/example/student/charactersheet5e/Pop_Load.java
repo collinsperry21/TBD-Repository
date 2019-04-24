@@ -7,6 +7,8 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
+import android.view.View;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -26,6 +28,8 @@ public class Pop_Load extends AppCompatActivity {
     private LoadAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    private TextView noFiles;
+
     private ArrayList<CharacterCardView> characterCardViews;
 
     @Override
@@ -34,6 +38,12 @@ public class Pop_Load extends AppCompatActivity {
         setTheme(R.style.AppTheme_CustomPopTheme);
         setContentView(R.layout.activity_pop_load);
 
+        noFiles = findViewById(R.id.no_files);
+        noFiles.setText("No saved characters. \n Create a new one!");
+
+        mRecyclerView = findViewById(R.id.character_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -69,18 +79,21 @@ public class Pop_Load extends AppCompatActivity {
 
             for (int i = 0; i < nameList.size(); i++) {
                 character = obj.deserialzeCharacter(nameList.get(i));
-                characterCardViews.add(new CharacterCardView(R.drawable.ic_android,character.getCharRace().getCharacterName(),character.getCharRace().getRaceName()));
+
+                characterCardViews.add(new CharacterCardView(getIconID(character.getCharClass().getClassName()),
+                        character.getCharRace().getCharacterName(),
+                        character.getCharRace().getRaceName(),
+                        character.getCharClass().getClassName(),
+                        Integer.toString(character.getCharLevel())));
             }
         }
         else{
+            noFiles.setVisibility(View.VISIBLE);
+            mRecyclerView.setVisibility(View.INVISIBLE);
 
         }
 
-        mRecyclerView = findViewById(R.id.character_recycler_view);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        mLayoutManager = new LinearLayoutManager(this);
+
         mAdapter = new LoadAdapter(characterCardViews);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -98,6 +111,49 @@ public class Pop_Load extends AppCompatActivity {
 
 
 
+    }
+
+    private int getIconID(String className) {
+        switch (className)
+        {
+            case "Barbarian":
+                return R.drawable.ic_barbarian;
+
+            case "Bard":
+                return R.drawable.ic_bard;
+
+            case "Cleric":
+                return R.drawable.ic_cleric;
+
+            case "Druid":
+                return R.drawable.ic_druid;
+
+            case "Fighter":
+                return R.drawable.ic_fighter;
+
+            case "Monk":
+                return R.drawable.ic_monk;
+
+            case "Paladin":
+                return R.drawable.ic_paladin;
+
+            case "Ranger":
+                return R.drawable.ic_ranger;
+
+            case "Rogue":
+                return R.drawable.ic_rogue;
+
+            case "Sorcerer":
+                return R.drawable.ic_sorcerer;
+
+            case "Warlock":
+                return R.drawable.ic_warlock;
+
+            case "Wizard":
+                return R.drawable.ic_wizard;
+                
+        }
+        return R.drawable.ic_android;
     }
 
     public void removeItem(int position)
