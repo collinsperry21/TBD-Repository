@@ -52,13 +52,6 @@ public class BeginCAC extends AppCompatActivity
     //?
     //private RequestQueue mQueue;
 
-
-    //Testing for reading file
-    WriteObject obj = new WriteObject(this);
-    //Move to end
-
-    //?
-
     Race raceClass =  new Race();
     CharClass charClass = new CharClass();
     CharSheet characterSheet = new CharSheet();

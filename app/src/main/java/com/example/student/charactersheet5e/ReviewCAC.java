@@ -1,8 +1,12 @@
 package com.example.student.charactersheet5e;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -38,6 +42,7 @@ public class ReviewCAC extends AppCompatActivity
 
     private int[] abilityBonus;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -65,8 +70,10 @@ public class ReviewCAC extends AppCompatActivity
         wisModText = findViewById(R.id.wisdom_mod_disp_text);
         chaModText = findViewById(R.id.charisma_mod_disp_text);
 
+        TextView hitDieText = findViewById(R.id.hitDie_text);
+        TextView hitPointsText = findViewById(R.id.hitPoints_text);
 
-
+        Button navigate_to_next = findViewById(R.id.navigate_to_next_CAC03);
 
         //Set a new character sheet from the old one ( may be a better way to do this?? )
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
@@ -96,6 +103,31 @@ public class ReviewCAC extends AppCompatActivity
 
         SetAbilityScore();
 
+        //Assuming lvl 1 set hit die
+        int hitDieAmt = GetHitDie(charSheet.getCharClass().getClassName());
+        String hitDieString = "1 X " + hitDieAmt + "D";
+        hitDieText.setText(hitDieString);
+        //TODO: Save hit die
+
+        //Assuming lvl 1 set hit points
+        int hitPoints = hitDieAmt + abilityBonus[2];
+        String hitPointsString = hitPoints + " ";
+        hitPointsText.setText(hitPointsString);
+        //TODO: save hit points maximum
+
+        navigate_to_next.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(ReviewCAC.this, ProficienciesCAC.class);
+
+                //send the character sheet to the next activity to add scores
+                intent.putExtra("characterSheet", charSheet);
+
+                    startActivity(intent);
+            }
+        });
 
 
     }
@@ -242,6 +274,46 @@ public class ReviewCAC extends AppCompatActivity
         {
             abilityBonus[5] +=  bonus;
         }
+    }
+
+    private int GetHitDie(String className)
+    {
+        int hitDieText = 0;
+
+        try
+        {
+            //Open the file
+            InputStream inStream = getAssets().open("classes_5e.json");
+            int size = inStream.available();
+            byte[] buffer = new byte[size];
+            inStream.read(buffer);
+            inStream.close();
+
+            String json = new String(buffer, "UTF-8");
+            JSONArray jsonArray = new JSONArray(json);
+
+            for (int i =0; i < jsonArray.length(); i++)
+            {
+                //Add class name to list of classes
+                JSONObject obj = jsonArray.getJSONObject(i);
+
+                if (obj.getString("name").equals(className))
+                {
+                    hitDieText = obj.getInt("hit_die");
+                    return hitDieText;
+                }
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+
+        return hitDieText;
     }
 }
 

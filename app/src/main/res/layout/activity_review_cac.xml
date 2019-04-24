@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/raceModsListText" />
 
@@ -59,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Strength"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="@+id/Strength"
         app:layout_constraintStart_toStartOf="@+id/Strength"
         app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
@@ -69,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Dexterity"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
         app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
@@ -79,37 +83,41 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Constitution"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toStartOf="@+id/Constitution"
         app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
 
     <TextView
         android:id="@+id/strength_score_text"
-        android:layout_width="53dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="@+id/Strength"
         app:layout_constraintStart_toStartOf="@+id/Strength"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/dexterity_score_text"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/constitution_score_text"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toStartOf="@+id/Constitution"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -120,6 +128,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:text=" "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="@+id/Strength"
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="@+id/Strength"
@@ -133,6 +142,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text=" "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
         app:layout_constraintTop_toBottomOf="@+id/dexterity_score_text" />
@@ -145,6 +155,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text=" "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toEndOf="@+id/Constitution"
         app:layout_constraintTop_toBottomOf="@+id/constitution_score_text" />
@@ -196,6 +207,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:text="Intelligence"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="@+id/Strength"
         app:layout_constraintStart_toStartOf="@+id/Strength"
         app:layout_constraintTop_toBottomOf="@+id/strength_mod_disp_text" />
@@ -205,6 +217,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="@+id/Strength"
         app:layout_constraintStart_toStartOf="@+id/Strength"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -217,6 +230,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text=" "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="@+id/intelligence_score_text"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="@+id/intelligence_score_text"
@@ -230,6 +244,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="8dp"
         android:text="Wisdom"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
         app:layout_constraintTop_toBottomOf="@+id/dexterity_mod_disp_text" />
@@ -239,6 +254,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
@@ -249,6 +265,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text=" "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
         app:layout_constraintTop_toBottomOf="@+id/wisdom_score_text" />
@@ -259,6 +276,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Charisma"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toStartOf="@+id/Constitution"
         app:layout_constraintTop_toBottomOf="@+id/constitution_mod_disp_text" />
@@ -268,6 +286,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toStartOf="@+id/Constitution"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
@@ -278,28 +297,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text=" "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toStartOf="@+id/Constitution"
         app:layout_constraintTop_toBottomOf="@+id/charisma_score_text" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:text="Proficiency Bonus: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intelligence_mod_disp_text" />
-
-    <TextView
-        android:id="@+id/proficiencyBonus_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toEndOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/intelligence_mod_disp_text" />
 
     <TextView
         android:id="@+id/textView22"
@@ -308,8 +309,9 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="Hit Dice: "
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/Strength" />
 
     <TextView
         android:id="@+id/hitDie_text"
@@ -317,11 +319,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+        app:layout_constraintTop_toBottomOf="@+id/Strength" />
 
     <Button
-        android:id="@+id/navigate_to_background_CAC"
+        android:id="@+id/navigate_to_next_CAC03"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -329,5 +332,26 @@
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Hit Points"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/hitPoints_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/hitDie_text" />
 
 </android.support.constraint.ConstraintLayout>
