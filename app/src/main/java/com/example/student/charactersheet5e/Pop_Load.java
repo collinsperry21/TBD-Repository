@@ -1,8 +1,9 @@
 package com.example.student.charactersheet5e;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
 
@@ -13,15 +14,19 @@ import java.util.ArrayList;
 import AppModels.CharSheet;
 
 //Need to clean this whole thing up
-public class Pop extends AppCompatActivity {
+public class Pop_Load extends AppCompatActivity {
 
     private ReadObject obj = new ReadObject(this);
-    private TextView charTest;
+
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pop);
+        setContentView(R.layout.activity_pop_load);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -32,7 +37,6 @@ public class Pop extends AppCompatActivity {
         //set the window to 80% on both w and h
         getWindow().setLayout((int)(width*.8),(int)(height*.8));
 
-
         CharSheet character = new CharSheet();
 
         //Array for list of filenames
@@ -41,7 +45,12 @@ public class Pop extends AppCompatActivity {
         //Fin all files with .ser
         File[] serFiles = finder(this.getFilesDir().getAbsolutePath());
 
-        charTest = findViewById(R.id.char_one);
+        //Array list for cards
+        ArrayList<CharacterCardView> characterCardViews = new ArrayList<>();
+
+
+
+
 
         for( File file : serFiles)
         {
@@ -53,18 +62,21 @@ public class Pop extends AppCompatActivity {
 
             for (int i = 0; i < nameList.size(); i++) {
                 character = obj.deserialzeCharacter(nameList.get(i));
-                //TODO Ask Prof about dynamically creating constraint layouts that are clickable/Recycler view with card view
-                charTest.setText(character.getCharRace().getCharacterName() +
-                                "\b" + character.getCharRace().getRaceName() +
-                                "\b" + character.getCharClass().getClassName() +
-                                "\b" + character.getCharLevel() +
-                                "\n" + charTest.getText());
+                characterCardViews.add(new CharacterCardView(R.drawable.ic_android,character.getCharRace().getCharacterName(),character.getCharRace().getRaceName()));
 
             }
         }
         else{
-            charTest.setText("No saved characters! \n Create one!");
+
         }
+
+        mRecyclerView = findViewById(R.id.character_recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mLayoutManager = new LinearLayoutManager(this);
+        mAdapter = new LoadAdapter(characterCardViews);
+
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
 
 
 

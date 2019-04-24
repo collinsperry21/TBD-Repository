@@ -18,7 +18,7 @@
             android:name=".Pop_Help_Activity"
             android:theme="@style/AppTheme.CustomPopTheme"></activity>
         <activity
-            android:name=".Pop"
+            android:name=".Pop_Load"
             android:theme="@style/AppTheme.CustomPopTheme" />
         <activity android:name=".AbilitiesCAC" />
         <activity android:name=".BeginCAC" />
