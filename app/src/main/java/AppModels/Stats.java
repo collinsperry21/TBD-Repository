@@ -17,10 +17,16 @@ public class Stats {
     private int modConstitution;
     private int modCharisma;
 
-    public Stats(int typeStats)
+    public Stats()
     {
-
+        setStrength(16);
+        setDexterity(14);
+        setConstitution(12);
+        setIntelligence(10);
+        setWisdom(9);
+        setCharisma(8);
     }
+    //public Stats(int statType){}
 
 
     public int getModStrength() {
