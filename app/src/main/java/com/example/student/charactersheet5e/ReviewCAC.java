@@ -10,8 +10,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 import AppModels.CharSheet;
 
@@ -19,6 +17,9 @@ public class ReviewCAC extends AppCompatActivity
 {
     private TextView raceModsTextView;
     private TextView raceModsListTextView;
+    private TextView subraceModsTextView;
+    private TextView subraceModsListTextView;
+
     private TextView strScoreText;
     private TextView dexScoreText;
     private TextView conScoreText;
@@ -35,7 +36,7 @@ public class ReviewCAC extends AppCompatActivity
 
     private CharSheet charSheet;
 
-    private int[] raceScore;
+    private int[] abilityBonus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,6 +47,9 @@ public class ReviewCAC extends AppCompatActivity
         //Connect variables to layout
         raceModsTextView = findViewById(R.id.raceModsDescriptionText);
         raceModsListTextView = findViewById(R.id.raceModsListText);
+
+        subraceModsTextView = findViewById(R.id.subraceModsDescriptionText);
+        subraceModsListTextView = findViewById(R.id.subraceModsListText);
 
         strScoreText = findViewById(R.id.strength_score_text);
         dexScoreText = findViewById(R.id.dexterity_score_text);
@@ -67,15 +71,28 @@ public class ReviewCAC extends AppCompatActivity
         //Set a new character sheet from the old one ( may be a better way to do this?? )
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
 
-        raceScore = new int[] {0, 0, 0, 0, 0, 0};
+        //Initialize array to hold bonuses for race and subrace
+        abilityBonus = new int[] {0, 0, 0, 0, 0, 0};
 
         //Insert chosen race into race mods description text
         String modsDescriptionText = charSheet.getCharRace().getRaceName() + "s have the following ability score mods:";
         raceModsTextView.setText(modsDescriptionText);
 
         //Insert a list of mods retrieved from Race into race mods list text
-        String modsListText = GetModsList(charSheet.getCharRace().getRaceName());
+        String modsListText = GetRaceModsList(charSheet.getCharRace().getRaceName());
         raceModsListTextView.setText(modsListText);
+
+
+        //If they have a subrace
+        if( !charSheet.getCharRace().getSubraceName().equals("None")) {
+            //Insert chosen subrace into race mods description text
+            String subModsDescriptionText = charSheet.getCharRace().getSubraceName() + "s have the following ability score mods:";
+            subraceModsTextView.setText(subModsDescriptionText);
+
+            //Insert a list of mods retrieved from SubRace into race mods list text
+            String subModsListText = GetSubraceModsList(charSheet.getCharRace().getSubraceName());
+            subraceModsListTextView.setText(subModsListText);
+        }
 
         SetAbilityScore();
 
@@ -86,12 +103,12 @@ public class ReviewCAC extends AppCompatActivity
     private void SetAbilityScore() {
         //Create an array with all ability scores
         int[] abilityScores;
-        abilityScores = new int[] {charSheet.getCharStats().getStrength()+ raceScore[0],
-                charSheet.getCharStats().getDexterity()+ raceScore[1],
-                charSheet.getCharStats().getConstitution() + raceScore[2],
-                charSheet.getCharStats().getIntelligence()+ raceScore[3],
-                charSheet.getCharStats().getWisdom()+ raceScore[4],
-                charSheet.getCharStats().getCharisma()+ raceScore[5]};
+        abilityScores = new int[] {charSheet.getCharStats().getStrength()+ abilityBonus[0],
+                charSheet.getCharStats().getDexterity()+ abilityBonus[1],
+                charSheet.getCharStats().getConstitution() + abilityBonus[2],
+                charSheet.getCharStats().getIntelligence()+ abilityBonus[3],
+                charSheet.getCharStats().getWisdom()+ abilityBonus[4],
+                charSheet.getCharStats().getCharisma()+ abilityBonus[5]};
 
         strScoreText.setText(Integer.toString(abilityScores[0] ));
         dexScoreText.setText(Integer.toString(abilityScores[1] ));
@@ -108,7 +125,7 @@ public class ReviewCAC extends AppCompatActivity
         chaModText.setText(Integer.toString( (abilityScores[5]/2) - 5));
     }
 
-    private String GetModsList(String raceName)
+    private String GetRaceModsList(String raceName)
     {
         String modsList = new String();
         try
@@ -134,7 +151,7 @@ public class ReviewCAC extends AppCompatActivity
                         JSONObject attributeObj = attributeJsonArray.getJSONObject(index);
                         modsList += attributeObj.getString("name") + " (+" +
                                 attributeObj.getString("bonus") + ")\t\t";
-                        BonusArray(attributeObj.getString("name"), attributeObj.getInt("bonus"));
+                        SetBonusArray(attributeObj.getString("name"), attributeObj.getInt("bonus"));
                         if ((index + 1)%3 == 0)
                         {
                             modsList += "\n";
@@ -154,30 +171,76 @@ public class ReviewCAC extends AppCompatActivity
         return modsList;
     }
 
-    private void BonusArray(String name, int bonus) {
+    private String GetSubraceModsList(String subraceName)
+    {
+        String modsList = new String();
+        try
+        {
+            InputStream inStream = getAssets().open("subraces_5e.json");
+            int size = inStream.available();
+            byte[] buffer = new byte[size];
+            inStream.read(buffer);
+            inStream.close();
+
+            String json = new String(buffer, "UTF-8");
+            JSONArray jsonArray = new JSONArray(json);
+
+            for (int i =0; i < jsonArray.length(); i++)
+            {
+                JSONObject obj = jsonArray.getJSONObject(i);
+
+                if (obj.getString("name").equals(subraceName))
+                {
+                    JSONArray attributeJsonArray = obj.getJSONArray("ability_bonuses");
+                    for (int index =0; index < attributeJsonArray.length(); index++)
+                    {
+                        JSONObject attributeObj = attributeJsonArray.getJSONObject(index);
+                        modsList += attributeObj.getString("name") + " (+" +
+                                attributeObj.getString("bonus") + ")\t\t";
+                        SetBonusArray(attributeObj.getString("name"), attributeObj.getInt("bonus"));
+                        if ((index + 1)%3 == 0)
+                        {
+                            modsList += "\n";
+                        }
+                    }
+                }
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+        return modsList;
+    }
+
+    private void SetBonusArray(String name, int bonus) {
         if(name.equals("STR"))
         {
-            raceScore[0] =  bonus;
+            abilityBonus[0] +=  bonus;
         }
         if(name.equals("DEX"))
         {
-            raceScore[1] =  bonus;
+            abilityBonus[1] +=  bonus;
         }
         if(name.equals("CON"))
         {
-            raceScore[2] =  bonus;
+            abilityBonus[2] +=  bonus;
         }
         if(name.equals("INT"))
         {
-            raceScore[3] =  bonus;
+            abilityBonus[3] +=  bonus;
         }
         if(name.equals("WIS"))
         {
-            raceScore[4] =  bonus;
+            abilityBonus[4] +=  bonus;
         }
         if(name.equals("CHA"))
         {
-            raceScore[5] =  bonus;
+            abilityBonus[5] +=  bonus;
         }
     }
 }
