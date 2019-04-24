@@ -327,7 +327,6 @@
 		},
 		"language_desc": "You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obscure dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.",
 		"traits": [],
-		"subraces": [],
 		"url": "http://www.dnd5eapi.co/api/races/4"
 	},
 	{
@@ -429,7 +428,6 @@
 				],
 				"type": "trait"
 			},
-		"subraces": [],
 		"url": "http://www.dnd5eapi.co/api/races/5"
 	},
 	{
@@ -610,7 +608,6 @@
 
 		],
 		"trait_options": {},
-		"subraces": [],
 		"url": "http://www.dnd5eapi.co/api/races/7"
 	},
 	{
@@ -669,7 +666,6 @@
 
 		],
 		"trait_options": {},
-		"subraces": [],
 		"url": "http://www.dnd5eapi.co/api/races/8"
 	},
 	{
@@ -722,7 +718,6 @@
 			}
 		],
 		"trait_options": {},
-		"subraces": [],
 		"url": "http://www.dnd5eapi.co/api/races/9"
 	}
 ]
