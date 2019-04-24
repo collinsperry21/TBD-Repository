@@ -35,6 +35,8 @@ public class ReviewCAC extends AppCompatActivity
 
     private CharSheet charSheet;
 
+    private int[] raceScore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -65,6 +67,8 @@ public class ReviewCAC extends AppCompatActivity
         //Set a new character sheet from the old one ( may be a better way to do this?? )
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
 
+        raceScore = new int[] {0, 0, 0, 0, 0, 0};
+
         //Insert chosen race into race mods description text
         String modsDescriptionText = charSheet.getCharRace().getRaceName() + "s have the following ability score mods:";
         raceModsTextView.setText(modsDescriptionText);
@@ -82,19 +86,19 @@ public class ReviewCAC extends AppCompatActivity
     private void SetAbilityScore() {
         //Create an array with all ability scores
         int[] abilityScores;
-        abilityScores = new int[] {charSheet.getCharStats().getStrength(),
-                charSheet.getCharStats().getDexterity(),
-                charSheet.getCharStats().getConstitution(),
-                charSheet.getCharStats().getIntelligence(),
-                charSheet.getCharStats().getWisdom(),
-                charSheet.getCharStats().getCharisma()};
+        abilityScores = new int[] {charSheet.getCharStats().getStrength()+ raceScore[0],
+                charSheet.getCharStats().getDexterity()+ raceScore[1],
+                charSheet.getCharStats().getConstitution() + raceScore[2],
+                charSheet.getCharStats().getIntelligence()+ raceScore[3],
+                charSheet.getCharStats().getWisdom()+ raceScore[4],
+                charSheet.getCharStats().getCharisma()+ raceScore[5]};
 
-        strScoreText.setText(Integer.toString(abilityScores[0]));
-        dexScoreText.setText(Integer.toString(abilityScores[1]));
+        strScoreText.setText(Integer.toString(abilityScores[0] ));
+        dexScoreText.setText(Integer.toString(abilityScores[1] ));
         conScoreText.setText(Integer.toString(abilityScores[2]));
-        intScoreText.setText(Integer.toString(abilityScores[3]));
-        wisScoreText.setText(Integer.toString(abilityScores[4]));
-        chaScoreText.setText(Integer.toString(abilityScores[5]));
+        intScoreText.setText(Integer.toString(abilityScores[3] ));
+        wisScoreText.setText(Integer.toString(abilityScores[4] ));
+        chaScoreText.setText(Integer.toString(abilityScores[5] ));
 
         strModText.setText( Integer.toString( (abilityScores[0]/2) - 5) );
         dexModText.setText( Integer.toString( (abilityScores[1]/2) - 5));
@@ -130,6 +134,7 @@ public class ReviewCAC extends AppCompatActivity
                         JSONObject attributeObj = attributeJsonArray.getJSONObject(index);
                         modsList += attributeObj.getString("name") + " (+" +
                                 attributeObj.getString("bonus") + ")\t\t";
+                        BonusArray(attributeObj.getString("name"), attributeObj.getInt("bonus"));
                         if ((index + 1)%3 == 0)
                         {
                             modsList += "\n";
@@ -147,6 +152,33 @@ public class ReviewCAC extends AppCompatActivity
             e.printStackTrace();
         }
         return modsList;
+    }
+
+    private void BonusArray(String name, int bonus) {
+        if(name.equals("STR"))
+        {
+            raceScore[0] =  bonus;
+        }
+        if(name.equals("DEX"))
+        {
+            raceScore[1] =  bonus;
+        }
+        if(name.equals("CON"))
+        {
+            raceScore[2] =  bonus;
+        }
+        if(name.equals("INT"))
+        {
+            raceScore[3] =  bonus;
+        }
+        if(name.equals("WIS"))
+        {
+            raceScore[4] =  bonus;
+        }
+        if(name.equals("CHA"))
+        {
+            raceScore[5] =  bonus;
+        }
     }
 }
 
