@@ -67,9 +67,8 @@ public class BeginCAC extends AppCompatActivity
         charName = findViewById(R.id.char_name);
         navigate_next_CAC = findViewById(R.id.NextCAC01);
 
-        getSupportActionBar().setTitle("Race and Class");
-
-
+        //?
+        //mQueue = newRequestQueue(this);
 
         //Create Array List for race, subrace, class, subclass
         ArrayList <String> raceList = GetRaceList ();
@@ -379,7 +378,7 @@ public class BeginCAC extends AppCompatActivity
     //Set the data models with the race and class info
     private void setCharacter(String name, String race, String subrace, String c, String subclass)
     {
-        characterSheet.setmName(name);
+        raceClass.setCharacterName(name);
         raceClass.setRaceName(race);
         raceClass.setSubraceName(subrace);
 

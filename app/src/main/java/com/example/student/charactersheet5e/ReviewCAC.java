@@ -49,8 +49,6 @@ public class ReviewCAC extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_cac);
 
-        getSupportActionBar().setTitle("Ability Score Review");
-
         //Connect variables to layout
         raceModsTextView = findViewById(R.id.raceModsDescriptionText);
         raceModsListTextView = findViewById(R.id.raceModsListText);
