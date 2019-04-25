@@ -7,16 +7,6 @@ public class CharClass implements Serializable
     private String className;
     private String subclassName;
 
-    public CharClass(String name)
-    {
-        setClassName(name);
-    }
-    public CharClass(String name, String subclassName)
-    {
-        setClassName(name);
-        setSubclassName(subclassName);
-    }
-
 
 
     public String getClassName() {

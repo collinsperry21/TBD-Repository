@@ -1,3 +1,67 @@
 <resources>
-    <string name="app_name">Character Sheet 5e</string>
+    <string name="app_name">5E Character Tracker</string>
+    <string name="title_activity_begin_cac">BeginCAC</string>
+    <string name="button">Button</string>
+    <string name="character_name">Character Name</string>
+
+
+    <string name="AbilityScoreRules">
+        Option 1: Roll four 6-sided dice and record the total of the highest three dice, record
+        this number and repeat 5 more times. Assign these values to your ability scores.\n
+        Option 2: Use 15, 14, 13, 12, 10, 8 as your values. Assign these to your ability scores.\n
+        Option 3: Customize your ability scores by choosing a variation that suits your needs.
+        Examples include using (15, 15, 15, 8, 8, 8) or (13, 13, 13, 12, 12, 12) or something else
+        within that range.
+    </string>
+
+    <string name="StrengthDescription">
+        Measures: Natural athleticism, bodily power \n
+        Important for: Barbarian, fighter, paladin \n
+        Racial Increases: \n
+            \tMountain Dwarf(+2)  \t\tHalf-Orc(+2)\n
+            \tDragonborn(+2)      \t\t\tHuman(+1)
+    </string>
+
+    <string name="DexterityDescription">
+        Measures: Physical agility, reflexes, balance, poise \n
+        Important for: Monk, Ranger, Rouge \n
+        Racial Increases: \n
+            \tElf(+2)  \t\tForest-Gnome(+1)\n
+            \tHalfling(+2)      \t\t\tHuman(+1)
+    </string>
+
+    <string name="ConstitutionDescription">
+        Measures: Health, stamina, vital force \n
+        Important for: Everyone \n
+        Racial Increases: \n
+            \tDwarf(+2)  \t\tHalf-Orc(+1)\n
+            \tStout Halfling(+1)      \t\t\tHuman(+1)
+            \tRock Gnome(+1)
+    </string>
+
+    <string name="IntelligenceDescription">
+        Measures: Mental acuity, information recall, analytical skill \n
+        Important for: Wizard \n
+        Racial Increases: \n
+            \tHigh elf(+1)  \t\tTiefling(+1)\n
+            \tGnome(+2)      \t\t\tHuman(+1)
+    </string>
+
+    <string name="WisdomDescription">
+        Measures: Awareness, intuition, insight \n
+        Important for: Cleric, druid \n
+        Racial Increases: \n
+            \tHill Dwarf(+1)  \t\tHuman(+1)\n
+            \tWood Elf(+1)
+    </string>
+
+    <string name="CharismaDescription">
+        Measures: Confidence, eloquence, leadership\n
+        Important for: Bard, sorcerer, warlock\n
+        Racial Increases: \n
+            \tHalf Elf(+2)  \t\tDragonborn(+1)\n
+            \tDrow(+1)  \t\tHuman(+1)\n
+            \tLightfoot Halfling (+1) \t\tTiefling(+2)
+    </string>
+
 </resources>
