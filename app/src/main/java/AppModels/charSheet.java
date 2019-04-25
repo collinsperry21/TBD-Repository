@@ -76,22 +76,12 @@ public class charSheet {
 
     }
 
-    public int calcMod(int stat) {
-        if ((stat - 10) / 2 < 0)
-        { return (stat - 10) / 2;}
-        return 0;
-    }
-    /*
-public void levelUp()
-{
-    switch(charClass.getClassName())
-    {
-        case "Barbarian":
-            if(getCharLevel()<4)
-    }
-    }
-}
-*/
 
+    public void levelUp() {
+
+
+    }
 }
+
+
 

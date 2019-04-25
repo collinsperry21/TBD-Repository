@@ -19,13 +19,14 @@ public class Stats {
 
     public Stats()
     {
-        setStrength(16);
+        setStrength(15);
         setDexterity(14);
-        setConstitution(12);
-        setIntelligence(10);
-        setWisdom(9);
+        setConstitution(13);
+        setIntelligence(12);
+        setWisdom(10);
         setCharisma(8);
     }
+    //Temp stats constructor. Once i know how stats will be linked from CaC, we can update
     //public Stats(int statType){}
 
 
