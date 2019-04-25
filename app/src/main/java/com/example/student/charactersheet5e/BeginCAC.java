@@ -9,6 +9,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -47,7 +48,7 @@ public class BeginCAC extends AppCompatActivity
     private ArrayAdapter <String> subclassAdapter;
 
     //next page
-    private Button navigate_next_CAC;
+    private ImageButton navigate_next_CAC;
 
     //?
     //private RequestQueue mQueue;

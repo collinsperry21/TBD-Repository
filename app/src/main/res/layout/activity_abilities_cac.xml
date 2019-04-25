@@ -182,44 +182,42 @@
 
     <Button
         android:id="@+id/help_Button"
-        android:layout_width="58dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="28dp"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/button_background"
-        android:text="?"
-        android:textColor="#F0F0F0"
-        android:textSize="18dp"
+        android:text=" ?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/auto_button"
-        android:layout_width="155dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_background"
-        android:text="Auto-Generate"
-        android:textColor="#F0F0F0"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/navigate_review_CAC"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WisdomInput" />
-
-    <Button
+    <ImageButton
         android:id="@+id/navigate_review_CAC"
-        android:layout_width="110dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="28dp"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/button_background"
-        android:text="Next"
-        android:textColor="#F0f0f0"
-        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/next_arrow" />
+
+    <ImageButton
+        android:id="@+id/rand_button"
+        android:layout_width="81dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/help_Button"
+        app:srcCompat="@drawable/random_dice" />
+
+    <ImageButton
+        android:id="@+id/reset_button"
+        android:layout_width="65dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navigate_review_CAC"
+        app:srcCompat="@drawable/undo_button" />
 </android.support.constraint.ConstraintLayout>

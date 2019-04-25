@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +22,8 @@ public class AbilitiesCAC extends AppCompatActivity
 {
     private TextView charName;
     private Button helpButton;
-    private Button autoGen;
-    private Button navigateToNext;
+    private ImageButton resetButton;
+    private ImageButton navigateToNext;
     //score fields
     private EditText strButton;
     private EditText dexButton;
@@ -42,7 +43,7 @@ public class AbilitiesCAC extends AppCompatActivity
         //Connect variables to layout
         charName = findViewById(R.id.character_name_text);
         helpButton = findViewById(R.id.help_Button);
-        autoGen = findViewById(R.id.auto_button);
+        resetButton = findViewById(R.id.reset_button);
         navigateToNext = findViewById(R.id.navigate_review_CAC);
 
         //Ability score text inputs
@@ -69,8 +70,7 @@ public class AbilitiesCAC extends AppCompatActivity
         charName.setText(charSheet.getCharRace().getCharacterName());
 
         //Help button
-        helpButton.setOnClickListener(new View.OnClickListener()
-        {
+        helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
@@ -80,7 +80,7 @@ public class AbilitiesCAC extends AppCompatActivity
         });
 
         //Auto Gen Button
-        autoGen.setOnClickListener(new View.OnClickListener() {
+        resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AutoGenerate(charSheet.getCharClass().getClassName());
