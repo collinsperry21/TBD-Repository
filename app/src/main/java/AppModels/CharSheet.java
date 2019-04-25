@@ -15,7 +15,7 @@ public class CharSheet implements Serializable {
     private int charExp;
     private Stats charStats;
 
-    public CharSheet(Race race, CharClass cCharClass, int level, int xp, Stats stats )
+    public CharSheet(Race race, CharClass cCharClass, Stats stats )
     {
         setCharRace(race);
         setCharClass(cCharClass);
