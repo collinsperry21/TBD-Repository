@@ -42,7 +42,7 @@ public class AbilitiesCAC extends AppCompatActivity
         //Connect variables to layout
         charName = findViewById(R.id.character_name_text);
         helpButton = findViewById(R.id.help_Button);
-        autoGen = findViewById(R.id.auto_button);
+        //autoGen = findViewById(R.id.auto_button);
         navigateToNext = findViewById(R.id.navigate_review_CAC);
 
         //Ability score text inputs
@@ -80,12 +80,14 @@ public class AbilitiesCAC extends AppCompatActivity
         });
 
         //Auto Gen Button
+        /*
         autoGen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AutoGenerate(charSheet.getCharClass().getClassName());
             }
         });
+        */
 
         //Next Button
         navigateToNext.setOnClickListener(new View.OnClickListener() {
