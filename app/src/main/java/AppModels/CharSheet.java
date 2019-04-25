@@ -30,6 +30,12 @@ public class CharSheet implements Serializable {
     //Default constructor
     public CharSheet()
     {
+        setCharRace(new Race("Race"));
+        setCharClass(new CharClass("Class"));
+        setCharLevel(1);
+        setCharExp(0);
+        setCharStats(new Stats());
+        mName = "Name";
 
     }
 
