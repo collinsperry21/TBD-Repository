@@ -101,7 +101,7 @@ public class Pop_Load extends AppCompatActivity {
                 character = obj.deserialzeCharacter(nameList.get(i));
 
                 characterCardViews.add(new CharacterCardView(getIconID(character.getCharClass().getClassName()),
-                        character.getCharRace().getCharacterName(),
+                        character.getmName(),
                         character.getCharRace().getRaceName(),
                         character.getCharClass().getClassName(),
                         Integer.toString(character.getCharLevel()),

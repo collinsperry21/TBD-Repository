@@ -16,6 +16,11 @@ public class Race implements Serializable
         setRaceName(raceName);
     }
 
+    public Race()
+    {
+
+    }
+
     public String getPrimaryStat() {
         return primaryStat;
     }

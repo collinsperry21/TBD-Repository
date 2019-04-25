@@ -378,7 +378,7 @@ public class BeginCAC extends AppCompatActivity
     //Set the data models with the race and class info
     private void setCharacter(String name, String race, String subrace, String c, String subclass)
     {
-        raceClass.setCharacterName(name);
+        characterSheet.setmName(name);
         raceClass.setRaceName(race);
         raceClass.setSubraceName(subrace);
 

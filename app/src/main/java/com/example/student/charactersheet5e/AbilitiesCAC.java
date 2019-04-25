@@ -67,7 +67,7 @@ public class AbilitiesCAC extends AppCompatActivity
         final Stats scoreStats = new Stats();
 
         //Set the text to the name of the character
-        charName.setText(charSheet.getCharRace().getCharacterName());
+        charName.setText(charSheet.getmName());
 
         //Help button
         helpButton.setOnClickListener(new View.OnClickListener() {
