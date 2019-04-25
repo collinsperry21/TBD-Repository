@@ -116,14 +116,13 @@ public class Pop_Load extends AppCompatActivity {
         }
     }
     private void setUpRecyclerView() {
-        mAdapter = new LoadAdapter(characterCardViews,this);
+        mAdapter = new LoadAdapter(characterCardViews, this);
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
         ItemTouchHelper itemTouchHelper = new
                 ItemTouchHelper(new SwipeToDeleteCallback(mAdapter));
         itemTouchHelper.attachToRecyclerView(mRecyclerView);
-
     }
 
     private int getIconID(String className) {
