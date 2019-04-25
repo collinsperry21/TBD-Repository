@@ -5,29 +5,17 @@ public class Spell {
     private String spellType;
     private int spellLevel;
 
-    public String getSpellName() {
-        return spellName;
-    }
+    public String getSpellName() { return spellName; }
 
-    public void setSpellName(String spellName) {
-        this.spellName = spellName;
-    }
+    public void setSpellName(String spellName) { this.spellName = spellName; }
 
-    public String getSpellType() {
-        return spellType;
-    }
+    public String getSpellType() { return spellType; }
 
-    public void setSpellType(String spellType) {
-        this.spellType = spellType;
-    }
+    public void setSpellType(String spellType) { this.spellType = spellType; }
 
-    public int getSpellLevel() {
-        return spellLevel;
-    }
+    public int getSpellLevel() { return spellLevel; }
 
-    public void setSpellLevel(int spellLevel) {
-        this.spellLevel = spellLevel;
-    }
+    public void setSpellLevel(int spellLevel) { this.spellLevel = spellLevel; }
 
 
 }
