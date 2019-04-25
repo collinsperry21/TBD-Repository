@@ -1,8 +1,6 @@
 package AppModels;
 
 
-import java.io.Console;
-
 public class charSheet {
 
     private String charName;
