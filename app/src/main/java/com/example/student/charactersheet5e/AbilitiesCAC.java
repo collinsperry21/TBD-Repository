@@ -109,6 +109,7 @@ public class AbilitiesCAC extends AppCompatActivity
         });
 
         getSupportActionBar().setTitle("Ability Scores");
+        AutoGenerate(charSheet.getCharClass().getClassName());
     }
 
     private Stats setCharacter(ArrayList<EditText> input, Stats stats){
