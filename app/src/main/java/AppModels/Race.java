@@ -2,7 +2,8 @@ package AppModels;
 
 import java.io.Serializable;
 
-public class Race implements Serializable {
+public class Race implements Serializable
+{
 
     private String raceName;
     private String subraceName;
