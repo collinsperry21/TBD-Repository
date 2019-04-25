@@ -12,8 +12,22 @@ public class Race implements Serializable
     private boolean hasSubrace;
     private String raceUrl;
 
+    public String getCharacterName() {
+        return characterName;
+    }
+
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
+    }
+
+    private String characterName;
+
     public Race(String raceName){
         setRaceName(raceName);
+    }
+    public Race(){
+        setRaceName("Race");
+        setSubraceName("Subrace");
     }
 
     public String getPrimaryStat() {
