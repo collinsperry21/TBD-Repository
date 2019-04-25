@@ -14,6 +14,7 @@ public class CharSheet implements Serializable {
     private int charLevel;
     private int charExp;
     private Stats charStats;
+    private String mName;
 
     public CharSheet(String name, Race race, CharClass cCharClass, Stats stats )
     {
@@ -22,6 +23,7 @@ public class CharSheet implements Serializable {
         setCharLevel(1);
         setCharExp(0);
         setCharStats(stats);
+        mName = name;
 
 
     }
@@ -72,7 +74,11 @@ public class CharSheet implements Serializable {
     }
 
 
+    public String getmName() {
+        return mName;
+    }
 
-
-
+    public void setmName(String mName) {
+        this.mName = mName;
+    }
 }

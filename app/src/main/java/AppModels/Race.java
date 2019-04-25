@@ -30,6 +30,11 @@ public class Race implements Serializable
         setSubraceName("Subrace");
     }
 
+    public Race()
+    {
+
+    }
+
     public String getPrimaryStat() {
         return primaryStat;
     }

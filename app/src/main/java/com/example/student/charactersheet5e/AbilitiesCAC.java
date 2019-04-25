@@ -40,6 +40,8 @@ public class AbilitiesCAC extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abilities_cac);
 
+
+
         //Connect variables to layout
         charName = findViewById(R.id.character_name_text);
         helpButton = findViewById(R.id.help_Button);
@@ -67,7 +69,7 @@ public class AbilitiesCAC extends AppCompatActivity
         final Stats scoreStats = new Stats();
 
         //Set the text to the name of the character
-        charName.setText(charSheet.getCharRace().getCharacterName());
+        charName.setText(charSheet.getmName());
 
         //Help button
         helpButton.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +108,8 @@ public class AbilitiesCAC extends AppCompatActivity
             }
         });
 
+        getSupportActionBar().setTitle("Ability Scores");
+        AutoGenerate(charSheet.getCharClass().getClassName());
     }
 
     private Stats setCharacter(ArrayList<EditText> input, Stats stats){

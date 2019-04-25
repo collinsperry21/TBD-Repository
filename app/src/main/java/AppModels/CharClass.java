@@ -21,6 +21,11 @@ public class CharClass implements Serializable
         setSubclassName(subclassName);
     }
 
+    public CharClass()
+    {
+
+    }
+
 
 
     public String getClassName() {
