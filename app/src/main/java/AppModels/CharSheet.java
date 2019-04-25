@@ -33,7 +33,6 @@ public class CharSheet implements Serializable {
         setCharLevel(1);
         setCharExp(0);
         setCharStats(new Stats());
-        mName = "Name";
 
     }
 
