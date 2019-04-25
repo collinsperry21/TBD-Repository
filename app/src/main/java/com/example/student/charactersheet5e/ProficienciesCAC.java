@@ -12,6 +12,8 @@ public class ProficienciesCAC extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proficiencies_cac);
 
+        getSupportActionBar().setTitle("Proficiencies");
+
         //Connect variables to layout
         TextView proficiencyBonusText = findViewById(R.id.proficiencyBonus_Text);
         TextView proficiencyDescText = findViewById(R.id.proficiencies_desc_text);
