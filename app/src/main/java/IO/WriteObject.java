@@ -28,7 +28,7 @@ public class WriteObject {
         ObjectOutputStream oos = null;
 
         String path =  context.getFilesDir().getAbsolutePath();
-        String fileName = (character.getCharRace().getCharacterName()).replaceAll(" ", "_") + ".ser";
+        String fileName = (character.getCharacterName()).replaceAll(" ", "_") + ".ser";
         File characterFile = new File(path + "/" + fileName);
 
         try {

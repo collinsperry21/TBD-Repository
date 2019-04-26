@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 import AppModels.CharSheet;
 import AppModels.Stats;
@@ -24,6 +25,7 @@ public class AbilitiesCAC extends AppCompatActivity
     private Button helpButton;
     private ImageButton resetButton;
     private ImageButton navigateToNext;
+    private ImageButton randButton;
     //score fields
     private EditText strButton;
     private EditText dexButton;
@@ -45,6 +47,7 @@ public class AbilitiesCAC extends AppCompatActivity
         helpButton = findViewById(R.id.help_Button);
         resetButton = findViewById(R.id.reset_button);
         navigateToNext = findViewById(R.id.navigate_review_CAC);
+        randButton = findViewById(R.id.rand_button);
 
         //Ability score text inputs
         strButton = findViewById(R.id.StrengthInput);
@@ -67,7 +70,10 @@ public class AbilitiesCAC extends AppCompatActivity
         final Stats scoreStats = new Stats();
 
         //Set the text to the name of the character
-        charName.setText(charSheet.getCharRace().getCharacterName());
+        charName.setText(charSheet.getCharacterName());
+
+        //Auto Gen
+        AutoGenerate(charSheet.getCharClass().getClassName());
 
         //Help button
         helpButton.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +111,23 @@ public class AbilitiesCAC extends AppCompatActivity
                 }
             }
         });
+        
+        randButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setRandomScores();
+            }
+        });
+
+    }
+
+    private void setRandomScores() {
+        strButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        dexButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        conButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        intButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        wisButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        chaButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
 
     }
 

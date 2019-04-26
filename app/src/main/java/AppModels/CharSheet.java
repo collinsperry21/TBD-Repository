@@ -1,12 +1,6 @@
 package AppModels;
 
-import android.os.Parcelable;
-
 import java.io.Serializable;
-
-import AppModels.CharClass;
-import AppModels.Race;
-import AppModels.Stats;
 
 public class CharSheet implements Serializable {
     private Race charRace;
@@ -14,14 +8,16 @@ public class CharSheet implements Serializable {
     private int charLevel;
     private int charExp;
     private Stats charStats;
+    private String characterName;
 
-    public CharSheet(String name, Race race, CharClass cCharClass, Stats stats )
+    public CharSheet(String xname, Race race, CharClass cCharClass, Stats stats )
     {
         setCharRace(race);
         setCharClass(cCharClass);
         setCharLevel(1);
         setCharExp(0);
         setCharStats(stats);
+        characterName = xname;
 
 
     }
@@ -35,6 +31,8 @@ public class CharSheet implements Serializable {
         setCharStats(new Stats());
 
     }
+
+
 
     public Stats getCharStats() {
         return charStats;
@@ -77,7 +75,11 @@ public class CharSheet implements Serializable {
     }
 
 
+    public String getCharacterName() {
+        return characterName;
+    }
 
-
-
+    public void setCharacterName(String characterName) {
+        this.characterName = characterName;
+    }
 }

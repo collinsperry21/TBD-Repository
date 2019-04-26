@@ -11,32 +11,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="16dp"
         android:text="Strength"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/instructions_Text" />
 
     <TextView
         android:id="@+id/ConstitutionAbilityLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="Constitution"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/instructions_Text" />
 
     <TextView
         android:id="@+id/DexterityAbilityLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="Dexterity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/instructions_Text" />
 
     <TextView
         android:id="@+id/IntelligenceAbilityLabel"
@@ -160,8 +160,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/bilbo_swash_caps"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="40sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -173,12 +176,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="89dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="Choose values for your attribute scores:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/character_name_text" />
 
     <Button
         android:id="@+id/help_Button"
@@ -206,8 +209,10 @@
         android:layout_width="81dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/reset_button"
         app:layout_constraintStart_toEndOf="@+id/help_Button"
         app:srcCompat="@drawable/random_dice" />
 
