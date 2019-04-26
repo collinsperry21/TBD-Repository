@@ -1,6 +1,7 @@
 package AppModels;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class CharSheet implements Serializable {
     private Race charRace;
@@ -9,6 +10,8 @@ public class CharSheet implements Serializable {
     private int charExp;
     private Stats charStats;
     private String characterName;
+
+    private ArrayList<Equipment> mEquipment;
 
     public CharSheet(String xname, Race race, CharClass cCharClass, Stats stats )
     {
@@ -81,5 +84,13 @@ public class CharSheet implements Serializable {
 
     public void setCharacterName(String characterName) {
         this.characterName = characterName;
+    }
+
+    public ArrayList<Equipment> getmEquipment() {
+        return mEquipment;
+    }
+
+    public void setmEquipment(ArrayList<Equipment> mEquipment) {
+        this.mEquipment = mEquipment;
     }
 }

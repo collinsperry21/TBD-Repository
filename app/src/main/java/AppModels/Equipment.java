@@ -1,6 +1,8 @@
 package AppModels;
 
-public class Equipment {
+import java.io.Serializable;
+
+public class Equipment implements Serializable {
     private String equipName;
     private String equipType;
 
