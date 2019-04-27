@@ -1,7 +1,9 @@
 package com.example.student.charactersheet5e;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import AppModels.CharSheet;
@@ -14,6 +16,8 @@ public class ProficienciesCAC extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proficiencies_cac);
+        //Change action bar text
+        getSupportActionBar().setTitle("Proficiencies");
 
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
 
@@ -26,5 +30,20 @@ public class ProficienciesCAC extends AppCompatActivity {
         //TODO: Save proficiency bonus
 
         //
+
+        navigate_to_next.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(ProficienciesCAC.this, );
+
+
+                //send the character sheet to the next activity to add scores
+                intent.putExtra("characterSheet", charSheet);
+
+                startActivity(intent);
+            }
+        });
     }
 }

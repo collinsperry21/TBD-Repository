@@ -64,8 +64,8 @@ public class BeginCAC extends AppCompatActivity
         charName = findViewById(R.id.char_name);
         navigate_next_CAC = findViewById(R.id.NextCAC01);
 
-        //?
-        //mQueue = newRequestQueue(this);
+        //Change action bar text
+        getSupportActionBar().setTitle("Race and Class");
 
         //Create Array List for race, subrace, class, subclass
         ArrayList <String> raceList = GetRaceList ();

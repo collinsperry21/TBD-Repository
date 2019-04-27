@@ -57,6 +57,9 @@ public class AbilitiesCAC extends AppCompatActivity
         wisButton = findViewById(R.id.WisdomInput);
         chaButton = findViewById(R.id.CharismaInput);
 
+        //Change action bar text
+        getSupportActionBar().setTitle("Choose Ability Scores");
+
         //Set array list for checking inputs
         final ArrayList <EditText> inputTestArray = new ArrayList<EditText>(
                 Arrays.asList(strButton,dexButton,conButton,intButton,wisButton,chaButton));
