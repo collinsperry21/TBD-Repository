@@ -50,9 +50,6 @@ public class BeginCAC extends AppCompatActivity
     //next page
     private ImageButton navigate_next_CAC;
 
-    //?
-    //private RequestQueue mQueue;
-
     Race raceClass =  new Race();
     CharClass charClass = new CharClass();
     CharSheet characterSheet = new CharSheet();

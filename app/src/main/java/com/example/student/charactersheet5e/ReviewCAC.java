@@ -113,7 +113,7 @@ public class ReviewCAC extends AppCompatActivity
         int hitPoints = hitDieAmt + abilityBonus[2];
         String hitPointsString = hitPoints + " ";
         hitPointsText.setText(hitPointsString);
-        //TODO: save hit points maximum
+        charSheet.getCharStats().setHitpoints(hitPoints);
 
         navigate_to_next.setOnClickListener(new View.OnClickListener()
         {
@@ -121,6 +121,7 @@ public class ReviewCAC extends AppCompatActivity
             public void onClick(View view)
             {
                 Intent intent = new Intent(ReviewCAC.this, ProficienciesCAC.class);
+
 
                 //send the character sheet to the next activity to add scores
                 intent.putExtra("characterSheet", charSheet);

@@ -1,5 +1,6 @@
 package com.example.student.charactersheet5e;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -66,7 +67,12 @@ public class Pop_Load extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new LoadAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                changeItem(position, "Clicked");            }
+                 //get the file name of the one clicked and send it to Character sheet to be opened
+                /* TODO UNDO THIS WHEN CHARACTER SHEET IS CREATED
+                Intent intent = new Intent(Pop_Load.this, AbilitiesCAC.class);
+                intent.putExtra("characterSheet", characterCardViews.get(position).getmFilename());
+                */
+                                  }
         });
 
 

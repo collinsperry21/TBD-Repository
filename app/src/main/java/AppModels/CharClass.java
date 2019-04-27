@@ -6,6 +6,7 @@ public class CharClass implements Serializable
 {
     private String className;
     private String subclassName;
+    private int classJsonIndex;
 
     public CharClass(){
         setClassName("Class");
@@ -37,5 +38,13 @@ public class CharClass implements Serializable
 
     public void setSubclassName(String subclassName) {
         this.subclassName = subclassName;
+    }
+
+    public int getClassJsonIndex() {
+        return classJsonIndex;
+    }
+
+    public void setClassJsonIndex(int classJsonIndex) {
+        this.classJsonIndex = classJsonIndex;
     }
 }

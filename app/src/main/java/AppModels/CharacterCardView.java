@@ -75,7 +75,5 @@ public class CharacterCardView {
         this.mFilename = mFilename;
     }
 
-    public void deleteFile() {
 
-    }
 }
