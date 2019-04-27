@@ -10,8 +10,10 @@ public class CharSheet implements Serializable {
     private int charExp;
     private Stats charStats;
     private String characterName;
+    private Description characterDescription;
 
     private ArrayList<Equipment> mEquipment;
+
 
     public CharSheet(String xname, Race race, CharClass cCharClass, Stats stats )
     {
@@ -92,5 +94,13 @@ public class CharSheet implements Serializable {
 
     public void setmEquipment(ArrayList<Equipment> mEquipment) {
         this.mEquipment = mEquipment;
+    }
+
+    public Description getCharacterDescription() {
+        return characterDescription;
+    }
+
+    public void setCharacterDescription(Description characterDescription) {
+        this.characterDescription = characterDescription;
     }
 }

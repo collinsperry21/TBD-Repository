@@ -4,13 +4,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import AppModels.CharSheet;
+
 public class ProficienciesCAC extends AppCompatActivity {
+    private CharSheet charSheet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proficiencies_cac);
+
+        charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
 
         //Connect variables to layout
         TextView proficiencyBonusText = findViewById(R.id.proficiencyBonus_Text);

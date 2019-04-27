@@ -211,7 +211,7 @@ public class BeginCAC extends AppCompatActivity
                 //If there are no subraces add "none"
                 if (obj.isNull("subraces"))
                 {
-                    newSubraceList.add("None");
+                    //newSubraceList.add("None");
                 }
                 //else put all subraces into a string, separated by a space, then add to array
                 else
@@ -382,6 +382,7 @@ public class BeginCAC extends AppCompatActivity
         raceClass.setSubraceName(subrace);
 
         charClass.setClassName(c);
+        charClass.setSubclassName(subclass);
 
         characterSheet.setCharRace(raceClass);
         characterSheet.setCharClass(charClass);
