@@ -1,11 +1,14 @@
 package AppModels;
 
+import com.example.student.charactersheet5e.ProficienciesCAC;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class CharSheet implements Serializable {
     private Race charRace;
     private CharClass charClass;
+    private Proficiencies proficiencies;
     private int charLevel;
     private int charExp;
     private Stats charStats;
@@ -102,5 +105,13 @@ public class CharSheet implements Serializable {
 
     public void setCharacterDescription(Description characterDescription) {
         this.characterDescription = characterDescription;
+    }
+
+    public Proficiencies getProficiencies() {
+        return proficiencies;
+    }
+
+    public void setProficiencies(Proficiencies proficiencies) {
+        this.proficiencies = proficiencies;
     }
 }
