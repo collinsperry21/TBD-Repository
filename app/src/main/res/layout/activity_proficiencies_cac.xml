@@ -8,10 +8,11 @@
 
     <ImageButton
         android:id="@+id/nextCAC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/clickable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/next_arrow" />
@@ -60,23 +61,13 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/navigate_next_CAC04"
-        android:layout_width="70dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:contentDescription="arrow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/next_arrow" />
-
     <Button
         android:id="@+id/profficiencies_help_button"
         android:layout_width="70dp"
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="32dp"
+        android:background="@drawable/clickable"
         android:text="?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -1,12 +1,14 @@
 package com.example.student.charactersheet5e;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -33,6 +35,7 @@ public class ProficienciesCAC extends AppCompatActivity
     private ArrayList <String> choices = new ArrayList<>(); //An array of strings, as long as listCount. Each entry contains a list of options
     private ArrayList <String> chosenProfs = new ArrayList<>();
     private CharSheet charSheet;
+    private ImageButton navigate_to_next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
