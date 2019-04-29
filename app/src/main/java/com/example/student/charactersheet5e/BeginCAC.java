@@ -247,7 +247,6 @@ public class BeginCAC extends AppCompatActivity
         String[] subraceStringList = subraceUpdatedList.split("  ");
         ArrayList<String> newSubraceArrayList = new ArrayList<>();
         newSubraceArrayList.add(subraceStringList[0]);
-        newSubraceArrayList.add("None");
         for (int i = 1; i < subraceStringList.length; i++) {
             newSubraceArrayList.add(subraceStringList[i]);
         }
@@ -323,7 +322,6 @@ public class BeginCAC extends AppCompatActivity
         String[] subclassStringList = subclassUpdatedList.split("  ");
         ArrayList<String> newSubclassArrayList = new ArrayList<>();
         newSubclassArrayList.add(subclassStringList[0]);
-        newSubclassArrayList.add("None");
         for (int i = 1; i < subclassStringList.length; i++)
         {
             newSubclassArrayList.add(subclassStringList[i]);
