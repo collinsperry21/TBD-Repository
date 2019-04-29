@@ -9,6 +9,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -47,7 +48,7 @@ public class BeginCAC extends AppCompatActivity
     private ArrayAdapter <String> subclassAdapter;
 
     //next page
-    private Button navigate_next_CAC;
+    private ImageButton navigate_next_CAC;
 
     //?
     //private RequestQueue mQueue;
@@ -249,6 +250,7 @@ public class BeginCAC extends AppCompatActivity
         String[] subraceStringList = subraceUpdatedList.split("  ");
         ArrayList<String> newSubraceArrayList = new ArrayList<>();
         newSubraceArrayList.add(subraceStringList[0]);
+        newSubraceArrayList.add("None");
         for (int i = 1; i < subraceStringList.length; i++) {
             newSubraceArrayList.add(subraceStringList[i]);
         }
@@ -324,6 +326,7 @@ public class BeginCAC extends AppCompatActivity
         String[] subclassStringList = subclassUpdatedList.split("  ");
         ArrayList<String> newSubclassArrayList = new ArrayList<>();
         newSubclassArrayList.add(subclassStringList[0]);
+        newSubclassArrayList.add("None");
         for (int i = 1; i < subclassStringList.length; i++)
         {
             newSubclassArrayList.add(subclassStringList[i]);
@@ -377,7 +380,7 @@ public class BeginCAC extends AppCompatActivity
     //Set the data models with the race and class info
     private void setCharacter(String name, String race, String subrace, String c, String subclass)
     {
-        raceClass.setCharacterName(name);
+        characterSheet.setCharacterName(name);
         raceClass.setRaceName(race);
         raceClass.setSubraceName(subrace);
 

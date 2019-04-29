@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
 
 import AppModels.CharSheet;
 import AppModels.Stats;
@@ -21,8 +23,9 @@ public class AbilitiesCAC extends AppCompatActivity
 {
     private TextView charName;
     private Button helpButton;
-    private Button autoGen;
-    private Button navigateToNext;
+    private ImageButton resetButton;
+    private ImageButton navigateToNext;
+    private ImageButton randButton;
     //score fields
     private EditText strButton;
     private EditText dexButton;
@@ -42,8 +45,9 @@ public class AbilitiesCAC extends AppCompatActivity
         //Connect variables to layout
         charName = findViewById(R.id.character_name_text);
         helpButton = findViewById(R.id.help_Button);
-        autoGen = findViewById(R.id.auto_button);
+        resetButton = findViewById(R.id.reset_button);
         navigateToNext = findViewById(R.id.navigate_review_CAC);
+        randButton = findViewById(R.id.rand_button);
 
         //Ability score text inputs
         strButton = findViewById(R.id.StrengthInput);
@@ -66,11 +70,13 @@ public class AbilitiesCAC extends AppCompatActivity
         final Stats scoreStats = new Stats();
 
         //Set the text to the name of the character
-        charName.setText(charSheet.getCharRace().getCharacterName());
+        charName.setText(charSheet.getCharacterName());
+
+        //Auto Gen
+        AutoGenerate(charSheet.getCharClass().getClassName());
 
         //Help button
-        helpButton.setOnClickListener(new View.OnClickListener()
-        {
+        helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
@@ -80,7 +86,7 @@ public class AbilitiesCAC extends AppCompatActivity
         });
 
         //Auto Gen Button
-        autoGen.setOnClickListener(new View.OnClickListener() {
+        resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AutoGenerate(charSheet.getCharClass().getClassName());
@@ -105,6 +111,23 @@ public class AbilitiesCAC extends AppCompatActivity
                 }
             }
         });
+        
+        randButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setRandomScores();
+            }
+        });
+
+    }
+
+    private void setRandomScores() {
+        strButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        dexButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        conButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        intButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        wisButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
+        chaButton.setText(Integer.toString(ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)+ThreadLocalRandom.current().nextInt(1, 7)));
 
     }
 
