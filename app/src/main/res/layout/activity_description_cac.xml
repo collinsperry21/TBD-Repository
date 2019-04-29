@@ -105,7 +105,7 @@
 
     <Spinner
         android:id="@+id/law_spinner"
-        android:layout_width="108dp"
+        android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
@@ -114,14 +114,12 @@
 
     <Spinner
         android:id="@+id/good_spinner"
-        android:layout_width="108dp"
+        android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/law_spinner"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/law_spinner" />
 
     <EditText
         android:id="@+id/editText"
