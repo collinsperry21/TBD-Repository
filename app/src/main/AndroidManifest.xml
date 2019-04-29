@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProficienciesCAC"></activity>
+        <activity android:name=".CharacterSheetPage1"></activity>
+        <activity android:name=".ProficienciesCAC" />
         <activity android:name=".ReviewCAC" />
         <activity
             android:name=".Pop_Help_Activity"
