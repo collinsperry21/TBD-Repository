@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,7 +77,7 @@ public class ReviewCAC extends AppCompatActivity
         //Change action bar text
         getSupportActionBar().setTitle("Review Ability Scores");
 
-        Button navigate_to_next = findViewById(R.id.navigate_to_next_CAC03);
+        ImageButton navigate_to_next = findViewById(R.id.navigate_to_next_CAC03);
 
         //Set a new character sheet from the old one ( may be a better way to do this?? )
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));

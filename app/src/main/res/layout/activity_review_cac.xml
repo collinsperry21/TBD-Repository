@@ -15,7 +15,8 @@
         android:layout_marginTop="32dp"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/subraceModsDescriptionText"
@@ -27,15 +28,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/raceModsListText" />
 
-    <Button
-        android:id="@+id/reviewHelpButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="32dp"
-        android:text=" ?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/raceModsListText"
@@ -55,6 +47,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subraceModsDescriptionText" />
 
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/box_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsDescriptionText" />
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -66,14 +66,59 @@
         app:layout_constraintStart_toStartOf="@+id/Strength"
         app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
 
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="100dp"
+        android:background="@drawable/box_circle"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="131dp" />
+
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="135dp"
+        android:background="@drawable/box_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsDescriptionText" />
+
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="269dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/box_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsDescriptionText" />
+
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/box_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsDescriptionText" />
+
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="269dp"
+        android:layout_marginTop="135dp"
+        android:background="@drawable/box_circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subraceModsDescriptionText" />
+
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="15dp"
         android:layout_marginTop="8dp"
         android:text="Dexterity"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
         app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
 
@@ -89,6 +134,7 @@
         app:layout_constraintTop_toBottomOf="@+id/subraceModsListText" />
 
     <TextView
+
         android:id="@+id/strength_score_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,7 +144,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="@+id/Strength"
         app:layout_constraintStart_toStartOf="@+id/Strength"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        />
 
     <TextView
         android:id="@+id/dexterity_score_text"
@@ -125,8 +172,9 @@
     <TextView
         android:id="@+id/strength_mod_disp_text"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="3dp"
         android:text=" "
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="@+id/Strength"
@@ -135,10 +183,11 @@
         app:layout_constraintTop_toBottomOf="@+id/strength_score_text" />
 
     <TextView
+
         android:id="@+id/dexterity_mod_disp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text=" "
@@ -151,8 +200,8 @@
         android:id="@+id/constitution_mod_disp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="8dp"
         android:text=" "
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -183,10 +232,10 @@
         app:constraint_referenced_ids="textView2,dexterity_score_text,strength_mod_disp_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Constitution"
-        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toEndOf="@+id/Strength"
         app:layout_constraintTop_toBottomOf="@+id/subraceModsListText"
-        app:layout_constraintVertical_bias="0.004" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <android.support.constraint.Group
         android:id="@+id/Constitution"
@@ -226,7 +275,7 @@
         android:id="@+id/intelligence_mod_disp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="9dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text=" "
@@ -240,30 +289,27 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="8dp"
         android:text="Wisdom"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        app:layout_constraintEnd_toEndOf="@+id/Dexterity"
-        app:layout_constraintStart_toStartOf="@+id/Dexterity"
-        app:layout_constraintTop_toBottomOf="@+id/dexterity_mod_disp_text" />
+        tools:layout_editor_absoluteX="177dp"
+        tools:layout_editor_absoluteY="251dp" />
 
     <TextView
         android:id="@+id/wisdom_score_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        tools:layout_editor_absoluteY="294dp" />
 
     <TextView
         android:id="@+id/wisdom_mod_disp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="5dp"
         android:text=" "
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
@@ -286,6 +332,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="5dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toStartOf="@+id/Constitution"
@@ -322,16 +369,17 @@
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toEndOf="@+id/textView22"
         app:layout_constraintTop_toBottomOf="@+id/Strength" />
-
-    <Button
+    <ImageButton
+        android:background="@drawable/clickable"
         android:id="@+id/navigate_to_next_CAC03"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/next_arrow" />
+
 
     <TextView
         android:id="@+id/textView9"
@@ -353,5 +401,20 @@
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toEndOf="@+id/textView9"
         app:layout_constraintTop_toBottomOf="@+id/hitDie_text" />
+    <Button
+        android:id="@+id/reviewHelpButton"
+    android:layout_width="60dp"
+    android:layout_height="45dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginBottom="32dp"
+    android:background="@drawable/clickable"
+    android:text=" ?"
+    android:paddingRight="5dp"
+    android:textAlignment="center"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+    android:textSize="30dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
+     />
 
 </android.support.constraint.ConstraintLayout>

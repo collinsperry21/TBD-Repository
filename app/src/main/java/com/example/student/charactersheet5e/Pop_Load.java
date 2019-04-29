@@ -67,12 +67,9 @@ public class Pop_Load extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new LoadAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                 //get the file name of the one clicked and send it to Character sheet to be opened
-                /* TODO UNDO THIS WHEN CHARACTER SHEET IS CREATED
-                Intent intent = new Intent(Pop_Load.this, AbilitiesCAC.class);
-                intent.putExtra("characterSheet", characterCardViews.get(position).getmFilename());
-                */
-                                  }
+                Intent intent = new Intent(Pop_Load.this, CharacterSheetPage1.class);
+                intent.putExtra("characterSheetFile", characterCardViews.get(position).getmFilename());
+                startActivity(intent);}
         });
 
 
