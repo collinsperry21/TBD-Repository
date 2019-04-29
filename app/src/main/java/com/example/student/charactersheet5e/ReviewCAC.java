@@ -17,9 +17,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import AppModels.CharSheet;
+import IO.WriteObject;
 
 public class ReviewCAC extends AppCompatActivity
 {
+
+
     private TextView raceModsTextView;
     private TextView raceModsListTextView;
     private TextView subraceModsTextView;
@@ -49,6 +52,9 @@ public class ReviewCAC extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_cac);
+
+        //Testing for writing file
+        WriteObject obj = new WriteObject(this);
 
         //Connect variables to layout
         raceModsTextView = findViewById(R.id.raceModsDescriptionText);
@@ -111,13 +117,16 @@ public class ReviewCAC extends AppCompatActivity
         int hitDieAmt = GetHitDie(charSheet.getCharClass().getClassName());
         String hitDieString = "1 X " + hitDieAmt + "D";
         hitDieText.setText(hitDieString);
-        //TODO: Save hit die
+        charSheet.getCharStats().setHitDie(hitDieString);
 
         //Assuming lvl 1 set hit points
         int hitPoints = hitDieAmt + abilityBonus[2];
         String hitPointsString = hitPoints + " ";
         hitPointsText.setText(hitPointsString);
         charSheet.getCharStats().setHitpoints(hitPoints);
+
+        //The speed of the character
+        charSheet.getCharStats().setSpeed(GetSpeed(charSheet.getCharRace().getRaceName()));
 
         navigate_to_next.setOnClickListener(new View.OnClickListener()
         {
@@ -126,11 +135,13 @@ public class ReviewCAC extends AppCompatActivity
             {
                 Intent intent = new Intent(ReviewCAC.this, ProficienciesCAC.class);
 
-
                 //send the character sheet to the next activity to add scores
                 intent.putExtra("characterSheet", charSheet);
 
-                    startActivity(intent);
+                //Testing to see if reading object is working, this is only temporarily here for demo
+                obj.serializeCharacter(charSheet);
+
+                startActivity(intent);
             }
         });
 
@@ -319,6 +330,46 @@ public class ReviewCAC extends AppCompatActivity
         }
 
         return hitDieText;
+    }
+
+    private int GetSpeed(String raceName)
+    {
+        int speed = 0;
+
+        try
+        {
+            //Open the file
+            InputStream inStream = getAssets().open("races_5e.json");
+            int size = inStream.available();
+            byte[] buffer = new byte[size];
+            inStream.read(buffer);
+            inStream.close();
+
+            String json = new String(buffer, "UTF-8");
+            JSONArray jsonArray = new JSONArray(json);
+
+            for (int i =0; i < jsonArray.length(); i++)
+            {
+                //Add class name to list of classes
+                JSONObject obj = jsonArray.getJSONObject(i);
+
+                if (obj.getString("name").equals(raceName))
+                {
+                    speed = obj.getInt("speed");
+                    return speed;
+                }
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+
+        return speed;
     }
 }
 

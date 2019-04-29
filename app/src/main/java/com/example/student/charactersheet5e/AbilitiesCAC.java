@@ -34,8 +34,7 @@ public class AbilitiesCAC extends AppCompatActivity
     private EditText wisButton;
     private EditText chaButton;
 
-    //Testing for writing file
-    WriteObject obj = new WriteObject(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,8 +106,6 @@ public class AbilitiesCAC extends AppCompatActivity
                     Intent intent = new Intent(getApplicationContext(), ReviewCAC.class);
                     //send the character sheet to the next activity to add scores
                     intent.putExtra("characterSheet", charSheet);
-                    //Testing to see if reading object is working, this is only temporarily here for demo
-                    obj.serializeCharacter(charSheet);
 
                     startActivity(intent);
                 }

@@ -17,7 +17,7 @@ public class DescCAC extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description_cac);
 
-        //Set a new character sheet from the old one ( may be a better way to do this?? )
+        //Set a new character sheet from the old one
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
 
         name = findViewById(R.id.character_name_text2);

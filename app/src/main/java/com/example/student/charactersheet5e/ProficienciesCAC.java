@@ -31,7 +31,7 @@ public class ProficienciesCAC extends AppCompatActivity {
 
         //Assuming lvl 1 set proficiency Bonus
         proficiencyBonusText.setText("+2");
-        //TODO: Save proficiency bonus
+        charSheet.getCharStats().setProfBonus(2);
 
         //
 

@@ -41,11 +41,11 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="136dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:text="Height:"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintEnd_toStartOf="@+id/editText2"
         app:layout_constraintTop_toBottomOf="@+id/character_name_text2" />
 
     <TextView
@@ -63,11 +63,11 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:text="Skin:"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintEnd_toStartOf="@+id/editText6"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
@@ -85,11 +85,11 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
         android:text="Hair:"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/textView18"
+        app:layout_constraintEnd_toStartOf="@+id/editText4"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
@@ -115,11 +115,9 @@
     <Spinner
         android:layout_width="108dp"
         android:layout_height="28dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/law_spinner"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <EditText
@@ -154,14 +152,11 @@
         android:id="@+id/editText4"
         android:layout_width="125dp"
         android:layout_height="41dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.038"
-        app:layout_constraintStart_toEndOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/editText6" />
 
     <EditText
@@ -182,27 +177,21 @@
         android:id="@+id/editText6"
         android:layout_width="123dp"
         android:layout_height="40dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="102dp"
         android:layout_height="43dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/character_name_text2" />
 </android.support.constraint.ConstraintLayout>

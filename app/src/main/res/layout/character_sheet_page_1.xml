@@ -96,6 +96,7 @@
         android:layout_width="110dp"
         android:layout_height="60dp"
         android:text=" "
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintStart_toEndOf="@+id/character_sheet_armorclass"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
@@ -105,6 +106,7 @@
         android:layout_width="110dp"
         android:layout_height="60dp"
         android:text=" "
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/character_sheet_armorclass"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
@@ -154,6 +156,7 @@
         android:layout_width="110dp"
         android:layout_height="60dp"
         android:text=" "
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintStart_toEndOf="@+id/character_sheet_hp"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
@@ -165,6 +168,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text=" "
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -177,6 +181,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:text=" "
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -256,7 +261,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/character_sheet_level" />
 
     <TextView
         android:id="@+id/textView18"
@@ -282,7 +287,8 @@
         android:text=" "
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/character_sheet_hp"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/textView28"

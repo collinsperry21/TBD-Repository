@@ -30,6 +30,13 @@ public class CharacterSheetPage1 extends AppCompatActivity {
     private TextView characterName;
     private TextView characterLvl;
 
+    private TextView hitPoints;
+    private TextView hitDie;
+    private TextView armorClass;
+    private TextView initiative;
+    private TextView speed;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,20 +46,32 @@ public class CharacterSheetPage1 extends AppCompatActivity {
         filename = (String) (getIntent().getSerializableExtra("characterSheetFile"));
         charSheet = obj.deserialzeCharacter(filename);
 
-        setAbilityScoreViews();
+        setUpAbilityScoreViews();
+        setUpStats();
 
-        characterName = findViewById(R.id.char_name_disp_text);
-        characterLvl = findViewById(R.id.character_sheet_level);
 
-        characterName.setText(charSheet.getCharacterName());
-        characterLvl.setText(Integer.toString(charSheet.getCharLevel()));
 
 
 
 
     }
 
-    private void setAbilityScoreViews(){
+    private void setUpStats() {
+        characterName = findViewById(R.id.char_name_disp_text);
+        characterLvl = findViewById(R.id.character_sheet_level);
+        initiative = findViewById(R.id.character_sheet_initiative);
+        hitDie = findViewById(R.id.character_sheet_hitdice);
+        hitPoints = findViewById(R.id.character_sheet_hp);
+        speed = findViewById(R.id.character_sheet_speed);
+
+        characterName.setText(charSheet.getCharacterName());
+        characterLvl.setText(Integer.toString(charSheet.getCharLevel()));
+        hitPoints.setText(Integer.toString(charSheet.getCharStats().getHitpoints()));
+        hitDie.setText(charSheet.getCharStats().getHitDie());
+        speed.setText(Integer.toString(charSheet.getCharStats().getSpeed()));
+    }
+
+    private void setUpAbilityScoreViews(){
         //Set up text views
         strScoreText = findViewById(R.id.character_sheet_str);
         dexScoreText = findViewById(R.id.character_sheet_dex);
