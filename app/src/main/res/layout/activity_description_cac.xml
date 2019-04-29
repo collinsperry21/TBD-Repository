@@ -96,7 +96,7 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="42dp"
         android:text="Alignment:"
         android:textSize="18sp"
@@ -113,11 +113,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <Spinner
+        android:id="@+id/good_spinner"
         android:layout_width="108dp"
         android:layout_height="28dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/law_spinner"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <EditText
