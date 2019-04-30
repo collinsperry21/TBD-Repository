@@ -1,14 +1,22 @@
 package AppModels;
 
+import com.example.student.charactersheet5e.ProficienciesCAC;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class CharSheet implements Serializable {
     private Race charRace;
     private CharClass charClass;
+    private Proficiencies proficiencies;
     private int charLevel;
     private int charExp;
     private Stats charStats;
     private String characterName;
+    private Description characterDescription;
+
+    private ArrayList<Equipment> mEquipment;
+
 
     public CharSheet(String xname, Race race, CharClass cCharClass, Stats stats )
     {
@@ -81,5 +89,29 @@ public class CharSheet implements Serializable {
 
     public void setCharacterName(String characterName) {
         this.characterName = characterName;
+    }
+
+    public ArrayList<Equipment> getmEquipment() {
+        return mEquipment;
+    }
+
+    public void setmEquipment(ArrayList<Equipment> mEquipment) {
+        this.mEquipment = mEquipment;
+    }
+
+    public Description getCharacterDescription() {
+        return characterDescription;
+    }
+
+    public void setCharacterDescription(Description characterDescription) {
+        this.characterDescription = characterDescription;
+    }
+
+    public Proficiencies getProficiencies() {
+        return proficiencies;
+    }
+
+    public void setProficiencies(Proficiencies proficiencies) {
+        this.proficiencies = proficiencies;
     }
 }

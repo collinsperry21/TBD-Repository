@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class Stats implements Serializable {
 
     private int hitpoints;
+    private String hitDie;
     private int speed;
     private int strength;
     private int intelligence;
@@ -18,6 +19,8 @@ public class Stats implements Serializable {
     private int modWisdom;
     private int modConstitution;
     private int modCharisma;
+    private int armorClass;
+    private int profBonus;
 
     public Stats()
     {
@@ -113,4 +116,27 @@ public class Stats implements Serializable {
     public void setCharisma(int charisma) { this.charisma = charisma; }
 
 
+    public String getHitDie() {
+        return hitDie;
+    }
+
+    public void setHitDie(String hitDie) {
+        this.hitDie = hitDie;
+    }
+
+    public int getArmorClass() {
+        return armorClass;
+    }
+
+    public void setArmorClass(int armorClass) {
+        this.armorClass = armorClass;
+    }
+
+    public int getProfBonus() {
+        return profBonus;
+    }
+
+    public void setProfBonus(int profBonus) {
+        this.profBonus = profBonus;
+    }
 }

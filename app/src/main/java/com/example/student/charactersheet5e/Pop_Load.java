@@ -64,13 +64,17 @@ public class Pop_Load extends AppCompatActivity {
 
         setUpView();
 
-        mAdapter.setOnItemClickListener(new LoadAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new LoadAdapter.OnItemClickListener() {{
             @Override
             public void onItemClick(int position) {
-                changeItem(position, "Clicked");
-                Intent intent = new Intent(Pop_Load.this, CharSheetActivity.class);
+                Intent intent = new Intent(Pop_Load.this, CharacterSheetPage1.class);
+                intent.putExtra("characterSheetFile", characterCardViews.get(position).getmFilename());
+                startActivity(intent);}
+
 
             }
+
+
         });
 
 

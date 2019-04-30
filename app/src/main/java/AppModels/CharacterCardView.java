@@ -1,6 +1,7 @@
 package AppModels;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class CharacterCardView {
     private int mPortrait;
@@ -9,6 +10,7 @@ public class CharacterCardView {
     private String mClass;
     private String mLvl;
     private String mFilename;
+
 
     public CharacterCardView( int portrait, String name, String race, String charClass, String lvl, String file)
     {
@@ -73,7 +75,5 @@ public class CharacterCardView {
         this.mFilename = mFilename;
     }
 
-    public void deleteFile() {
 
-    }
 }

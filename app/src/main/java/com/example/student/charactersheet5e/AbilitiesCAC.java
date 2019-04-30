@@ -34,8 +34,7 @@ public class AbilitiesCAC extends AppCompatActivity
     private EditText wisButton;
     private EditText chaButton;
 
-    //Testing for writing file
-    WriteObject obj = new WriteObject(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +55,9 @@ public class AbilitiesCAC extends AppCompatActivity
         intButton = findViewById(R.id.IntelligenceInput);
         wisButton = findViewById(R.id.WisdomInput);
         chaButton = findViewById(R.id.CharismaInput);
+
+        //Change action bar text
+        getSupportActionBar().setTitle("Choose Ability Scores");
 
         //Set array list for checking inputs
         final ArrayList <EditText> inputTestArray = new ArrayList<EditText>(
@@ -104,8 +106,6 @@ public class AbilitiesCAC extends AppCompatActivity
                     Intent intent = new Intent(getApplicationContext(), ReviewCAC.class);
                     //send the character sheet to the next activity to add scores
                     intent.putExtra("characterSheet", charSheet);
-                    //Testing to see if reading object is working, this is only temporarily here for demo
-                    obj.serializeCharacter(charSheet);
 
                     startActivity(intent);
                 }

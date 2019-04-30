@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ProficienciesCAC">
 
+    <ImageButton
+        android:id="@+id/nextCAC"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/clickable"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/next_arrow" />
+
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
@@ -35,15 +46,60 @@
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <LinearLayout
+        android:id="@+id/proficiencies_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="75dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/profficiencies_help_button"
+        android:layout_width="70dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/clickable"
+        android:text="?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/proficiencies_output_text01"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/proficiencies_layout"
+        app:layout_constraintTop_toTopOf="@+id/proficiencies_layout" />
+
+    <TextView
+        android:id="@+id/proficiencies_output_text02"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/proficiencies_output_text03"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/proficiencies_layout"
+        app:layout_constraintTop_toBottomOf="@+id/proficiencies_output_text01" />
+
+    <TextView
+        android:id="@+id/proficiencies_output_text03"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="@+id/proficiencies_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/proficiencies_layout" />
 </android.support.constraint.ConstraintLayout>

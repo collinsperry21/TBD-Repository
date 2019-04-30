@@ -50,9 +50,6 @@ public class BeginCAC extends AppCompatActivity
     //next page
     private ImageButton navigate_next_CAC;
 
-    //?
-    //private RequestQueue mQueue;
-
     Race raceClass =  new Race();
     CharClass charClass = new CharClass();
     CharSheet characterSheet = new CharSheet();
@@ -67,8 +64,8 @@ public class BeginCAC extends AppCompatActivity
         charName = findViewById(R.id.char_name);
         navigate_next_CAC = findViewById(R.id.NextCAC01);
 
-        //?
-        //mQueue = newRequestQueue(this);
+        //Change action bar text
+        getSupportActionBar().setTitle("Race and Class");
 
         //Create Array List for race, subrace, class, subclass
         ArrayList <String> raceList = GetRaceList ();
@@ -214,7 +211,7 @@ public class BeginCAC extends AppCompatActivity
                 //If there are no subraces add "none"
                 if (obj.isNull("subraces"))
                 {
-                    newSubraceList.add("None");
+                    //newSubraceList.add("None");
                 }
                 //else put all subraces into a string, separated by a space, then add to array
                 else
@@ -250,7 +247,6 @@ public class BeginCAC extends AppCompatActivity
         String[] subraceStringList = subraceUpdatedList.split("  ");
         ArrayList<String> newSubraceArrayList = new ArrayList<>();
         newSubraceArrayList.add(subraceStringList[0]);
-        newSubraceArrayList.add("None");
         for (int i = 1; i < subraceStringList.length; i++) {
             newSubraceArrayList.add(subraceStringList[i]);
         }
@@ -326,7 +322,6 @@ public class BeginCAC extends AppCompatActivity
         String[] subclassStringList = subclassUpdatedList.split("  ");
         ArrayList<String> newSubclassArrayList = new ArrayList<>();
         newSubclassArrayList.add(subclassStringList[0]);
-        newSubclassArrayList.add("None");
         for (int i = 1; i < subclassStringList.length; i++)
         {
             newSubclassArrayList.add(subclassStringList[i]);
@@ -385,6 +380,7 @@ public class BeginCAC extends AppCompatActivity
         raceClass.setSubraceName(subrace);
 
         charClass.setClassName(c);
+        charClass.setSubclassName(subclass);
 
         characterSheet.setCharRace(raceClass);
         characterSheet.setCharClass(charClass);
