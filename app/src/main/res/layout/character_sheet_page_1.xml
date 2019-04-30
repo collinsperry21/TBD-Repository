@@ -68,7 +68,7 @@
         tools:layout_editor_absoluteY="286dp" />
 
     <TextView
-        android:id="@+id/character_sheet_initiative5"
+        android:id="@+id/character_sheet_proficiency"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:text=" "
@@ -77,7 +77,7 @@
         tools:layout_editor_absoluteY="218dp" />
 
     <TextView
-        android:id="@+id/character_sheet_initiative4"
+        android:id="@+id/character_sheet_hit_dice"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:text=" "
@@ -122,7 +122,7 @@
         tools:layout_editor_absoluteY="190dp" />
 
     <TextView
-        android:id="@+id/character_sheet_initiative3"
+        android:id="@+id/character_sheet_speed"
         android:layout_width="120dp"
         android:layout_height="60dp"
         android:text=" "
@@ -131,7 +131,7 @@
         tools:layout_editor_absoluteY="130dp" />
 
     <TextView
-        android:id="@+id/character_sheet_initiative2"
+        android:id="@+id/character_sheet_armor_class"
         android:layout_width="140dp"
         android:layout_height="60dp"
         android:text=" "
@@ -140,7 +140,7 @@
         tools:layout_editor_absoluteY="218dp" />
 
     <TextView
-        android:id="@+id/character_sheet_initiative6"
+        android:id="@+id/character_sheet_hitpoints"
         android:layout_width="140dp"
         android:layout_height="60dp"
         android:text=" "
@@ -171,7 +171,7 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/char_level_disp_text"
         android:layout_width="298dp"
         android:layout_height="32dp"
         android:text=" "
