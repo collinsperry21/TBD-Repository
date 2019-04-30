@@ -5,14 +5,11 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,21 +18,23 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import AppModels.CharSheet;
 
 public class ProficienciesCAC extends AppCompatActivity
 {
+    //variables updated by JSON parse
+    private int numOfLists = 0; //Code assumes the max is 3
+    private ArrayList<Integer> numOfOptionsAvailable = new ArrayList<>();
+    private ArrayList<Integer> numOfChoicesAllowed = new ArrayList<>();
+    private ArrayList<String> optionsForLists = new ArrayList<>();
 
-    private int listCount = 0; //Code assumes the max is 3
-    private ArrayList<Integer> optionsCount = new ArrayList<>(); //Holds the number of options in each list
-    private List<Integer> numChoices = new ArrayList<>(); // Array containing the number of choices the user gets to choose from each list
-    private ArrayList<Integer> userItems = new ArrayList<>();
-    private ArrayList <String> choices = new ArrayList<>(); //An array of strings, as long as listCount. Each entry contains a list of options
-    private ArrayList <String> chosenProfs = new ArrayList<>();
+    //variables used for layout
+    private ArrayList<Integer> userChoices = new ArrayList<>();
+    //private TextView currentTextView = new TextView(ProficienciesCAC.this);
+
+    //character sheet
     private CharSheet charSheet;
-    private ImageButton navigate_to_next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,11 +42,13 @@ public class ProficienciesCAC extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proficiencies_cac);
 
+        //Renew character sheet
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
 
         //Set action bar
         getSupportActionBar().setTitle("Proficiencies: " + charSheet.getCharClass().getClassName());
 
+        //Connect layout  variables to layout
         Button firstButton = new Button(ProficienciesCAC.this);
         Button secondButton = new Button(ProficienciesCAC.this);
         Button thirdButton = new Button (ProficienciesCAC.this);
@@ -55,90 +56,26 @@ public class ProficienciesCAC extends AppCompatActivity
         TextView secondTextView = findViewById(R.id.proficiencies_output_text02);
         TextView thirdTextView = findViewById(R.id.proficiencies_output_text03);
 
-
-        charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
-
         //Connect variables to layout
         TextView proficiencyBonusText = findViewById(R.id.proficiencyBonus_Text);
-        TextView proficiencyDescText = findViewById(R.id.proficiencies_desc_text);
         LinearLayout profLayout = findViewById(R.id.proficiencies_layout);
-
-
-
-        navigate_to_next = findViewById(R.id.nextCAC);
+        ImageButton navigate_to_next = findViewById(R.id.nextCAC);
 
         //Assuming lvl 1 set proficiency Bonus
         proficiencyBonusText.setText("+2");
         charSheet.getCharStats().setProfBonus(2);
 
+        //Parse JSON for class related proficiency lists
         GetListCount(charSheet.getCharClass().getClassName());
 
+
         Button currentButton = new Button(ProficienciesCAC.this);
-        for (int i = 0; i < listCount; i++)
+        for (int i = 0; i < numOfLists; i++)
         {
             switch (i)
             {
                 case 0:
                     currentButton = firstButton;
-                    currentButton.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v)
-                        {
-                            AlertDialog.Builder mBuilder = new AlertDialog.Builder(ProficienciesCAC.this);
-                            mBuilder.setTitle("Choose " + numChoices.get(0));
-                            boolean[] checkedItems = new boolean[optionsCount.get(0)];
-                            String[] choicesList = BreakDownOptions(choices.get(0));
-                            mBuilder.setMultiChoiceItems(choicesList, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which, boolean isChecked) {
-                                    if (isChecked)
-                                    {
-                                        if (!userItems.contains(which)){
-                                            userItems.add(which);
-                                        }
-                                    }else{
-                                        userItems.remove(which);
-                                    }
-                                }
-                            });
-                            mBuilder.setCancelable(false);
-                            mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    String item = "";
-                                    //todo: fix dis shit
-                                    for (int i = 0; i < userItems.size(); i++){
-                                        item += choicesList[userItems.get(i)];
-                                        if (i != userItems.size()- 1)
-                                        {
-                                            item += ",\n";
-                                        }
-                                    }
-                                    firstTextView.setText(item);
-                                }
-                            });
-                            mBuilder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                                }
-                            });
-                            mBuilder.setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    for(int i = 0; i < checkedItems.length; i++)
-                                    {
-                                        checkedItems[i] = false;
-                                        userItems.clear();
-                                        firstTextView.setText("");
-                                    }
-                                }
-                            });
-
-                            AlertDialog mDialog = mBuilder.create();
-                            mDialog.show();
-                        }
-                    });
                     break;
                 case 1:
                     currentButton = secondButton;
@@ -147,19 +84,86 @@ public class ProficienciesCAC extends AppCompatActivity
                     currentButton = thirdButton;
                     break;
             }
-            currentButton.setLayoutParams(new RelativeLayout.LayoutParams(
-                    LinearLayout.LayoutParams.WRAP_CONTENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
-            ));
-            profLayout.addView(currentButton);
-            String buttonText = "Choose " + numChoices.get(i);
-            currentButton.setText(buttonText);
+            //Pull necessary variables from arrays
+            int maxChoices = numOfChoicesAllowed.get(i);
+            int listLength = numOfOptionsAvailable.get(i);
+            String[] optionsList = optionsForLists.get(i).split("  ");
 
+            currentButton.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    //Clear Text View each time button is clicked
+                    firstTextView.setText("");
+
+                    //Set list defaults
+                    AlertDialog.Builder listBuilder = new AlertDialog.Builder(ProficienciesCAC.this);
+                    listBuilder.setTitle("Choose " + maxChoices);
+
+                    //Create bool array to hold if chosen or not
+                    boolean[] checkedItems = new boolean[listLength];
+                    listBuilder.setMultiChoiceItems(optionsList, checkedItems, new DialogInterface.OnMultiChoiceClickListener()
+                    {
+                        int count = 0;
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which, boolean isChecked)
+                        {
+                            count += isChecked ? 1 : -1;
+
+                            if (count > maxChoices)
+                            {
+                                checkedItems[which] = false;
+                                count--;
+                                ((AlertDialog)dialog).getListView().setItemChecked(which, false);
+                            }
+                            else if (isChecked)
+                            {
+                                if (!userChoices.contains(which))
+                                {
+                                    userChoices.add(which);
+                                }
+                            }
+                            else
+                            {
+                                userChoices.remove(which);
+                            }
+                        }
+                    });
+                    listBuilder.setCancelable(false);
+                    listBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            String item = "";
+                            for (int i = 0; i < userChoices.size(); i++)
+                            {
+                                item += optionsList[userChoices.get(i)];
+                                if (i != userChoices.size()- 1)
+                                {
+                                    item += ",\n";
+                                }
+                            }
+                            firstTextView.setText(item);
+                        }
+                    });
+
+                    AlertDialog dialog = listBuilder.create();
+                    dialog.show();
+                }
+            });
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT );
+            params.setMargins(0, 10, 0, 140);
+            currentButton.setLayoutParams(params);
+            currentButton.setBackgroundResource(R.drawable.button_background);
+            profLayout.addView(currentButton);
+            String buttonText = "Choose " + maxChoices;
+            currentButton.setText(buttonText);
         }
 
-
-        //
-
+        //Send user to descriptions page
         navigate_to_next.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -167,7 +171,7 @@ public class ProficienciesCAC extends AppCompatActivity
             {
                 Intent intent = new Intent(ProficienciesCAC.this, DescCAC.class);
 
-                //send the character sheet to the next activity to add scores
+                //send the character sheet to the next activity
                 intent.putExtra("characterSheet", charSheet);
 
                 startActivity(intent);
@@ -197,14 +201,14 @@ public class ProficienciesCAC extends AppCompatActivity
                 if (obj.getString("name").equals(className))
                 {
                     JSONArray profChoicesJsonArray = obj.getJSONArray("proficiency_choices");
-                    listCount = profChoicesJsonArray.length();
-                    for (int index =0; index < listCount; index++)
+                    numOfLists = profChoicesJsonArray.length();
+                    for (int index =0; index < numOfLists; index++)
                     {
                         JSONObject choicesObj = profChoicesJsonArray.getJSONObject(index);
-                        numChoices.add(choicesObj.getInt("choose"));
+                        numOfChoicesAllowed.add(choicesObj.getInt("choose"));
                         String profList = new String();
                         JSONArray profArray = choicesObj.getJSONArray("from");
-                        optionsCount.add(profArray.length());
+                        numOfOptionsAvailable.add(profArray.length());
                         for (int idx = 0; idx < profArray.length(); idx++)
                         {
                             JSONObject profObject = profArray.getJSONObject(idx);
@@ -212,7 +216,7 @@ public class ProficienciesCAC extends AppCompatActivity
                             profList += "  ";
 
                         }
-                        choices.add(profList);
+                        optionsForLists.add(profList);
                     }
                 }
             }
@@ -225,11 +229,5 @@ public class ProficienciesCAC extends AppCompatActivity
         {
             e.printStackTrace();
         }
-    }
-
-    private String[] BreakDownOptions(String optionsString)
-    {
-        String[] optionsArray = optionsString.split("  ");
-        return optionsArray;
     }
 }
