@@ -64,4 +64,7 @@
             \tLightfoot Halfling (+1) \t\tTiefling(+2)
     </string>
 
+    <string name="ProficiencyDescription"> Your level determines your proficiency bonus which
+        will be applied to many of the players stats. Your class determines your weapon proficiencies,
+        your saving throw proficiencies and some of your skill and tool proficiencies. </string>
 </resources>
