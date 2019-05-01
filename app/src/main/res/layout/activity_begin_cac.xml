@@ -37,6 +37,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:textSize = "17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/newCharName" />
@@ -48,6 +49,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:textSize = "17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/race_spinner" />
@@ -59,6 +61,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:textSize = "17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/subrace_spinner" />
@@ -70,6 +73,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="Lvl : 1"
+        android:textSize = "15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subclass_spinner" />
 
@@ -80,6 +84,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:text="Exp : 0"
+        android:textSize = "15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subclass_spinner" />
 
@@ -89,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Race :"
+        android:textSize = "15sp"
         app:layout_constraintBottom_toBottomOf="@+id/race_spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/race_spinner" />
@@ -99,6 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Subrace :"
+        android:textSize = "15sp"
         app:layout_constraintBottom_toBottomOf="@+id/subrace_spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/subrace_spinner" />
@@ -109,6 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Class :"
+        android:textSize = "15sp"
         app:layout_constraintBottom_toBottomOf="@+id/class_spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/class_spinner" />
@@ -119,6 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:text="Subclass :"
+        android:textSize = "15sp"
         app:layout_constraintBottom_toBottomOf="@+id/subclass_spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/subclass_spinner" />
@@ -130,6 +139,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:textSize = "17sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/class_spinner" />
