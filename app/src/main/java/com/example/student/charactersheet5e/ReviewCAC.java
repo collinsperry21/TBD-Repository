@@ -21,12 +21,7 @@ import IO.WriteObject;
 
 public class ReviewCAC extends AppCompatActivity
 {
-
-
-    private TextView raceModsTextView;
     private TextView raceModsListTextView;
-    private TextView subraceModsTextView;
-    private TextView subraceModsListTextView;
 
     private TextView strScoreText;
     private TextView dexScoreText;
@@ -57,11 +52,7 @@ public class ReviewCAC extends AppCompatActivity
         WriteObject obj = new WriteObject(this);
 
         //Connect variables to layout
-        raceModsTextView = findViewById(R.id.raceModsDescriptionText);
         raceModsListTextView = findViewById(R.id.raceModsListText);
-
-        subraceModsTextView = findViewById(R.id.subraceModsDescriptionText);
-        subraceModsListTextView = findViewById(R.id.subraceModsListText);
 
         strScoreText = findViewById(R.id.strength_score_text);
         dexScoreText = findViewById(R.id.dexterity_score_text);
@@ -83,9 +74,6 @@ public class ReviewCAC extends AppCompatActivity
         ImageButton navigate_to_next = findViewById(R.id.navigate_to_next_CAC03);
         Button helpButton = findViewById(R.id.reviewHelpButton);
 
-        //Change action bar text
-        getSupportActionBar().setTitle("Review Ability Scores");
-
 
         //Set a new character sheet from the old one ( may be a better way to do this?? )
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
@@ -93,25 +81,25 @@ public class ReviewCAC extends AppCompatActivity
         //Initialize array to hold bonuses for race and subrace
         abilityBonus = new int[] {0, 0, 0, 0, 0, 0};
 
-        //Insert chosen race into race mods description text
-        String modsDescriptionText = charSheet.getCharRace().getRaceName() + "s have the following ability score mods:";
-        raceModsTextView.setText(modsDescriptionText);
-
         //Insert a list of mods retrieved from Race into race mods list text
         String modsListText = GetRaceModsList(charSheet.getCharRace().getRaceName());
-        raceModsListTextView.setText(modsListText);
-
 
         //If they have a subrace
-        if( !charSheet.getCharRace().getSubraceName().equals("None")) {
-            //Insert chosen subrace into race mods description text
-            String subModsDescriptionText = charSheet.getCharRace().getSubraceName() + "s have the following ability score mods:";
-            subraceModsTextView.setText(subModsDescriptionText);
+        if( !charSheet.getCharRace().getSubraceName().equals("None"))
+        {
+            //Change action bar text
+            getSupportActionBar().setTitle("Review Ability Scores: " + charSheet.getCharRace().getSubraceName());
 
             //Insert a list of mods retrieved from SubRace into race mods list text
-            String subModsListText = GetSubraceModsList(charSheet.getCharRace().getSubraceName());
-            subraceModsListTextView.setText(subModsListText);
+            modsListText += GetSubraceModsList(charSheet.getCharRace().getSubraceName());
+        }else
+        {
+            //Change action bar text
+            getSupportActionBar().setTitle("Review Ability Scores: " + charSheet.getCharRace().getRaceName() );
+
         }
+
+        raceModsListTextView.setText(modsListText);
 
         SetAbilityScore();
 
@@ -212,7 +200,7 @@ public class ReviewCAC extends AppCompatActivity
                         modsList += attributeObj.getString("name") + " (+" +
                                 attributeObj.getString("bonus") + ")\t\t";
                         SetBonusArray(attributeObj.getString("name"), attributeObj.getInt("bonus"));
-                        if ((index + 1)%3 == 0)
+                        if ((index + 1)%2 == 0)
                         {
                             modsList += "\n";
                         }
