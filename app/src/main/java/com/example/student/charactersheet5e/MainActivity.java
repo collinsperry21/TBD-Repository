@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import AppModels.CharSheet;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button navigate_to_CAC;
@@ -26,6 +28,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        if( getIntent().hasExtra("EXIT"))
+        {
+            //Set a new character sheet from the old one
+            Intent intent = new Intent(MainActivity.this, CharacterSheetPage1.class);
+            intent.putExtra("characterSheet", (CharSheet) (getIntent().getSerializableExtra("characterSheet")));
+            startActivity(intent);
+
+        }
+
+
 
         loadButton =  findViewById(R.id.load_button);
         loadButton.setOnClickListener(new View.OnClickListener() {

@@ -43,8 +43,8 @@ public class CharacterSheetPage1 extends AppCompatActivity {
         setContentView(R.layout.character_sheet_page_1);
 
         //Read the file in and store it in a charsheet object
-        filename = (String) (getIntent().getSerializableExtra("characterSheetFile"));
-        charSheet = obj.deserialzeCharacter(filename);
+        charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
+
 
         setUpAbilityScoreViews();
         setUpStats();

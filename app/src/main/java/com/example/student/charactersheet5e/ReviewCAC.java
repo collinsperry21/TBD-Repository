@@ -53,8 +53,7 @@ public class ReviewCAC extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_cac);
 
-        //Testing for writing file
-        WriteObject obj = new WriteObject(this);
+
 
         //Connect variables to layout
         raceModsTextView = findViewById(R.id.raceModsDescriptionText);
@@ -80,10 +79,12 @@ public class ReviewCAC extends AppCompatActivity
         TextView hitDieText = findViewById(R.id.hitDie_text);
         TextView hitPointsText = findViewById(R.id.hitPoints_text);
 
+        ImageButton navigate_to_next = findViewById(R.id.navigate_to_next_CAC03);
+        Button helpButton = findViewById(R.id.reviewHelpButton);
+
         //Change action bar text
         getSupportActionBar().setTitle("Review Ability Scores");
 
-        ImageButton navigate_to_next = findViewById(R.id.navigate_to_next_CAC03);
 
         //Set a new character sheet from the old one ( may be a better way to do this?? )
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
@@ -128,6 +129,16 @@ public class ReviewCAC extends AppCompatActivity
         //The speed of the character
         charSheet.getCharStats().setSpeed(GetSpeed(charSheet.getCharRace().getRaceName()));
 
+        //Help button
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent i = new Intent(getApplicationContext(), Pop_ReviewHelp.class);
+                startActivity(i);
+            }
+        });
+
         navigate_to_next.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -137,9 +148,6 @@ public class ReviewCAC extends AppCompatActivity
 
                 //send the character sheet to the next activity to add scores
                 intent.putExtra("characterSheet", charSheet);
-
-                //Testing to see if reading object is working, this is only temporarily here for demo
-                obj.serializeCharacter(charSheet);
 
                 startActivity(intent);
             }
