@@ -10,9 +10,10 @@ public class CharacterCardView {
     private String mClass;
     private String mLvl;
     private String mFilename;
+    private CharSheet characterSheet;
 
 
-    public CharacterCardView( int portrait, String name, String race, String charClass, String lvl, String file)
+    public CharacterCardView( int portrait, String name, String race, String charClass, String lvl, String file, CharSheet character)
     {
         mPortrait = portrait;
         mName = name;
@@ -20,6 +21,7 @@ public class CharacterCardView {
         mClass = charClass;
         mLvl = lvl;
         mFilename = file;
+        characterSheet = character;
 
     }
     public void changeName(String text){
@@ -76,4 +78,11 @@ public class CharacterCardView {
     }
 
 
+    public CharSheet getCharacterSheet() {
+        return characterSheet;
+    }
+
+    public void setCharacterSheet(CharSheet characterSheet) {
+        this.characterSheet = characterSheet;
+    }
 }

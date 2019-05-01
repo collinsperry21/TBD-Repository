@@ -53,8 +53,7 @@ public class ReviewCAC extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_cac);
 
-        //Testing for writing file
-        WriteObject obj = new WriteObject(this);
+
 
         //Connect variables to layout
         raceModsTextView = findViewById(R.id.raceModsDescriptionText);
@@ -149,9 +148,6 @@ public class ReviewCAC extends AppCompatActivity
 
                 //send the character sheet to the next activity to add scores
                 intent.putExtra("characterSheet", charSheet);
-
-                //Testing to see if reading object is working, this is only temporarily here for demo
-                obj.serializeCharacter(charSheet);
 
                 startActivity(intent);
             }
