@@ -48,7 +48,7 @@ public class ProficienciesCAC extends AppCompatActivity
         //Set action bar
         getSupportActionBar().setTitle("Proficiencies: " + charSheet.getCharClass().getClassName());
 
-        //Connect layout  variables to layout
+        //Connect dynamic layout variables to layout
         Button firstButton = new Button(ProficienciesCAC.this);
         Button secondButton = new Button(ProficienciesCAC.this);
         Button thirdButton = new Button (ProficienciesCAC.this);
@@ -56,19 +56,19 @@ public class ProficienciesCAC extends AppCompatActivity
         TextView secondTextView = findViewById(R.id.proficiencies_output_text02);
         TextView thirdTextView = findViewById(R.id.proficiencies_output_text03);
 
-        //Connect variables to layout
+        //Connect static layout variables to layout
         TextView proficiencyBonusText = findViewById(R.id.proficiencyBonus_Text);
         LinearLayout profLayout = findViewById(R.id.proficiencies_layout);
         ImageButton navigate_to_next = findViewById(R.id.nextCAC);
 
-        //Assuming lvl 1 set proficiency Bonus
+        //display proficiency bonus assuming lvl 1 set proficiency Bonus
         proficiencyBonusText.setText("+2");
         charSheet.getCharStats().setProfBonus(2);
 
         //Parse JSON for class related proficiency lists
         GetListCount(charSheet.getCharClass().getClassName());
 
-
+        //Create buttons and dialogs
         Button currentButton = new Button(ProficienciesCAC.this);
         for (int i = 0; i < numOfLists; i++)
         {
@@ -88,20 +88,33 @@ public class ProficienciesCAC extends AppCompatActivity
             int maxChoices = numOfChoicesAllowed.get(i);
             int listLength = numOfOptionsAvailable.get(i);
             String[] optionsList = optionsForLists.get(i).split("  ");
+            int currentListNum = i;
 
             currentButton.setOnClickListener(new View.OnClickListener()
             {
                 @Override
                 public void onClick(View v)
                 {
-                    //Clear Text View each time button is clicked
-                    firstTextView.setText("");
+                    //Clear Text View and user choices each time button is clicked
+                    switch (currentListNum)
+                    {
+                        case 0:
+                            firstTextView.setText("");
+                            break;
+                        case 1:
+                            secondTextView.setText("");
+                            break;
+                        case 2:
+                            thirdTextView.setText("");
+                            break;
+                    }
+                    userChoices.clear();
 
                     //Set list defaults
                     AlertDialog.Builder listBuilder = new AlertDialog.Builder(ProficienciesCAC.this);
                     listBuilder.setTitle("Choose " + maxChoices);
 
-                    //Create bool array to hold if chosen or not
+                    //Create boolean array to hold if chosen or not
                     boolean[] checkedItems = new boolean[listLength];
                     listBuilder.setMultiChoiceItems(optionsList, checkedItems, new DialogInterface.OnMultiChoiceClickListener()
                     {
@@ -110,6 +123,8 @@ public class ProficienciesCAC extends AppCompatActivity
                         @Override
                         public void onClick(DialogInterface dialog, int which, boolean isChecked)
                         {
+
+                            //Count the number of selections and prevent user from choosing too many
                             count += isChecked ? 1 : -1;
 
                             if (count > maxChoices)
@@ -120,6 +135,7 @@ public class ProficienciesCAC extends AppCompatActivity
                             }
                             else if (isChecked)
                             {
+                                //Update array holding user choices
                                 if (!userChoices.contains(which))
                                 {
                                     userChoices.add(which);
@@ -127,6 +143,7 @@ public class ProficienciesCAC extends AppCompatActivity
                             }
                             else
                             {
+                                //Update array holding user choices
                                 userChoices.remove(which);
                             }
                         }
@@ -146,9 +163,22 @@ public class ProficienciesCAC extends AppCompatActivity
                                     item += ",\n";
                                 }
                             }
-                            firstTextView.setText(item);
+                            switch (currentListNum)
+                            {
+                                case 0:
+                                    firstTextView.setText(item);
+                                    break;
+                                case 1:
+                                    secondTextView.setText(item);
+                                    break;
+                                case 2:
+                                    thirdTextView.setText(item);
+                                    break;
+                            }
                         }
                     });
+
+                    //Todo: save user selections
 
                     AlertDialog dialog = listBuilder.create();
                     dialog.show();
