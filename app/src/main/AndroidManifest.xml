@@ -13,19 +13,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DescCAC"></activity>
-        <activity android:name=".CharacterSheetPage1"></activity>
-        <activity android:name=".CharacterSheetPage2"></activity>
-        <activity android:name=".ProficienciesCAC" />
-        <activity android:name=".ReviewCAC" />
+        <activity android:name=".DescCAC"
+            android:parentActivityName=".ProficienciesCAC"></activity>
+        <activity android:name=".CharacterSheetPage1"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".CharacterSheetPage2"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".ProficienciesCAC"
+            android:parentActivityName=".ReviewCAC"/>
+        <activity android:name=".ReviewCAC"
+            android:parentActivityName=".AbilitiesCAC"/>
         <activity
             android:name=".Pop_Help_Activity"
-            android:theme="@style/AppTheme.CustomPopTheme" />
+            android:theme="@style/AppTheme.CustomPopTheme"
+            android:parentActivityName=".AbilitiesCAC"/>
         <activity
             android:name=".Pop_Load"
-            android:theme="@style/AppTheme.CustomPopTheme" />
-        <activity android:name=".AbilitiesCAC" />
-        <activity android:name=".BeginCAC" />
+            android:theme="@style/AppTheme.CustomPopTheme"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".AbilitiesCAC"
+            android:parentActivityName=".BeginCAC"/>
+        <activity android:name=".BeginCAC"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -46,17 +46,22 @@ public class DescCAC extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(DescCAC.this,CharacterSheetPage1.class);
+                Intent intent = new Intent(DescCAC.this,MainActivity.class);
 
                 setDescription();
 
                 //Send to character sheet
                 intent.putExtra("characterSheet", charSheet);
 
+                intent.putExtra("EXIT", true);
+
                 //Save object
                 obj.serializeCharacter(charSheet);
 
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+
                 startActivity(intent);
+
             }
         });
 
