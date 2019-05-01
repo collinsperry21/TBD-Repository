@@ -18,6 +18,7 @@
         android:background="@color/colorPrimaryDark"
         android:textAlignment="center"
         android:textColor="#FFF"
+        android:textSize="25sp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimaryDark"
                 android:text="How To Choose:"
+                android:textSize="20sp"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="#FFF" />
 
@@ -54,8 +56,9 @@
                 android:id="@+id/CAC_Ability_Score_Rules"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorGray"
+                android:background="#FFF"
                 android:text="@string/AbilityScoreRules"
+                android:textSize="17sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintTop_toBottomOf="@+id/scrollView3"
                 tools:layout_editor_absoluteX="143dp" />
@@ -66,14 +69,16 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/colorPrimaryDark"
                 android:text="Strength:"
+                android:textSize="20sp"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorGray"
+                android:background="#FFF"
                 android:text="@string/StrengthDescription"
+                android:textSize="17sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintTop_toBottomOf="@+id/scrollView3"
                 tools:layout_editor_absoluteX="143dp" />
@@ -84,14 +89,16 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/colorPrimaryDark"
                 android:text="Dexterity:"
+                android:textSize="20sp"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorGray"
+                android:background="#FFF"
                 android:text="@string/DexterityDescription"
+                android:textSize="17sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintTop_toBottomOf="@+id/scrollView3"
                 tools:layout_editor_absoluteX="143dp" />
@@ -102,6 +109,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/colorPrimaryDark"
                 android:text="Constitution:"
+                android:textSize="20sp"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="#FFF" />
 
@@ -109,9 +117,10 @@
                 android:id="@+id/CAC_Constitution"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@color/colorGray"
+                android:layout_marginTop="0dp"
+                android:background="#FFF"
                 android:text="@string/ConstitutionDescription"
+                android:textSize="17sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintTop_toBottomOf="@+id/scrollView3"
                 tools:layout_editor_absoluteX="143dp" />
@@ -122,14 +131,16 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/colorPrimaryDark"
                 android:text="Intelligence:"
+                android:textSize="20sp"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorGray"
+                android:background="#FFF"
                 android:text="@string/IntelligenceDescription"
+                android:textSize="17sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintTop_toBottomOf="@+id/scrollView3"
                 tools:layout_editor_absoluteX="143dp" />
@@ -140,14 +151,16 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/colorPrimaryDark"
                 android:text="Wisdom:"
+                android:textSize="20sp"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="#FFF" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorGray"
+                android:background="#FFF"
                 android:text="@string/WisdomDescription"
+                android:textSize="17sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintTop_toBottomOf="@+id/scrollView3"
                 tools:layout_editor_absoluteX="143dp" />
@@ -157,6 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@color/colorPrimaryDark"
+                android:textSize="20sp"
                 android:text="Charisma:"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="#FFF" />
@@ -164,8 +178,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorGray"
+                android:background="#FFF"
                 android:text="@string/CharismaDescription"
+                android:textSize="17sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 app:layout_constraintTop_toBottomOf="@+id/scrollView3"
                 tools:layout_editor_absoluteX="143dp" />
