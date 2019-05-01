@@ -81,6 +81,7 @@ public class Pop_Load extends AppCompatActivity {
 
 
     }
+    }
 
 
     private void setUpView() {
