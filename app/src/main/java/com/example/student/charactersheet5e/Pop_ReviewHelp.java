@@ -6,7 +6,8 @@ import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.WindowManager;
 
-public class Pop_ReviewHelp extends Activity {
+public class Pop_ReviewHelp extends Activity
+{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
