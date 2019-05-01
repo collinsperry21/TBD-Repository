@@ -35,6 +35,8 @@ public class Pop_Load extends AppCompatActivity {
 
     private ArrayList<CharacterCardView> characterCardViews;
 
+    private CharSheet character;
+
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +70,7 @@ public class Pop_Load extends AppCompatActivity {
             @Override
             public void onItemClick(int position) {
                 Intent intent = new Intent(Pop_Load.this, CharacterSheetPage1.class);
-                intent.putExtra("characterSheetFile", characterCardViews.get(position).getmFilename());
+                intent.putExtra("characterSheet", characterCardViews.get(position).getCharacterSheet());
                 startActivity(intent);}
         });
 
@@ -108,7 +110,8 @@ public class Pop_Load extends AppCompatActivity {
                         character.getCharRace().getRaceName(),
                         character.getCharClass().getClassName(),
                         Integer.toString(character.getCharLevel()),
-                        nameList.get(i)
+                        nameList.get(i),
+                        character
                 ));
             }
         }
