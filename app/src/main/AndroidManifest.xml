@@ -14,7 +14,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".Pop_ReviewHelp"></activity>
         <activity android:name=".DescCAC" />
         <activity android:name=".CharacterSheetPage1" />
         <activity android:name=".CharacterSheetPage2"></activity>
@@ -22,6 +21,9 @@
         <activity android:name=".ReviewCAC" />
         <activity
             android:name=".Pop_Help_Activity"
+            android:theme="@style/AppTheme.CustomPopTheme" />
+        <activity
+            android:name=".Pop_ReviewHelp"
             android:theme="@style/AppTheme.CustomPopTheme" />
         <activity
             android:name=".Pop_Load"
