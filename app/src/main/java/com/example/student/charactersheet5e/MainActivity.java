@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         if( getIntent().hasExtra("EXIT"))
         {
             //Set a new character sheet from the old one
-            Intent intent = new Intent(MainActivity.this, CharacterSheetPage1.class);
+            Intent intent = new Intent(MainActivity.this, MainSwipeActivity.class);
             intent.putExtra("characterSheet", (CharSheet) (getIntent().getSerializableExtra("characterSheet")));
             startActivity(intent);
 

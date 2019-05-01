@@ -1,17 +1,19 @@
 package com.example.student.charactersheet5e;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import AppModels.CharSheet;
-import IO.ReadObject;
 
-public class CharacterSheetPage1 extends AppCompatActivity {
+public class CharacterSheetPage1 extends Fragment {
 
     private String filename;
     private CharSheet charSheet;
-    private ReadObject obj = new ReadObject(this);
 
     private TextView strScoreText;
     private TextView dexScoreText;
@@ -35,50 +37,50 @@ public class CharacterSheetPage1 extends AppCompatActivity {
     private TextView armorClass;
     private TextView initiative;
     private TextView speed;
+    private TextView prof;
+    
+    private View rootView;
 
-
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.character_sheet_page_1);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreateView(inflater, container, savedInstanceState);
+        rootView = inflater.inflate(R.layout.character_sheet_page_1, container, false);
 
-        //Read the file in and store it in a charsheet object
-        charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
+        MainSwipeActivity activity = (MainSwipeActivity) getActivity();
+        charSheet = activity.getCharSheet();
 
-
-        setUpAbilityScoreViews();
         setUpStats();
+        setUpAbilityScoreViews();
 
-
-
-
-
-
+        return rootView;
     }
 
     private void setUpStats() {
-        characterName = findViewById(R.id.char_name_disp_text);
-        characterLvl = findViewById(R.id.character_sheet_level);
-        initiative = findViewById(R.id.character_sheet_initiative);
-        hitDie = findViewById(R.id.character_sheet_hitdice);
-        hitPoints = findViewById(R.id.character_sheet_hp);
-        speed = findViewById(R.id.character_sheet_speed);
+        characterName = rootView.findViewById(R.id.char_name_disp_text);
+        characterLvl = rootView.findViewById(R.id.character_sheet_level);
+        initiative = rootView.findViewById(R.id.character_sheet_initiative);
+        hitDie = rootView.findViewById(R.id.character_sheet_hitdice);
+        hitPoints = rootView.findViewById(R.id.character_sheet_hp);
+        speed = rootView.findViewById(R.id.character_sheet_speed);
+        prof = rootView.findViewById(R.id.character_sheet_prof);
 
         characterName.setText(charSheet.getCharacterName());
         characterLvl.setText(Integer.toString(charSheet.getCharLevel()));
         hitPoints.setText(Integer.toString(charSheet.getCharStats().getHitpoints()));
         hitDie.setText(charSheet.getCharStats().getHitDie());
         speed.setText(Integer.toString(charSheet.getCharStats().getSpeed()));
+        prof.setText("+" + Integer.toString(charSheet.getCharStats().getProfBonus()));
     }
 
     private void setUpAbilityScoreViews(){
         //Set up text views
-        strScoreText = findViewById(R.id.character_sheet_str);
-        dexScoreText = findViewById(R.id.character_sheet_dex);
-        conScoreText = findViewById(R.id.character_sheet_con);
-        intScoreText = findViewById(R.id.character_sheet_int);
-        wisScoreText = findViewById(R.id.character_sheet_wis);
-        chaScoreText = findViewById(R.id.character_sheet_cha);
+        strScoreText = rootView.findViewById(R.id.character_sheet_str);
+        dexScoreText = rootView.findViewById(R.id.character_sheet_dex);
+        conScoreText = rootView.findViewById(R.id.character_sheet_con);
+        intScoreText = rootView.findViewById(R.id.character_sheet_int);
+        wisScoreText = rootView.findViewById(R.id.character_sheet_wis);
+        chaScoreText = rootView.findViewById(R.id.character_sheet_cha);
 
         strScoreText.setText(Integer.toString(charSheet.getCharStats().getStrength()));
         dexScoreText.setText(Integer.toString(charSheet.getCharStats().getDexterity()));
