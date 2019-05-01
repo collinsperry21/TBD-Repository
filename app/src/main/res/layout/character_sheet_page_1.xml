@@ -2,8 +2,10 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/page_one_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
 
     <TextView
@@ -285,10 +287,10 @@
         android:layout_width="110dp"
         android:layout_height="60dp"
         android:text=" "
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintEnd_toStartOf="@+id/character_sheet_hp"
-        app:layout_constraintTop_toBottomOf="@+id/textView16"
-        android:textAlignment="center" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/textView28"

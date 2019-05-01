@@ -7,13 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class CharacterSheetPage2 extends Fragment {
+public class CharacterSheetPage3 extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.character_sheet_page_2, container, false);
+        View rootView = inflater.inflate(R.layout.character_sheet_page_3, container, false);
 
         return rootView;
     }
