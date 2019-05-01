@@ -23,6 +23,8 @@
             android:parentActivityName=".ReviewCAC"/>
         <activity android:name=".ReviewCAC"
             android:parentActivityName=".AbilitiesCAC"/>
+        <activity android:name=".Pop_ReviewHelp"
+            android:parentActivityName=".ReviewCAC"/>
         <activity
             android:name=".Pop_Help_Activity"
             android:theme="@style/AppTheme.CustomPopTheme"
