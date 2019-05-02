@@ -28,6 +28,7 @@ public class ProficienciesCAC extends AppCompatActivity
     private ArrayList<Integer> numOfOptionsAvailable = new ArrayList<>();
     private ArrayList<Integer> numOfChoicesAllowed = new ArrayList<>();
     private ArrayList<String> optionsForLists = new ArrayList<>();
+    private ArrayList<String> listTypes = new ArrayList<>();
 
     //variables used for layout
     private ArrayList<Integer> userChoices = new ArrayList<>();
@@ -55,6 +56,8 @@ public class ProficienciesCAC extends AppCompatActivity
         TextView firstTextView = findViewById(R.id.proficiencies_output_text01);
         TextView secondTextView = findViewById(R.id.proficiencies_output_text02);
         TextView thirdTextView = findViewById(R.id.proficiencies_output_text03);
+        TextView firstDescText = findViewById(R.id.ListOne_Text);
+        TextView secondDescText = findViewById(R.id.ListTwo_Text);
 
         //Connect static layout variables to layout
         TextView proficiencyBonusText = findViewById(R.id.proficiencyBonus_Text);
@@ -76,9 +79,11 @@ public class ProficienciesCAC extends AppCompatActivity
             {
                 case 0:
                     currentButton = firstButton;
+                    firstDescText.setText(listTypes.get(i));
                     break;
                 case 1:
                     currentButton = secondButton;
+                    secondDescText.setText(listTypes.get(i));
                     break;
                 case 2:
                     currentButton = thirdButton;
@@ -157,6 +162,7 @@ public class ProficienciesCAC extends AppCompatActivity
                             String item = "";
                             for (int i = 0; i < userChoices.size(); i++)
                             {
+                                item += "-";
                                 item += optionsList[userChoices.get(i)];
                                 if (i != userChoices.size()- 1)
                                 {
@@ -185,8 +191,9 @@ public class ProficienciesCAC extends AppCompatActivity
                 }
             });
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT );
-            params.setMargins(0, 10, 0, 140);
+            params.setMargins(0, 10, 0, 210);
             currentButton.setLayoutParams(params);
+            currentButton.setAllCaps(false);
             currentButton.setBackgroundResource(R.drawable.button_background);
             profLayout.addView(currentButton);
             String buttonText = "Choose " + maxChoices;
@@ -236,6 +243,7 @@ public class ProficienciesCAC extends AppCompatActivity
                     {
                         JSONObject choicesObj = profChoicesJsonArray.getJSONObject(index);
                         numOfChoicesAllowed.add(choicesObj.getInt("choose"));
+                        listTypes.add(choicesObj.getString("type"));
                         String profList = new String();
                         JSONArray profArray = choicesObj.getJSONArray("from");
                         numOfOptionsAvailable.add(profArray.length());

@@ -13,30 +13,42 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DescCAC"
-            android:parentActivityName=".ProficienciesCAC"></activity>
-        <activity android:name=".CharacterSheetPage1"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".CharacterSheetPage2"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".ProficienciesCAC"
-            android:parentActivityName=".ReviewCAC"/>
-        <activity android:name=".ReviewCAC"
-            android:parentActivityName=".AbilitiesCAC"/>
-        <activity android:name=".Pop_ReviewHelp"
-            android:parentActivityName=".ReviewCAC"/>
+        <activity android:name=".MainSwipeActivity"></activity>
+        <activity android:name=".CharacterSheetPage4" />
+        <activity android:name=".CharacterSheetPage3" />
+        <activity
+            android:name=".DescCAC"
+            android:parentActivityName=".ProficienciesCAC" />
+        <activity
+            android:name=".CharacterSheetPage1"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CharacterSheetPage2"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ProficienciesCAC"
+            android:parentActivityName=".ReviewCAC" />
+        <activity
+            android:name=".ReviewCAC"
+            android:parentActivityName=".AbilitiesCAC" />
         <activity
             android:name=".Pop_Help_Activity"
-            android:theme="@style/AppTheme.CustomPopTheme"
-            android:parentActivityName=".AbilitiesCAC"/>
+            android:parentActivityName=".AbilitiesCAC"
+            android:theme="@style/AppTheme.CustomPopTheme" />
+        <activity
+            android:name=".Pop_ReviewHelp"
+            android:theme="@style/AppTheme.CustomPopTheme" />
         <activity
             android:name=".Pop_Load"
-            android:theme="@style/AppTheme.CustomPopTheme"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".AbilitiesCAC"
-            android:parentActivityName=".BeginCAC"/>
-        <activity android:name=".BeginCAC"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.CustomPopTheme" />
+        <activity
+            android:name=".AbilitiesCAC"
+            android:parentActivityName=".BeginCAC" />
+        <activity
+            android:name=".BeginCAC"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

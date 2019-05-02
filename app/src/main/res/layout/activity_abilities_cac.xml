@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     tools:context=".AbilitiesCAC">
 
     <TextView
@@ -13,6 +14,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="16dp"
         android:text="Strength"
+        android:textSize = "15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/instructions_Text" />
 
@@ -23,6 +25,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="Constitution"
+        android:textSize = "15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/instructions_Text" />
 
@@ -34,6 +37,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="Dexterity"
+        android:textSize = "15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/instructions_Text" />
@@ -45,6 +49,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="64dp"
         android:text="Intelligence"
+        android:textSize = "15sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/StrengthInput" />
 
@@ -56,6 +61,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="8dp"
         android:text="Wisdom"
+        android:textSize = "15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DexterityInput" />
@@ -67,6 +73,7 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="42dp"
         android:text="Charisma"
+        android:textSize = "15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ConstitutionInput" />
 
@@ -241,4 +248,18 @@
         app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/undo_button" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/rand_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WisdomInput"
+        app:srcCompat="@drawable/open_book" />
 </android.support.constraint.ConstraintLayout>

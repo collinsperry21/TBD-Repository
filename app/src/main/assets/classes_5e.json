@@ -7,7 +7,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 2,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/106",
@@ -94,7 +94,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 3,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/105",
@@ -172,7 +172,7 @@
 			},
 			{
 				"choose": 3,
-				"type": "proficiencies",
+				"type": "Instruments",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/81",
@@ -281,7 +281,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 2,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/110",
@@ -361,7 +361,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 2,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/106",
@@ -493,7 +493,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 2,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/105",
@@ -585,7 +585,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 1,
-				"type": "proficiencies",
+				"type": "Tools and Instruments",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/58",
@@ -662,13 +662,7 @@
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/76",
 						"name": "Forgery kit"
-					}
-				]
-			},
-			{
-				"choose": 1,
-				"type": "proficiencies",
-				"from": [
+					},
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/81",
 						"name": "Bagpipes"
@@ -713,7 +707,7 @@
 			},
 			{
 				"choose": 2,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/105",
@@ -788,7 +782,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 2,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/108",
@@ -873,7 +867,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 3,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/106",
@@ -969,7 +963,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 4,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/105",
@@ -1084,7 +1078,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 2,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/107",
@@ -1168,7 +1162,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 2,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/107",
@@ -1248,7 +1242,7 @@
 		"proficiency_choices": [
 			{
 				"choose": 2,
-				"type": "proficiencies",
+				"type": "Skills",
 				"from": [
 					{
 						"url": "http://www.dnd5eapi.co/api/proficiencies/107",

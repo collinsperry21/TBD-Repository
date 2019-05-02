@@ -70,7 +70,7 @@ public class Pop_Load extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new LoadAdapter.OnItemClickListener() {{
             @Override
             public void onItemClick(int position) {
-                Intent intent = new Intent(Pop_Load.this, CharacterSheetPage1.class);
+                Intent intent = new Intent(Pop_Load.this, MainSwipeActivity.class);
                 intent.putExtra("characterSheet", characterCardViews.get(position).getCharacterSheet());
                 startActivity(intent);
                 finish();

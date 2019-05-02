@@ -22,44 +22,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:text="Proficiency Bonus :"
+        android:layout_marginTop="32dp"
+        android:text="Your Proficiency Bonus:"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/proficiencies_desc_text" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/proficiencyBonus_Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
+        android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/proficiencies_desc_text" />
-
-    <TextView
-        android:id="@+id/proficiencies_desc_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/ProficiencyDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <LinearLayout
         android:id="@+id/proficiencies_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="256dp"
         android:layout_marginBottom="80dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10">
+        app:layout_constraintTop_toBottomOf="@+id/ListOne_Text">
 
     </LinearLayout>
 
@@ -70,7 +62,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/clickable"
-        android:text="?"
+        android:text=" ? "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -78,9 +70,11 @@
         android:id="@+id/proficiencies_output_text01"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="one"
+        android:textSize="15sp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/proficiencies_layout"
         app:layout_constraintTop_toTopOf="@+id/proficiencies_layout" />
@@ -89,9 +83,11 @@
         android:id="@+id/proficiencies_output_text02"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="125dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="150dp"
         android:layout_marginEnd="32dp"
-        android:text="two"
+        android:textSize="15sp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/proficiencies_layout"
         app:layout_constraintTop_toTopOf="@+id/proficiencies_layout" />
@@ -100,10 +96,52 @@
         android:id="@+id/proficiencies_output_text03"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="260dp"
         android:layout_marginEnd="32dp"
-        android:text="three"
+        android:textSize="15sp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/proficiencies_layout"
         app:layout_constraintTop_toTopOf="@+id/proficiencies_layout" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:text="Choose your Proficiencies: "
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/ListOne_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:textSize="17sp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+    <TextView
+        android:id="@+id/ListTwo_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:textSize="17sp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintBottom_toTopOf="@+id/proficiencies_output_text02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

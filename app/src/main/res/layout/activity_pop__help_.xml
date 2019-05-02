@@ -59,9 +59,7 @@
                 android:background="#FFF"
                 android:text="@string/AbilityScoreRules"
                 android:textSize="17sp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                app:layout_constraintTop_toBottomOf="@+id/scrollView3"
-                tools:layout_editor_absoluteX="143dp" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
                 android:layout_width="match_parent"
