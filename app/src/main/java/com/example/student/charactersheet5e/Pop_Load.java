@@ -75,12 +75,7 @@ public class Pop_Load extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        });
-
-
-
-
-    });
+        }});
     }
 
 
