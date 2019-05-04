@@ -34,11 +34,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="100" />
-                            <entry key="outputName" value="ic_5e_dungeon_n_dragons_logo" />
+                            <entry key="height" value="964" />
+                            <entry key="outputName" value="ic_strbox" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\Brandon Jenkins\Downloads\D&amp;D 5e Icons\5e Dungeons &amp; Dragons Logo.svg" />
-                            <entry key="width" value="460" />
+                            <entry key="sourceFile" value="C:\Users\Brandon Jenkins\Downloads\strbox(1).svg" />
+                            <entry key="width" value="819" />
                           </map>
                         </option>
                       </PersistentState>
