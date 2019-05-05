@@ -89,6 +89,22 @@ public class CharacterSheetPage1 extends Fragment {
         wisScoreText.setText(Integer.toString(charSheet.getCharStats().getWisdom()));
         chaScoreText.setText(Integer.toString(charSheet.getCharStats().getCharisma()));
 
+        strModText = rootView.findViewById(R.id.char_sheet_mod_str);
+        dexModText = rootView.findViewById(R.id.char_sheet_mod_dex);
+        conModText = rootView.findViewById(R.id.char_sheet_mod_con);
+        intModText = rootView.findViewById(R.id.char_sheet_mod_int);
+        wisModText = rootView.findViewById(R.id.char_sheet_mod_wis);
+        chaModText = rootView.findViewById(R.id.char_sheet_mod_cha);
+
+        strModText.setText(Integer.toString(charSheet.getCharStats().getStrength()/2 - 5));
+        dexModText.setText(Integer.toString(charSheet.getCharStats().getDexterity()/2 - 5));
+        conModText.setText(Integer.toString(charSheet.getCharStats().getConstitution()/2 - 5));
+        intModText.setText(Integer.toString(charSheet.getCharStats().getIntelligence()/2 - 5));
+        wisModText.setText(Integer.toString(charSheet.getCharStats().getWisdom()/2 - 5));
+        chaModText.setText(Integer.toString(charSheet.getCharStats().getCharisma()/2 - 5));
+
+
+
 
     }
 }

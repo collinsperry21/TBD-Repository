@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/page_one_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+    android:layout_height="match_parent"
+    android:id="@+id/page_one_layout"
+    android:fillViewport="true"
+>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,7 +15,7 @@
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/character_sheet_armorclass"
@@ -30,6 +26,7 @@
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView24" />
@@ -51,9 +48,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="40sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView11"
                     app:layout_constraintEnd_toEndOf="@+id/imageView11"
                     app:layout_constraintStart_toStartOf="@+id/imageView11"
@@ -66,9 +62,8 @@
                     android:layout_height="50dp"
                     android:layout_marginBottom="8dp"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="40sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView14"
                     app:layout_constraintEnd_toEndOf="@+id/imageView14"
                     app:layout_constraintStart_toStartOf="@+id/imageView14"
@@ -84,6 +79,7 @@
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView19" />
@@ -120,6 +116,7 @@
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toStartOf="@+id/character_sheet_hp"
                     app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
@@ -128,9 +125,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="40sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView13"
                     app:layout_constraintEnd_toEndOf="@+id/imageView13"
                     app:layout_constraintStart_toStartOf="@+id/imageView13"
@@ -159,6 +155,7 @@
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
                     app:layout_constraintEnd_toStartOf="@+id/character_sheet_armorclass"
                     app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
@@ -194,6 +191,7 @@
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
                     app:layout_constraintStart_toEndOf="@+id/character_sheet_hp"
                     app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -202,9 +200,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="40sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView15"
                     app:layout_constraintEnd_toEndOf="@+id/imageView15"
                     app:layout_constraintStart_toStartOf="@+id/imageView15"
@@ -218,6 +215,7 @@
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp"
                     app:layout_constraintStart_toEndOf="@+id/character_sheet_armorclass"
                     app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
@@ -253,9 +251,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="40sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView12"
                     app:layout_constraintEnd_toEndOf="@+id/imageView12"
                     app:layout_constraintStart_toStartOf="@+id/imageView12"
@@ -293,9 +290,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="40sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView16"
                     app:layout_constraintEnd_toEndOf="@+id/imageView16"
                     app:layout_constraintStart_toStartOf="@+id/imageView16"
@@ -306,8 +302,11 @@
                     android:id="@+id/imageView11"
                     android:layout_width="100dp"
                     android:layout_height="125dp"
-                    android:layout_marginStart="64dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/character_sheet_hitdice"
                     app:srcCompat="@drawable/ic_strbox" />
@@ -316,8 +315,11 @@
                     android:id="@+id/imageView12"
                     android:layout_width="100dp"
                     android:layout_height="125dp"
-                    android:layout_marginStart="64dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView11"
                     app:srcCompat="@drawable/ic_dexbox" />
@@ -326,8 +328,11 @@
                     android:id="@+id/imageView13"
                     android:layout_width="100dp"
                     android:layout_height="125dp"
-                    android:layout_marginStart="64dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView12"
                     app:srcCompat="@drawable/ic_conbox" />
@@ -336,9 +341,12 @@
                     android:id="@+id/imageView14"
                     android:layout_width="100dp"
                     android:layout_height="125dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="64dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/character_sheet_prof"
                     app:srcCompat="@drawable/ic_intbox" />
 
@@ -346,26 +354,109 @@
                     android:id="@+id/imageView15"
                     android:layout_width="100dp"
                     android:layout_height="125dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="64dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView14"
                     app:srcCompat="@drawable/ic_chabox" />
+
+                <TextView
+                    android:id="@+id/char_sheet_mod_str"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView11"
+                    app:layout_constraintStart_toStartOf="@+id/imageView11"
+                    app:layout_constraintTop_toTopOf="@+id/imageView11"
+                    app:layout_constraintVertical_bias="0.93" />
+
+                <TextView
+                    android:id="@+id/char_sheet_mod_wis"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView16"
+                    app:layout_constraintStart_toStartOf="@+id/imageView16"
+                    app:layout_constraintTop_toTopOf="@+id/imageView16"
+                    app:layout_constraintVertical_bias="0.93" />
+
+                <TextView
+                    android:id="@+id/char_sheet_mod_con"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView13"
+                    app:layout_constraintStart_toStartOf="@+id/imageView13"
+                    app:layout_constraintTop_toTopOf="@+id/imageView13"
+                    app:layout_constraintVertical_bias="0.93" />
+
+                <TextView
+                    android:id="@+id/char_sheet_mod_cha"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView15"
+                    app:layout_constraintStart_toStartOf="@+id/imageView15"
+                    app:layout_constraintTop_toTopOf="@+id/imageView15"
+                    app:layout_constraintVertical_bias="0.93" />
+
+                <TextView
+                    android:id="@+id/char_sheet_mod_dex"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView12"
+                    app:layout_constraintStart_toStartOf="@+id/imageView12"
+                    app:layout_constraintTop_toTopOf="@+id/imageView12"
+                    app:layout_constraintVertical_bias="0.93" />
+
+                <TextView
+                    android:id="@+id/char_sheet_mod_int"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView14"
+                    app:layout_constraintStart_toStartOf="@+id/imageView14"
+                    app:layout_constraintTop_toTopOf="@+id/imageView14"
+                    app:layout_constraintVertical_bias="0.93" />
 
                 <ImageView
                     android:id="@+id/imageView16"
                     android:layout_width="100dp"
                     android:layout_height="125dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="64dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView15"
                     app:srcCompat="@drawable/ic_wisbox" />
 
             </android.support.constraint.ConstraintLayout>
 
         </LinearLayout>
-    </ScrollView>
+</ScrollView>
 
 
-</android.support.constraint.ConstraintLayout>

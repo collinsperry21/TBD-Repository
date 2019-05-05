@@ -167,6 +167,8 @@ public class ReviewCAC extends AppCompatActivity
         intModText.setText(Integer.toString( (abilityScores[3]/2) - 5));
         wisModText.setText(Integer.toString( (abilityScores[4]/2) - 5));
         chaModText.setText(Integer.toString( (abilityScores[5]/2) - 5));
+
+
     }
 
     private String GetRaceModsList(String raceName)
