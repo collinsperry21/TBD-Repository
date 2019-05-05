@@ -139,7 +139,7 @@
                     android:layout_height="28dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:text="Armor Class"
+                    android:text="Armor"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20sp"

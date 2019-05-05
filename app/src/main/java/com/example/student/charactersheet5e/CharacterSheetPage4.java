@@ -13,7 +13,7 @@ public class CharacterSheetPage4 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.character_sheet_page_3, container, false);
+        View rootView = inflater.inflate(R.layout.character_sheet_page_4, container, false);
 
         return rootView;
     }

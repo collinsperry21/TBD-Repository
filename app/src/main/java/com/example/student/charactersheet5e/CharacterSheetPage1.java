@@ -8,7 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 import AppModels.CharSheet;
+import AppModels.Equipment;
 
 public class CharacterSheetPage1 extends Fragment {
 
@@ -53,6 +61,8 @@ public class CharacterSheetPage1 extends Fragment {
         setUpStats();
         setUpAbilityScoreViews();
 
+
+
         return rootView;
     }
 
@@ -71,6 +81,78 @@ public class CharacterSheetPage1 extends Fragment {
         hitDie.setText(charSheet.getCharStats().getHitDie());
         speed.setText(Integer.toString(charSheet.getCharStats().getSpeed()));
         prof.setText("+" + Integer.toString(charSheet.getCharStats().getProfBonus()));
+        initiative.setText(Integer.toString(charSheet.getCharStats().getDexterity()/2-5));
+
+        setArmorClass();
+    }
+
+    private void setArmorClass()
+    {
+        armorClass = rootView.findViewById(R.id.character_sheet_armorclass);
+
+        int armor = (charSheet.getCharStats().getDexterity()/2 - 5);
+
+        charSheet.getmEquipment().add(new Equipment("Spear"));
+
+        if( charSheet.getmEquipment() != null) {
+
+            int armorBonus = 0;
+
+            for(Equipment i : charSheet.getmEquipment()) {
+                 armorBonus = getWearableArmor(i.getEquipName());
+            }
+            armor += armorBonus;
+
+
+        }
+        else {
+            armor += 10;
+        }
+
+        armorClass.setText(Integer.toString(armor));
+
+
+    }
+
+    private int getWearableArmor(String name) {
+
+        try
+        {
+            //Open the file
+            InputStream inStream = getContext().getAssets().open("equipment_5e.json");
+            int size = inStream.available();
+            byte[] buffer = new byte[size];
+            inStream.read(buffer);
+            inStream.close();
+
+            String json = new String(buffer, "UTF-8");
+            JSONArray jsonArray = new JSONArray(json);
+
+            for (int i =0; i < jsonArray.length(); i++)
+            {
+                //Add class name to list of classes
+                JSONObject obj = jsonArray.getJSONObject(i);
+
+
+                if (obj.getString("name").equals(name) && obj.getString("equipment_category").equals("Armor"))
+                {
+
+
+                    return obj.getJSONObject("armor_class").getInt("base");
+
+                }
+
+            }
+        }
+        catch(IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch(JSONException e)
+        {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     private void setUpAbilityScoreViews(){

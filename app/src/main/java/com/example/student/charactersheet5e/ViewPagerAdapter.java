@@ -20,13 +20,15 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 return new CharacterSheetPage2(); //CharacterSheetPage2 at position 1
             case 2:
                 return new CharacterSheetPage3(); //CharacterSheetPage3 at position 2
+            case 3:
+                return new CharacterSheetPage4(); //CharacterSheetPage3 at position 3
         }
         return null; //does not happen
     }
 
     @Override
     public int getCount() {
-        return 3; //three fragments
+        return 4; //three fragments
     }
 
     @Override

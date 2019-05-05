@@ -6,6 +6,13 @@ public class Equipment implements Serializable {
     private String equipName;
     private String equipType;
 
+    public Equipment(String name)
+    {
+
+        equipName = name;
+
+    }
+
     public String getEquipType() { return equipType; }
 
     public void setEquipType(String equipType) { this.equipType = equipType; }
@@ -13,7 +20,7 @@ public class Equipment implements Serializable {
 
     public String getEquipName() { return equipName; }
 
-    public void setItemName(String equipName) { this.equipName = equipName; }
+    public void setEquipName(String equipName) { this.equipName = equipName; }
 
     }
 
