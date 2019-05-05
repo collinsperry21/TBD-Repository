@@ -104,7 +104,7 @@ public class ReviewCAC extends AppCompatActivity
 
         //Assuming lvl 1 set hit die
         int hitDieAmt = GetHitDie(charSheet.getCharClass().getClassName());
-        String hitDieString = "1 X " + hitDieAmt + "D";
+        String hitDieString = "1 X D" + hitDieAmt;
         hitDieText.setText(hitDieString);
         charSheet.getCharStats().setHitDie(hitDieString);
 
@@ -161,14 +161,47 @@ public class ReviewCAC extends AppCompatActivity
         wisScoreText.setText(Integer.toString(abilityScores[4] ));
         chaScoreText.setText(Integer.toString(abilityScores[5] ));
 
-        strModText.setText( Integer.toString( (abilityScores[0]/2) - 5) );
-        dexModText.setText( Integer.toString( (abilityScores[1]/2) - 5));
-        conModText.setText(Integer.toString( (abilityScores[2]/2) - 5));
-        intModText.setText(Integer.toString( (abilityScores[3]/2) - 5));
-        wisModText.setText(Integer.toString( (abilityScores[4]/2) - 5));
-        chaModText.setText(Integer.toString( (abilityScores[5]/2) - 5));
-
-
+        if (0 < ((abilityScores[0]/2) - 5))
+        {
+            strModText.setText( "+" + Integer.toString( (abilityScores[0]/2) - 5) );
+        }else
+        {
+            strModText.setText( Integer.toString( (abilityScores[0]/2) - 5) );
+        }
+        if (0 < ((abilityScores[1]/2) - 5))
+        {
+            dexModText.setText( "+" + Integer.toString( (abilityScores[1]/2) - 5) );
+        }else
+        {
+            dexModText.setText( Integer.toString( (abilityScores[1]/2) - 5) );
+        }
+        if (0 < ((abilityScores[2]/2) - 5))
+        {
+            conModText.setText( "+" + Integer.toString( (abilityScores[2]/2) - 5) );
+        }else
+        {
+            conModText.setText( Integer.toString( (abilityScores[2]/2) - 5) );
+        }
+        if (0 < ((abilityScores[3]/2) - 5))
+        {
+            intModText.setText( "+" + Integer.toString( (abilityScores[3]/2) - 5) );
+        }else
+        {
+            intModText.setText( Integer.toString( (abilityScores[3]/2) - 5) );
+        }
+        if (0 < ((abilityScores[4]/2) - 5))
+        {
+            wisModText.setText( "+" + Integer.toString( (abilityScores[4]/2) - 5) );
+        }else
+        {
+            wisModText.setText( Integer.toString( (abilityScores[4]/2) - 5) );
+        }if (0 < ((abilityScores[5]/2) - 5))
+        {
+            chaModText.setText( "+" + Integer.toString( (abilityScores[5]/2) - 5) );
+        }else
+        {
+            chaModText.setText( Integer.toString( (abilityScores[5]/2) - 5) );
+        }
     }
 
     private String GetRaceModsList(String raceName)
