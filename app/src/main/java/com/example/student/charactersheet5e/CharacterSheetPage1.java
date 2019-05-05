@@ -1,11 +1,13 @@
 package com.example.student.charactersheet5e;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -39,6 +41,9 @@ public class CharacterSheetPage1 extends Fragment {
 
     private TextView characterName;
     private TextView characterLvl;
+    private TextView race;
+    private TextView subrace;
+    private TextView charclass;
 
     private TextView hitPoints;
     private TextView hitDie;
@@ -46,6 +51,8 @@ public class CharacterSheetPage1 extends Fragment {
     private TextView initiative;
     private TextView speed;
     private TextView prof;
+
+    private Button profBon;
     
     private View rootView;
 
@@ -61,6 +68,16 @@ public class CharacterSheetPage1 extends Fragment {
         setUpStats();
         setUpAbilityScoreViews();
 
+        profBon = rootView.findViewById(R.id.profbon);
+
+        profBon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Pop_Prof.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         return rootView;
@@ -69,6 +86,9 @@ public class CharacterSheetPage1 extends Fragment {
     private void setUpStats() {
         characterName = rootView.findViewById(R.id.char_name_disp_text);
         characterLvl = rootView.findViewById(R.id.character_sheet_level);
+        race = rootView.findViewById(R.id.character_sheet_race);
+        subrace = rootView.findViewById(R.id.character_sheet_subrace);
+        charclass = rootView.findViewById(R.id.character_sheet_class);
         initiative = rootView.findViewById(R.id.character_sheet_initiative);
         hitDie = rootView.findViewById(R.id.character_sheet_hitdice);
         hitPoints = rootView.findViewById(R.id.character_sheet_hp);
@@ -77,6 +97,9 @@ public class CharacterSheetPage1 extends Fragment {
 
         characterName.setText(charSheet.getCharacterName());
         characterLvl.setText(Integer.toString(charSheet.getCharLevel()));
+        race.setText(charSheet.getCharRace().getRaceName());
+        subrace.setText(charSheet.getCharRace().getSubraceName());
+        charclass.setText(charSheet.getCharClass().getClassName());
         hitPoints.setText(Integer.toString(charSheet.getCharStats().getHitpoints()));
         hitDie.setText(charSheet.getCharStats().getHitDie());
         speed.setText(Integer.toString(charSheet.getCharStats().getSpeed()));
@@ -92,7 +115,7 @@ public class CharacterSheetPage1 extends Fragment {
 
         int armor = (charSheet.getCharStats().getDexterity()/2 - 5);
 
-        charSheet.getmEquipment().add(new Equipment("Spear"));
+        //charSheet.getmEquipment().add(new Equipment("Spear"));
 
         if( charSheet.getmEquipment() != null) {
 

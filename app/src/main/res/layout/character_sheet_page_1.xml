@@ -14,15 +14,17 @@
             android:orientation="vertical">
 
             <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/character_sheet_armorclass"
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
+                    android:layout_width="105dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
+
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -33,7 +35,7 @@
 
                 <TextView
                     android:id="@+id/textView23"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="28dp"
                     android:text="Proficiency"
                     android:textAlignment="center"
@@ -72,8 +74,8 @@
 
                 <TextView
                     android:id="@+id/character_sheet_hp"
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
+                    android:layout_width="105dp"
+                    android:layout_height="45dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:text=" "
@@ -86,20 +88,46 @@
 
                 <TextView
                     android:id="@+id/textView12"
-                    android:layout_width="74dp"
+                    android:layout_width="64dp"
                     android:layout_height="32dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Name:"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Race:"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintStart_toStartOf="@+id/imageView17"
+                    app:layout_constraintTop_toTopOf="@+id/imageView17" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="74dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Class:"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/character_sheet_race"
+                    app:layout_constraintTop_toTopOf="@+id/imageView17" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="95dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Subrace:"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/imageView17"
+                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
                 <TextView
                     android:id="@+id/textView21"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="28dp"
                     android:text="Hit Dice"
                     android:textAlignment="center"
@@ -111,8 +139,8 @@
 
                 <TextView
                     android:id="@+id/character_sheet_initiative"
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
+                    android:layout_width="105dp"
+                    android:layout_height="45dp"
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -135,7 +163,7 @@
 
                 <TextView
                     android:id="@+id/textView24"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="28dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
@@ -150,8 +178,8 @@
 
                 <TextView
                     android:id="@+id/character_sheet_hitdice"
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
+                    android:layout_width="105dp"
+                    android:layout_height="45dp"
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -161,33 +189,38 @@
 
                 <TextView
                     android:id="@+id/textView19"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="28dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="12dp"
                     android:text="Speed"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/textView18"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_level" />
+                    app:layout_constraintTop_toTopOf="@+id/imageView18" />
 
                 <TextView
                     android:id="@+id/char_name_disp_text"
-                    android:layout_width="236dp"
-                    android:layout_height="29dp"
+                    android:layout_width="342dp"
+                    android:layout_height="40dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/bilbo_swash_caps"
                     android:text=" "
+                    android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toEndOf="@+id/textView12"
+                    android:textSize="42sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/character_sheet_speed"
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
+                    android:layout_width="105dp"
+                    android:layout_height="45dp"
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -210,8 +243,8 @@
 
                 <TextView
                     android:id="@+id/character_sheet_prof"
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
+                    android:layout_width="105dp"
+                    android:layout_height="45dp"
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -221,9 +254,9 @@
 
                 <TextView
                     android:id="@+id/textView18"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="28dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginEnd="8dp"
                     android:text="HP"
                     android:textAlignment="center"
@@ -231,20 +264,61 @@
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.51"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_level" />
+                    app:layout_constraintTop_toTopOf="@+id/imageView18" />
 
                 <TextView
                     android:id="@+id/character_sheet_level"
-                    android:layout_width="298dp"
+                    android:layout_width="25dp"
                     android:layout_height="32dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
                     android:text=" "
+                    android:textAlignment="textStart"
                     android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     app:layout_constraintStart_toEndOf="@+id/textView13"
-                    app:layout_constraintTop_toBottomOf="@+id/char_name_disp_text" />
+                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_class" />
+
+                <TextView
+                    android:id="@+id/character_sheet_race"
+                    android:layout_width="91dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:text=" "
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView12"
+                    app:layout_constraintTop_toTopOf="@+id/imageView17" />
+
+                <TextView
+                    android:id="@+id/character_sheet_class"
+                    android:layout_width="94dp"
+                    android:layout_height="31dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:text=" "
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView31"
+                    app:layout_constraintTop_toTopOf="@+id/imageView17" />
+
+                <TextView
+                    android:id="@+id/character_sheet_subrace"
+                    android:layout_width="99dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:text=" "
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView30"
+                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_race" />
 
                 <TextView
                     android:id="@+id/character_sheet_dex"
@@ -263,27 +337,27 @@
                     android:id="@+id/textView13"
                     android:layout_width="74dp"
                     android:layout_height="32dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
                     android:text="Level:"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                    app:layout_constraintStart_toEndOf="@+id/character_sheet_subrace"
+                    app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
                 <TextView
                     android:id="@+id/textView16"
-                    android:layout_width="110dp"
+                    android:layout_width="105dp"
                     android:layout_height="28dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="12dp"
                     android:text="Initiative"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@+id/textView18"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_level" />
+                    app:layout_constraintTop_toTopOf="@+id/imageView18" />
 
                 <TextView
                     android:id="@+id/character_sheet_wis"
@@ -303,12 +377,11 @@
                     android:layout_width="100dp"
                     android:layout_height="125dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintHorizontal_bias="0.15"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_hitdice"
+                    app:layout_constraintTop_toBottomOf="@+id/profbon"
                     app:srcCompat="@drawable/ic_strbox" />
 
                 <ImageView
@@ -319,7 +392,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintHorizontal_bias="0.15"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView11"
                     app:srcCompat="@drawable/ic_dexbox" />
@@ -332,7 +405,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintHorizontal_bias="0.15"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView12"
                     app:srcCompat="@drawable/ic_conbox" />
@@ -342,12 +415,12 @@
                     android:layout_width="100dp"
                     android:layout_height="125dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintHorizontal_bias="0.85"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_prof"
+                    app:layout_constraintTop_toBottomOf="@+id/profbon"
                     app:srcCompat="@drawable/ic_intbox" />
 
                 <ImageView
@@ -358,7 +431,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintHorizontal_bias="0.85"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView14"
                     app:srcCompat="@drawable/ic_chabox" />
@@ -368,6 +441,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textAlignment="center"
+                    android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView11"
@@ -381,6 +455,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textAlignment="center"
+                    android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView16"
@@ -394,6 +469,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textAlignment="center"
+                    android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView13"
@@ -407,6 +483,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textAlignment="center"
+                    android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView15"
@@ -420,6 +497,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textAlignment="center"
+                    android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView12"
@@ -433,6 +511,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:textAlignment="center"
+                    android:textColor="#000000"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView14"
@@ -449,10 +528,58 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintHorizontal_bias="0.85"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView15"
                     app:srcCompat="@drawable/ic_wisbox" />
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="330dp"
+                    android:layout_height="128dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.493"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/char_name_disp_text"
+                    app:srcCompat="@drawable/rectangle" />
+
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="330dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.492"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView17"
+                    app:srcCompat="@drawable/rectangle" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="120dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/char_sheet_mod_con" />
+
+                <Button
+                    android:id="@+id/profbon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="ProficBon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_armorclass" />
 
             </android.support.constraint.ConstraintLayout>
 
