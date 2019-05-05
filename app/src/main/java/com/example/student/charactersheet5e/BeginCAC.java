@@ -114,7 +114,7 @@ public class BeginCAC extends AppCompatActivity
             {
                 // Get select item
                 int sid = raceSpinner.getSelectedItemPosition();
-                if (sid > 0 && sid < subraceList.size())
+                if (sid > 0 && sid <= subraceList.size())
                 {
                     UpdateSubrace(sid);
                     Toast.makeText(getBaseContext(), "Subrace options updated.",
@@ -135,7 +135,7 @@ public class BeginCAC extends AppCompatActivity
             {
                 // Get select item
                 int sid = classSpinner.getSelectedItemPosition();
-                if (sid > 0 && sid < subclassList.size())
+                if (sid > 0 && sid <= subclassList.size())
                 {
                     UpdateSubclass(sid);
                     Toast.makeText(getBaseContext(), "Subclass options updated.",
@@ -211,7 +211,7 @@ public class BeginCAC extends AppCompatActivity
                 //If there are no subraces add "none"
                 if (obj.isNull("subraces"))
                 {
-                    //newSubraceList.add("None");
+                    newSubraceList.add("None");
                 }
                 //else put all subraces into a string, separated by a space, then add to array
                 else
