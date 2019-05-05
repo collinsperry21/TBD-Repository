@@ -2,6 +2,7 @@ package com.example.student.charactersheet5e;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -80,10 +81,12 @@ public class ProficienciesCAC extends AppCompatActivity
                 case 0:
                     currentButton = firstButton;
                     firstDescText.setText(listTypes.get(i));
+                    firstDescText.setPaintFlags(firstDescText.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
                     break;
                 case 1:
                     currentButton = secondButton;
                     secondDescText.setText(listTypes.get(i));
+                    secondDescText.setPaintFlags(firstDescText.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
                     break;
                 case 2:
                     currentButton = thirdButton;
