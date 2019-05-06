@@ -37,6 +37,8 @@ public class CharacterSheetPage1 extends Fragment {
 
     private TextView hitPoints;
 
+    private TextView hitDie;
+
     private TextView strScoreText;
     private TextView dexScoreText;
     private TextView conScoreText;
@@ -52,9 +54,7 @@ public class CharacterSheetPage1 extends Fragment {
     private TextView chaModText;
 
 
-    private TextView hitDie;
     private TextView prof;
-    
     private View rootView;
 
     @Nullable
@@ -84,13 +84,14 @@ public class CharacterSheetPage1 extends Fragment {
         experience = rootView.findViewById(R.id.display_experience_text);
 
         initiative = rootView.findViewById(R.id.display_initiative_text);
-        armorClass = rootView.findViewById(R.id.display_armorClass_text);
+        //ArmorClass set in function
         speed = rootView.findViewById(R.id.display_speed_text);
 
         hitPoints = rootView.findViewById(R.id.display_HitPoints_text);
 
-        hitDie = rootView.findViewById(R.id.display_HitPoints_text);
-        prof = rootView.findViewById(R.id.character_sheet_prof);
+        hitDie = rootView.findViewById(R.id.display_HitDice_text);
+
+        //prof = rootView.findViewById(R.id.display_DeathSaves_text);
 
         //SetText
         characterName.setText("Name: " + charSheet.getCharacterName());
@@ -106,26 +107,27 @@ public class CharacterSheetPage1 extends Fragment {
 
         int init = charSheet.getCharStats().getDexterity()/2-5;
         initiative.setText("\n+" + init);
-        int aClass = 10 + init; //Todo: include armour and sheild
-        armorClass.setText("\n+" + aClass);
+        setArmorClass();
         int spd = charSheet.getCharStats().getSpeed();
         speed.setText("\n" + spd);
 
-        hitPoints.setText(Integer.toString(charSheet.getCharStats().getHitpoints()));
+        int maxHP = charSheet.getCharStats().getHitpoints();
+        hitPoints.setText(maxHP + "/" + maxHP);//Todo: make current health/max health
 
-        hitDie.setText(charSheet.getCharStats().getHitDie());
-        prof.setText("+" + Integer.toString(charSheet.getCharStats().getProfBonus()));
+        hitDie.setText("\n" + charSheet.getCharStats().getHitDie());
 
-        setArmorClass();
+        //prof.setText("+" + Integer.toString(charSheet.getCharStats().getProfBonus()));
+
+
     }
 
     private void setArmorClass()
     {
-        armorClass = rootView.findViewById(R.id.character_sheet_armorclass);
+        armorClass = rootView.findViewById(R.id.display_armorClass_text);
 
         int armor = (charSheet.getCharStats().getDexterity()/2 - 5);
 
-        charSheet.getmEquipment().add(new Equipment("Spear"));
+        //Test: charSheet.getmEquipment().add(new Equipment("Spear"));
 
         if( charSheet.getmEquipment() != null) {
 
@@ -142,7 +144,7 @@ public class CharacterSheetPage1 extends Fragment {
             armor += 10;
         }
 
-        armorClass.setText(Integer.toString(armor));
+        armorClass.setText("\n+" + armor);
 
 
     }
