@@ -74,7 +74,7 @@ public class CharacterSheetPage1 extends Fragment {
         setUpStats();
         setUpAbilityScoreViews();
 
-        profBon = rootView.findViewById(R.id.profbon);
+        profBon = rootView.findViewById(R.id.ProficienciesList_Button);
 
         profBon.setOnClickListener(new View.OnClickListener() {
             @Override

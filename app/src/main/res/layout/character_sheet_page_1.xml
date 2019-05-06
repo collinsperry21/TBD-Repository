@@ -35,7 +35,7 @@
 
             <TextView
                 android:id="@+id/char_name_disp_text"
-                android:layout_width="350dp"
+                android:layout_width="325dp"
                 android:layout_height="35dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
