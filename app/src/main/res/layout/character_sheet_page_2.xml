@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -22,55 +23,62 @@
         android:id="@+id/character_sheet_xp"
         android:layout_width="200dp"
         android:layout_height="28dp"
+        android:layout_marginEnd="1dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="264dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView39" />
 
     <TextView
         android:id="@+id/char_sheet_name_2"
         android:layout_width="307dp"
         android:layout_height="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="150dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/textView39"
         android:layout_width="200dp"
         android:layout_height="28dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="1dp"
         android:text="Experience"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="236dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/char_sheet_background" />
 
     <TextView
         android:id="@+id/textView25"
         android:layout_width="75dp"
         android:layout_height="30dp"
+        android:layout_marginTop="8dp"
         android:text="Name:"
         android:textAlignment="viewStart"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="150dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/char_sheet_name_2" />
 
     <TextView
         android:id="@+id/char_sheet_background"
         android:layout_width="200dp"
         android:layout_height="28dp"
+        android:layout_marginEnd="1dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="208dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
     <TextView
         android:id="@+id/textView38"
@@ -81,44 +89,47 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="180dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/char_sheet_name_2" />
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="200dp"
         android:layout_height="28dp"
+        android:layout_marginEnd="1dp"
         android:text="Background"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="180dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/char_sheet_name_2" />
 
     <TextView
         android:id="@+id/textView37"
         android:layout_width="200dp"
         android:layout_height="28dp"
+        android:layout_marginTop="8dp"
         android:text="Alignment"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="236dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/char_sheet_race" />
 
 
     <TextView
         android:id="@+id/char_sheet_align"
         android:layout_width="200dp"
         android:layout_height="28dp"
+        android:layout_marginTop="8dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="264dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
     <TextView
         android:id="@+id/char_sheet_race"
@@ -128,15 +139,15 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="208dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
     <TextView
         android:id="@+id/space"
         android:layout_width="410dp"
         android:layout_height="4dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="292dp" />
+        app:layout_constraintBottom_toTopOf="@+id/page_two_scroll"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <ScrollView
@@ -144,9 +155,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/space"
+        android:layout_marginBottom="8dp"
         android:scrollbarStyle="outsideInset"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="296dp">
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -181,7 +194,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Allies & Organizations:"
+                android:text="Allies + Organizations:"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
@@ -204,7 +217,7 @@
                 android:id="@+id/textView31"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:text="Other Proficiencies & Languages:"
+                android:text="Other Proficiencies + Languages:"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
