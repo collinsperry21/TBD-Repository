@@ -127,9 +127,9 @@ public class CharacterSheetPage1 extends Fragment {
 
         int armor = (charSheet.getCharStats().getDexterity()/2 - 5);
 
-        //Test: charSheet.getmEquipment().add(new Equipment("Spear"));
+        //Test: charSheet.getmEquipment().add(new Equipment("Hide"));
 
-        if( charSheet.getmEquipment() != null) {
+        if( charSheet.getmEquipment().size() != 0) {
 
             int armorBonus = 0;
 
@@ -140,7 +140,8 @@ public class CharacterSheetPage1 extends Fragment {
 
 
         }
-        else {
+        else
+        {
             armor += 10;
         }
 
@@ -178,6 +179,7 @@ public class CharacterSheetPage1 extends Fragment {
                 }
 
             }
+            return 10;
         }
         catch(IOException e)
         {
