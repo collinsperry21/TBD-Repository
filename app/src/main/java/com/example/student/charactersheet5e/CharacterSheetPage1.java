@@ -23,6 +23,18 @@ public class CharacterSheetPage1 extends Fragment {
     private String filename;
     private CharSheet charSheet;
 
+
+    private TextView characterName;
+    private TextView raceName;
+    private TextView className;
+    private TextView subclassName;
+    private TextView level;
+    private TextView experience;
+
+    private TextView initiative;
+    private TextView armorClass;
+    private TextView speed;
+
     private TextView strScoreText;
     private TextView dexScoreText;
     private TextView conScoreText;
@@ -37,14 +49,9 @@ public class CharacterSheetPage1 extends Fragment {
     private TextView wisModText;
     private TextView chaModText;
 
-    private TextView characterName;
-    private TextView characterLvl;
 
-    private TextView hitPoints;
+    //private TextView hitPoints;
     private TextView hitDie;
-    private TextView armorClass;
-    private TextView initiative;
-    private TextView speed;
     private TextView prof;
     
     private View rootView;
@@ -67,21 +74,47 @@ public class CharacterSheetPage1 extends Fragment {
     }
 
     private void setUpStats() {
+        //Connect variables to layout
         characterName = rootView.findViewById(R.id.char_name_disp_text);
-        characterLvl = rootView.findViewById(R.id.character_sheet_level);
-        initiative = rootView.findViewById(R.id.character_sheet_initiative);
+        raceName = rootView.findViewById(R.id.display_race_text);
+        className = rootView.findViewById(R.id.display_class_text);
+        subclassName = rootView.findViewById(R.id.display_subclass_text);
+        level = rootView.findViewById(R.id.display_level_text);
+        experience = rootView.findViewById(R.id.display_experience_text);
+
+        initiative = rootView.findViewById(R.id.display_initiative_text);
+        armorClass = rootView.findViewById(R.id.display_armorClass_text);
+        speed = rootView.findViewById(R.id.display_speed_text);
+
+        //characterLvl = rootView.findViewById(R.id.character_sheet_level);
         hitDie = rootView.findViewById(R.id.character_sheet_hitdice);
-        hitPoints = rootView.findViewById(R.id.character_sheet_hp);
-        speed = rootView.findViewById(R.id.character_sheet_speed);
+        //hitPoints = rootView.findViewById(R.id.character_sheet_hp);
         prof = rootView.findViewById(R.id.character_sheet_prof);
 
-        characterName.setText(charSheet.getCharacterName());
-        characterLvl.setText(Integer.toString(charSheet.getCharLevel()));
-        hitPoints.setText(Integer.toString(charSheet.getCharStats().getHitpoints()));
+        //SetText
+        characterName.setText("Name: " + charSheet.getCharacterName());
+        //Set race to race name or subrace name if it exists
+        String race = charSheet.getCharRace().getRaceName();
+        if(charSheet.getCharRace().getHasSubrace())
+            race = charSheet.getCharRace().getSubraceName();
+        raceName.setText("Race: " + race);
+        //SetText
+        className.setText("Class: " + charSheet.getCharClass().getClassName());
+        subclassName.setText("Subclass: " + charSheet.getCharClass().getSubclassName());
+        level.setText("Level: " + charSheet.getCharLevel());
+        experience.setText("Exp: " + charSheet.getCharExp());
+
+        int init = charSheet.getCharStats().getDexterity()/2-5;
+        initiative.setText("\n+" + init);
+        int aClass = 10 + init; //Todo: include armour and sheild
+        armorClass.setText("\n+" + aClass);
+        int spd = charSheet.getCharStats().getSpeed();
+        speed.setText("\n" + spd);
+
+
+        //hitPoints.setText(Integer.toString(charSheet.getCharStats().getHitpoints()));
         hitDie.setText(charSheet.getCharStats().getHitDie());
-        speed.setText(Integer.toString(charSheet.getCharStats().getSpeed()));
         prof.setText("+" + Integer.toString(charSheet.getCharStats().getProfBonus()));
-        initiative.setText(Integer.toString(charSheet.getCharStats().getDexterity()/2-5));
 
         setArmorClass();
     }
