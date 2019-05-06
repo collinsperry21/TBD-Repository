@@ -1,11 +1,13 @@
 package com.example.student.charactersheet5e;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -55,6 +57,9 @@ public class CharacterSheetPage1 extends Fragment {
 
 
     private TextView prof;
+
+    private Button profBon;
+    
     private View rootView;
 
     @Nullable
@@ -68,6 +73,16 @@ public class CharacterSheetPage1 extends Fragment {
 
         setUpStats();
         setUpAbilityScoreViews();
+
+        profBon = rootView.findViewById(R.id.profbon);
+
+        profBon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Pop_Prof.class);
+                startActivity(intent);
+            }
+        });
 
 
 
