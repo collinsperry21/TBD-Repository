@@ -46,7 +46,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="256dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="300dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,19 +93,6 @@
         app:layout_constraintTop_toTopOf="@+id/proficiencies_layout" />
 
     <TextView
-        android:id="@+id/proficiencies_output_text03"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="32dp"
-        android:textSize="15sp"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/proficiencies_layout"
-        app:layout_constraintTop_toTopOf="@+id/proficiencies_layout" />
-
-    <TextView
         android:id="@+id/textView27"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -142,6 +129,35 @@
         android:textSize="17sp"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintBottom_toTopOf="@+id/proficiencies_output_text02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/defaultProficiencies_Recycler"
+        android:layout_width="395dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/colorPrimary"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/defaultList_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="4dp"
+        android:text="Class Proficiencies"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/defaultProficiencies_Recycler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
