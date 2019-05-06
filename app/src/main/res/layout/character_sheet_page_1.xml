@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/page_one_layout"
+    android:background="@color/colorGray"
     android:fillViewport="true"
 >
 
@@ -18,30 +19,213 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/char_name_disp_text"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFF"
+                    android:text="Name:"
+                    android:textColor="#000"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/display_race_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFF"
+                    android:text="Race:"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/char_name_disp_text" />
+
+                <TextView
+                    android:id="@+id/display_class_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="210dp"
+                    android:background="#FFF"
+                    android:text="Class:"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/display_race_text" />
+
+                <TextView
+                    android:id="@+id/display_subclass_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFF"
+                    android:text="SubClass:"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/display_race_text" />
+
+                <TextView
+                    android:id="@+id/display_level_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="210dp"
+                    android:background="#FFF"
+                    android:text="Level:"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/display_class_text" />
+
+                <TextView
+                    android:id="@+id/display_experience_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFF"
+                    android:text="Exp:"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/display_subclass_text" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:text="Initiative"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17sp"
+                    android:background="#FFF"
+                    android:textStyle="bold"
+                    android:translationZ="1dp"
+                    app:layout_constraintEnd_toEndOf="@+id/display_initiative_text"
+                    app:layout_constraintStart_toStartOf="@+id/display_initiative_text"
+                    app:layout_constraintTop_toTopOf="@+id/display_initiative_text" />
+
+                <TextView
+                    android:id="@+id/display_initiative_text"
+                    android:layout_width="90dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#FFF"
+                    android:paddingTop="8dp"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="19sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/display_level_text" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="110dp"
+                    android:layout_height="28dp"
+                    android:text="Armor Class"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:background="#FFF"
+                    android:translationZ="1dp"
+                    app:layout_constraintEnd_toEndOf="@+id/display_armorClass_text"
+                    app:layout_constraintStart_toStartOf="@+id/display_armorClass_text"
+                    app:layout_constraintTop_toTopOf="@+id/display_armorClass_text" />
+
+                <TextView
+                    android:id="@+id/display_armorClass_text"
+                    android:layout_width="110dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#FFF"
+                    android:paddingTop="8dp"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="19sp"
+                    app:layout_constraintEnd_toStartOf="@+id/display_speed_text"
+                    app:layout_constraintStart_toEndOf="@+id/display_initiative_text"
+                    app:layout_constraintTop_toBottomOf="@+id/display_level_text" />
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:background="#FFF"
+                    android:text="Speed"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:translationZ="1dp"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/display_speed_text"
+                    app:layout_constraintStart_toStartOf="@+id/display_speed_text"
+                    app:layout_constraintTop_toTopOf="@+id/display_speed_text"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/display_speed_text"
+                    android:layout_width="90dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFF"
+                    android:paddingTop="8dp"
+                    android:textAlignment="center"
+                    android:textColor="#000"
+                    android:textSize="19sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/display_experience_text" />
+
+                <TextView
                     android:id="@+id/character_sheet_armorclass"
                     android:layout_width="110dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
                     android:text=" "
+                    android:background="#FFF"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView24" />
+                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_hitdice" />
 
                 <TextView
                     android:id="@+id/textView23"
                     android:layout_width="110dp"
                     android:layout_height="28dp"
-                    android:text="Proficiency"
+                    android:text="Death Saves"
+                    android:background="#FFF"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/textView24"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_speed" />
+                    android:translationZ="1dp"
+                    app:layout_constraintEnd_toEndOf="@+id/character_sheet_prof"
+                    app:layout_constraintStart_toStartOf="@+id/character_sheet_prof"
+                    app:layout_constraintTop_toTopOf="@+id/character_sheet_prof" />
 
                 <TextView
                     android:id="@+id/character_sheet_str"
@@ -71,54 +255,17 @@
                     app:layout_constraintVertical_bias="0.38" />
 
                 <TextView
-                    android:id="@+id/character_sheet_hp"
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text=" "
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView19" />
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="74dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Name:"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
                     android:id="@+id/textView21"
                     android:layout_width="110dp"
                     android:layout_height="28dp"
                     android:text="Hit Dice"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/textView24"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_initiative" />
-
-                <TextView
-                    android:id="@+id/character_sheet_initiative"
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
-                    android:text=" "
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/character_sheet_hp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView18" />
+                    app:layout_constraintEnd_toEndOf="@+id/character_sheet_armorclass"
+                    app:layout_constraintStart_toStartOf="@+id/character_sheet_armorclass"
+                    app:layout_constraintTop_toTopOf="@+id/character_sheet_armorclass" />
 
                 <TextView
                     android:id="@+id/character_sheet_con"
@@ -134,66 +281,21 @@
                     app:layout_constraintVertical_bias="0.38" />
 
                 <TextView
-                    android:id="@+id/textView24"
-                    android:layout_width="110dp"
-                    android:layout_height="28dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="Armor"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_hp" />
-
-                <TextView
                     android:id="@+id/character_sheet_hitdice"
-                    android:layout_width="110dp"
+                    android:layout_width="0dp"
                     android:layout_height="60dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="#FFF"
                     android:text=" "
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="20sp"
-                    app:layout_constraintEnd_toStartOf="@+id/character_sheet_armorclass"
-                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
-
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="110dp"
-                    android:layout_height="28dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Speed"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@+id/textView18"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_level" />
-
-                <TextView
-                    android:id="@+id/char_name_disp_text"
-                    android:layout_width="236dp"
-                    android:layout_height="29dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:text=" "
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toEndOf="@+id/textView12"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/character_sheet_speed"
-                    android:layout_width="110dp"
-                    android:layout_height="60dp"
-                    android:text=" "
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toEndOf="@+id/character_sheet_hp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView19" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/display_armorClass_text" />
 
                 <TextView
                     android:id="@+id/character_sheet_cha"
@@ -211,40 +313,29 @@
                 <TextView
                     android:id="@+id/character_sheet_prof"
                     android:layout_width="110dp"
-                    android:layout_height="60dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
                     android:text=" "
+                    android:background="#FFF"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textSize="20sp"
-                    app:layout_constraintStart_toEndOf="@+id/character_sheet_armorclass"
-                    app:layout_constraintTop_toBottomOf="@+id/textView23" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_hitdice" />
 
                 <TextView
                     android:id="@+id/textView18"
-                    android:layout_width="110dp"
-                    android:layout_height="28dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:text="HP"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="24sp"
+                    android:textSize="17sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_level" />
-
-                <TextView
-                    android:id="@+id/character_sheet_level"
-                    android:layout_width="298dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="8dp"
-                    android:text=" "
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toEndOf="@+id/textView13"
-                    app:layout_constraintTop_toBottomOf="@+id/char_name_disp_text" />
+                    app:layout_constraintBottom_toBottomOf="@+id/character_sheet_hitdice"
+                    app:layout_constraintEnd_toEndOf="@+id/character_sheet_hitdice"
+                    app:layout_constraintStart_toEndOf="@+id/imageView3" />
 
                 <TextView
                     android:id="@+id/character_sheet_dex"
@@ -258,32 +349,6 @@
                     app:layout_constraintStart_toStartOf="@+id/imageView12"
                     app:layout_constraintTop_toTopOf="@+id/imageView12"
                     app:layout_constraintVertical_bias="0.386" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="74dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="Level:"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="110dp"
-                    android:layout_height="28dp"
-                    android:layout_marginTop="15dp"
-                    android:text="Initiative"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/textView18"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_level" />
 
                 <TextView
                     android:id="@+id/character_sheet_wis"
@@ -303,12 +368,12 @@
                     android:layout_width="100dp"
                     android:layout_height="125dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.2"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_hitdice"
+                    app:layout_constraintTop_toBottomOf="@+id/character_sheet_armorclass"
                     app:srcCompat="@drawable/ic_strbox" />
 
                 <ImageView
@@ -342,7 +407,7 @@
                     android:layout_width="100dp"
                     android:layout_height="125dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.8"
@@ -453,6 +518,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView15"
                     app:srcCompat="@drawable/ic_wisbox" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/character_sheet_hitdice"
+                    app:layout_constraintStart_toStartOf="@+id/character_sheet_hitdice"
+                    app:layout_constraintTop_toTopOf="@+id/character_sheet_hitdice"
+                    app:srcCompat="@drawable/black_heart" />
 
             </android.support.constraint.ConstraintLayout>
 
