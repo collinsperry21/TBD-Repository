@@ -35,6 +35,8 @@ public class CharacterSheetPage1 extends Fragment {
     private TextView armorClass;
     private TextView speed;
 
+    private TextView hitPoints;
+
     private TextView strScoreText;
     private TextView dexScoreText;
     private TextView conScoreText;
@@ -50,7 +52,6 @@ public class CharacterSheetPage1 extends Fragment {
     private TextView chaModText;
 
 
-    //private TextView hitPoints;
     private TextView hitDie;
     private TextView prof;
     
@@ -86,9 +87,9 @@ public class CharacterSheetPage1 extends Fragment {
         armorClass = rootView.findViewById(R.id.display_armorClass_text);
         speed = rootView.findViewById(R.id.display_speed_text);
 
-        //characterLvl = rootView.findViewById(R.id.character_sheet_level);
-        hitDie = rootView.findViewById(R.id.character_sheet_hitdice);
-        //hitPoints = rootView.findViewById(R.id.character_sheet_hp);
+        hitPoints = rootView.findViewById(R.id.display_HitPoints_text);
+
+        hitDie = rootView.findViewById(R.id.display_HitPoints_text);
         prof = rootView.findViewById(R.id.character_sheet_prof);
 
         //SetText
@@ -98,7 +99,6 @@ public class CharacterSheetPage1 extends Fragment {
         if(charSheet.getCharRace().getHasSubrace())
             race = charSheet.getCharRace().getSubraceName();
         raceName.setText("Race: " + race);
-        //SetText
         className.setText("Class: " + charSheet.getCharClass().getClassName());
         subclassName.setText("Subclass: " + charSheet.getCharClass().getSubclassName());
         level.setText("Level: " + charSheet.getCharLevel());
@@ -111,8 +111,8 @@ public class CharacterSheetPage1 extends Fragment {
         int spd = charSheet.getCharStats().getSpeed();
         speed.setText("\n" + spd);
 
+        hitPoints.setText(Integer.toString(charSheet.getCharStats().getHitpoints()));
 
-        //hitPoints.setText(Integer.toString(charSheet.getCharStats().getHitpoints()));
         hitDie.setText(charSheet.getCharStats().getHitDie());
         prof.setText("+" + Integer.toString(charSheet.getCharStats().getProfBonus()));
 
