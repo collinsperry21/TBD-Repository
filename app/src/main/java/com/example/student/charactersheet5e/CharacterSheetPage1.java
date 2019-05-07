@@ -59,7 +59,7 @@ public class CharacterSheetPage1 extends Fragment {
     private TextView prof;
 
     private Button profBon;
-    
+
     private View rootView;
 
     @Nullable
