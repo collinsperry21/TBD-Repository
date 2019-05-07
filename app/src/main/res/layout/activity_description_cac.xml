@@ -6,6 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/editHeight"
+        android:layout_width="106dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editSex" />
+
     <ImageButton
         android:id="@+id/endCAC"
         android:layout_width="70dp"
@@ -49,14 +60,14 @@
         app:layout_constraintTop_toBottomOf="@+id/character_name_text2" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/display_level_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:text="Height:"
+        android:layout_marginEnd="8dp"
+        android:text="Sex:"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintEnd_toStartOf="@+id/editSex"
         app:layout_constraintTop_toBottomOf="@+id/character_name_text2" />
 
     <TextView
@@ -65,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="45dp"
-        android:text="Eyes:"
+        android:text="Weight:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -75,11 +86,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="16dp"
-        android:text="Skin:"
+        android:layout_marginEnd="8dp"
+        android:text="Height:"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText6"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintEnd_toStartOf="@+id/editHeight"
+        app:layout_constraintTop_toBottomOf="@+id/display_level_text" />
 
     <TextView
         android:id="@+id/textView18"
@@ -87,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="45dp"
-        android:text="Weight:"
+        android:text="Eyes:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -100,7 +111,7 @@
         android:layout_marginEnd="16dp"
         android:text="Hair:"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText4"
+        app:layout_constraintEnd_toStartOf="@+id/editHair"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
@@ -112,16 +123,16 @@
         android:text="Alignment:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Spinner
         android:id="@+id/law_spinner"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="42dp"
         app:layout_constraintStart_toEndOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Spinner
         android:id="@+id/good_spinner"
@@ -133,7 +144,7 @@
         app:layout_constraintTop_toBottomOf="@+id/law_spinner" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editAge"
         android:layout_width="103dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
@@ -144,7 +155,7 @@
         app:layout_constraintTop_toBottomOf="@+id/character_name_text2" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editWeight"
         android:layout_width="94dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
@@ -152,10 +163,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editAge" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editHair"
         android:layout_width="110dp"
         android:layout_height="43dp"
         android:layout_marginTop="24dp"
@@ -163,10 +174,10 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/editHeight" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editEyes"
         android:layout_width="76dp"
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
@@ -174,21 +185,21 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/editWeight" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editSkin"
         android:layout_width="106dp"
         android:layout_height="45dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/editEyes" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editSex"
         android:layout_width="85dp"
         android:layout_height="42dp"
         android:layout_marginTop="8dp"
@@ -198,50 +209,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/character_name_text2" />
 
-    <ScrollView
-        android:layout_width="362dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/endCAC"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.272"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="42dp"
+        android:text="Skin:"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/good_spinner"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/good_spinner" />
 
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:text="Background:"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/editText8"
-                android:layout_width="match_parent"
-                android:layout_height="206dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@android:color/transparent"
-                android:ems="10"
-                android:inputType="textMultiLine"
-                android:lines="1" />
-
-        </LinearLayout>
-    </ScrollView>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="42dp"
+        android:text="Background:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/good_spinner" />
 
 </android.support.constraint.ConstraintLayout>

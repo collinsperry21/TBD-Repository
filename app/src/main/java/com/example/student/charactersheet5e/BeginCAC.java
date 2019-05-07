@@ -5,19 +5,11 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,13 +18,10 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import AppModels.Race;
 import AppModels.CharClass;
 import AppModels.CharSheet;
-
-import static com.android.volley.toolbox.Volley.newRequestQueue;
 
 
 public class BeginCAC extends AppCompatActivity
@@ -44,7 +33,7 @@ public class BeginCAC extends AppCompatActivity
     private ArrayList subraceList;
     private ArrayList subclassList;
 
-    private ArrayAdapter <String> subraceAdapter;
+    private ArrayAdapter<String> subraceAdapter;
     private ArrayAdapter <String> subclassAdapter;
 
     //next page
@@ -114,7 +103,7 @@ public class BeginCAC extends AppCompatActivity
             {
                 // Get select item
                 int sid = raceSpinner.getSelectedItemPosition();
-                if (sid > 0 && sid < subraceList.size())
+                if (sid > 0 && sid <= subraceList.size())
                 {
                     UpdateSubrace(sid);
                     Toast.makeText(getBaseContext(), "Subrace options updated.",
@@ -135,7 +124,7 @@ public class BeginCAC extends AppCompatActivity
             {
                 // Get select item
                 int sid = classSpinner.getSelectedItemPosition();
-                if (sid > 0 && sid < subclassList.size())
+                if (sid > 0 && sid <= subclassList.size())
                 {
                     UpdateSubclass(sid);
                     Toast.makeText(getBaseContext(), "Subclass options updated.",
@@ -211,7 +200,7 @@ public class BeginCAC extends AppCompatActivity
                 //If there are no subraces add "none"
                 if (obj.isNull("subraces"))
                 {
-                    //newSubraceList.add("None");
+                    newSubraceList.add("None");
                 }
                 //else put all subraces into a string, separated by a space, then add to array
                 else

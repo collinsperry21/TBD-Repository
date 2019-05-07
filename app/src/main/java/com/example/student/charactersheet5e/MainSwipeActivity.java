@@ -16,6 +16,8 @@ public class MainSwipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.character_sheet_swipe);
 
+        getSupportActionBar().hide();
+
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
 
         ViewPager viewPager = findViewById(R.id.view_pager);
