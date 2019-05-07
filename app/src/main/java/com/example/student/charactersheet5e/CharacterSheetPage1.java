@@ -116,7 +116,7 @@ public class CharacterSheetPage1 extends Fragment {
             race = charSheet.getCharRace().getSubraceName();
         raceName.setText("Race: " + race);
         className.setText("Class: " + charSheet.getCharClass().getClassName());
-        subclassName.setText("Subclass: " + charSheet.getCharClass().getSubclassName());
+        subclassName.setText(charSheet.getCharClass().getSubclassName());
         level.setText("Level: " + charSheet.getCharLevel());
         experience.setText("Exp: " + charSheet.getCharExp());
 
