@@ -86,15 +86,8 @@ public class Pop_Prof extends Activity
                         String profName = defaultObj.getString("name");
                         defaultProficiencies.add(new ProficienciesRecItem(profName, GetProfDescription(profName), getIcon(profName)));
                     }
-
-
                 }
-
-
-
             }
-
-
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -104,22 +97,70 @@ public class Pop_Prof extends Activity
     }
     private int getIcon(String profName) {
 
-        if(profName.toLowerCase().contains("armor")) {
+
+        if (profName.toLowerCase().contains("armor")) {
             return R.drawable.ic_armor;
-        }
-        else if(profName.toLowerCase().contains("weapon")) {
+        } else if (profName.toLowerCase().contains("weapon")||profName.toLowerCase().contains("crossbow")) {
             return R.drawable.ic_weapon;
-        }
-        else if (profName.toLowerCase().contains("shield")) {
+        } else if (profName.toLowerCase().contains("shield")) {
             return R.drawable.ic_shield;
         }
-
-        else
-        {
+        else if (profName.toLowerCase().contains("music")) {
+            return R.drawable.ic_bard;
+        }
+        else {
+            String cat = getProfCat(profName);
+            if (cat.toLowerCase().contains("armor")) {
+                return R.drawable.ic_armor;
+            } else if (cat.toLowerCase().contains("weapon")) {
+                return R.drawable.ic_weapon;
+            } else if (cat.toLowerCase().contains("shield")) {
+                return R.drawable.ic_shield;
+            }
+            else
+            {
                 return R.drawable.ic_5e_dnd_logo;
+            }
+
+
+        }
+    }
+
+    private String getProfCat(String profName) {
+
+        try {
+            //Open file, read in, close file
+            InputStream inStream = getAssets().open("equipment_categories.json");
+            int size = inStream.available();
+            byte[] buffer = new byte[size];
+            inStream.read(buffer);
+            inStream.close();
+
+            String json = new String(buffer, "UTF-8");
+            JSONArray jsonArray = new JSONArray(json);
+
+            //Step through JSON array
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject obj = jsonArray.getJSONObject(i);
+                //Find equipment category
+                JSONArray descriptionList = obj.getJSONArray("equipment");
+                for(int j = 0; j < descriptionList.length(); j++) {
+                    JSONObject equipObj = descriptionList.getJSONObject(j);
+                    if (profName.toLowerCase().contains(equipObj.getString("name").toLowerCase())) {
+
+                        String cat =obj.getString("name");
+
+                        return cat;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
-
+        return "-1";
     }
 
     private String GetProfDescription(String profName) {

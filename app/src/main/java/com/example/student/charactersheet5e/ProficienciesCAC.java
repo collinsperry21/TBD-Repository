@@ -23,6 +23,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import AppModels.CharSheet;
+import AppModels.Proficiencies;
 
 public class ProficienciesCAC extends AppCompatActivity {
     //variables updated by JSON parse
@@ -171,9 +172,7 @@ public class ProficienciesCAC extends AppCompatActivity {
                             }
                         }
                     });
-
-                    //Todo: save user selections
-
+                    //TODO SAVE PROF
                     AlertDialog dialog = listBuilder.create();
                     dialog.show();
                 }
@@ -257,28 +256,71 @@ public class ProficienciesCAC extends AppCompatActivity {
     }
 
     private int getIcon(String profName) {
-        switch (profName) {
-            case "All armor":
+
+
+        if (profName.toLowerCase().contains("armor")) {
+            return R.drawable.ic_armor;
+        } else if (profName.toLowerCase().contains("weapon")||profName.toLowerCase().contains("crossbow")) {
+            return R.drawable.ic_weapon;
+        } else if (profName.toLowerCase().contains("shield")) {
+            return R.drawable.ic_shield;
+        }
+        else if (profName.toLowerCase().contains("music")) {
+            return R.drawable.ic_bard;
+        }
+        else {
+            String cat = getProfCat(profName);
+            if (cat.toLowerCase().contains("armor")) {
                 return R.drawable.ic_armor;
-            case "Martial weapons":
+            } else if (cat.toLowerCase().contains("weapon")) {
                 return R.drawable.ic_weapon;
-            case "Shields":
+            } else if (cat.toLowerCase().contains("shield")) {
                 return R.drawable.ic_shield;
-            case "Simple weapons":
-                return R.drawable.ic_weapon;
-            case "Longswords":
-                return R.drawable.ic_weapon;
-            case "Rapiers":
-                return R.drawable.ic_weapon;
-            case "Shortswords":
-                return R.drawable.ic_weapon;
-            case "Crossbows, hand":
-                return R.drawable.ic_weapon;
-            default:
+            }
+            else
+            {
                 return R.drawable.ic_5e_dnd_logo;
+            }
+
+
+        }
+    }
+
+    private String getProfCat(String profName) {
+
+        try {
+            //Open file, read in, close file
+            InputStream inStream = getAssets().open("equipment_categories.json");
+            int size = inStream.available();
+            byte[] buffer = new byte[size];
+            inStream.read(buffer);
+            inStream.close();
+
+            String json = new String(buffer, "UTF-8");
+            JSONArray jsonArray = new JSONArray(json);
+
+            //Step through JSON array
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject obj = jsonArray.getJSONObject(i);
+                //Find equipment category
+                JSONArray descriptionList = obj.getJSONArray("equipment");
+                for(int j = 0; j < descriptionList.length(); j++) {
+                    JSONObject equipObj = descriptionList.getJSONObject(j);
+                    if (profName.toLowerCase().contains(equipObj.getString("name").toLowerCase())) {
+
+                        String cat =obj.getString("name");
+
+                        return cat;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
-
+        return "-1";
     }
 
     private String GetProfDescription(String profName) {

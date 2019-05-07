@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class CharSheet implements Serializable {
     private Race charRace;
     private CharClass charClass;
-    private Proficiencies proficiencies;
+
     private int charLevel;
     private int charExp;
     private Stats charStats;
@@ -24,6 +24,7 @@ public class CharSheet implements Serializable {
     private int platinum;
 
     private ArrayList<Equipment> mEquipment;
+    private ArrayList<Proficiencies> mProficiencies;
 
 
     public CharSheet(String xname, Race race, CharClass cCharClass, Stats stats )
@@ -49,6 +50,7 @@ public class CharSheet implements Serializable {
         setCharExp(0);
         setCharStats(new Stats());
         mEquipment = new ArrayList<>();
+        mProficiencies = new ArrayList<>();
 
         copper = 0;
         silver = 0;
@@ -124,14 +126,6 @@ public class CharSheet implements Serializable {
         this.characterDescription = characterDescription;
     }
 
-    public Proficiencies getProficiencies() {
-        return proficiencies;
-    }
-
-    public void setProficiencies(Proficiencies proficiencies) {
-        this.proficiencies = proficiencies;
-    }
-
     public int getCopper() {
         return copper;
     }
@@ -172,4 +166,11 @@ public class CharSheet implements Serializable {
         this.platinum = platinum;
     }
 
+    public ArrayList<Proficiencies> getmProficiencies() {
+        return mProficiencies;
+    }
+
+    public void setmProficiencies(ArrayList<Proficiencies> mProficiencies) {
+        this.mProficiencies = mProficiencies;
+    }
 }
