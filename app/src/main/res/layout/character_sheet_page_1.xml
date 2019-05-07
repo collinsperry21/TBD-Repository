@@ -35,8 +35,8 @@
 
             <TextView
                 android:id="@+id/char_name_disp_text"
-                android:layout_width="325dp"
-                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
@@ -83,6 +83,7 @@
                 android:id="@+id/display_subclass_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="210dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:background="#FFF"
@@ -90,6 +91,7 @@
                 android:textColor="#000"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/display_race_text" />
 
             <TextView
@@ -111,6 +113,7 @@
                 android:id="@+id/display_experience_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="210dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:background="#FFF"
@@ -118,6 +121,7 @@
                 android:textColor="#000"
                 android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/display_subclass_text" />
 
             <TextView

@@ -7,14 +7,10 @@ public class Equipment implements Serializable {
     private String equipType;
 
     public Equipment(String name)
-    {
+    { equipName = name; }
 
-        equipName = name;
-
-    }
-
+    //get/set equipment type
     public String getEquipType() { return equipType; }
-
     public void setEquipType(String equipType) { this.equipType = equipType; }
 
 
