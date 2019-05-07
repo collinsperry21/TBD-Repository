@@ -18,6 +18,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import AppModels.CharSheet;
+import AppModels.Proficiencies;
 
 public class Pop_Prof extends Activity
 {
@@ -48,8 +49,20 @@ public class Pop_Prof extends Activity
 
         getWindow().setAttributes(params);
         setProfRecView();
+        populateRecView();
+
+    }
+
+    private void populateRecView() {
         //Parse JSON for class related proficiency lists
         GetListCount(charSheet.getCharClass().getClassName());
+        for(int i = 0; i <  charSheet.getmProficiencies().size(); i++)
+        {
+            defaultProficiencies.add(new ProficienciesRecItem(charSheet.getmProficiencies().get(i).getProf(),
+                    GetProfDescription(charSheet.getmProficiencies().get(i).getProf()) ,
+                    getIcon(charSheet.getmProficiencies().get(i).getProf())));
+        }
+
     }
 
     private void setProfRecView() {
@@ -100,22 +113,36 @@ public class Pop_Prof extends Activity
 
         if (profName.toLowerCase().contains("armor")) {
             return R.drawable.ic_armor;
-        } else if (profName.toLowerCase().contains("weapon")||profName.toLowerCase().contains("crossbow")) {
+        }
+        else if (profName.toLowerCase().contains("weapon")||profName.toLowerCase().contains("crossbow")) {
             return R.drawable.ic_weapon;
-        } else if (profName.toLowerCase().contains("shield")) {
+        }
+        else if (profName.toLowerCase().contains("shield")) {
             return R.drawable.ic_shield;
         }
         else if (profName.toLowerCase().contains("music")) {
             return R.drawable.ic_bard;
         }
+        else if (profName.toLowerCase().contains("skill")) {
+            return R.drawable.ic_scroll;
+        }
+
         else {
             String cat = getProfCat(profName);
             if (cat.toLowerCase().contains("armor")) {
                 return R.drawable.ic_armor;
-            } else if (cat.toLowerCase().contains("weapon")) {
+            }
+            else if (cat.toLowerCase().contains("weapon")) {
                 return R.drawable.ic_weapon;
-            } else if (cat.toLowerCase().contains("shield")) {
+            }
+            else if (cat.toLowerCase().contains("shield")) {
                 return R.drawable.ic_shield;
+            }
+            else if (cat.toLowerCase().contains("music")) {
+                return R.drawable.ic_bard;
+            }
+            else if (cat.toLowerCase().contains("tool")&&charSheet.getCharClass().getClassName().contains("Bard")) {
+                return R.drawable.ic_bard;
             }
             else
             {
@@ -165,41 +192,76 @@ public class Pop_Prof extends Activity
 
     private String GetProfDescription(String profName) {
         String description = "";
-        try {
-            //Open file, read in, close file
-            InputStream inStream = getAssets().open("equipment_categories.json");
-            int size = inStream.available();
-            byte[] buffer = new byte[size];
-            inStream.read(buffer);
-            inStream.close();
 
-            String json = new String(buffer, "UTF-8");
-            JSONArray jsonArray = new JSONArray(json);
+        if (profName.toLowerCase().contains("skill")) {
+            profName = profName.replace("Skill: ", "");
+            try {
+                //Open file, read in, close file
+                InputStream inStream = getAssets().open("skills_5e.json");
+                int size = inStream.available();
+                byte[] buffer = new byte[size];
+                inStream.read(buffer);
+                inStream.close();
 
-            //Step through JSON array
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject obj = jsonArray.getJSONObject(i);
-                //Find equipment category
-                if (obj.getString("name").equalsIgnoreCase(profName)) {
-                    //Get proficiencies choices
-                    JSONArray descriptionList = obj.getJSONArray("equipment");
-                    for (int index = 0; index < 7 && index < descriptionList.length(); index++) {
-                        JSONObject descriptionObj = descriptionList.getJSONObject(index);
-                        description += descriptionObj.getString("name");
-                        if (index < 6 && index < descriptionList.length() - 1) {
-                            description += ", ";
-                        }
+                String json = new String(buffer, "UTF-8");
+                JSONArray jsonArray = new JSONArray(json);
+
+                //Step through JSON array
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject obj = jsonArray.getJSONObject(i);
+                    //Find equipment category
+                    if (obj.getString("name").equalsIgnoreCase(profName)) {
+                        //Get proficiencies choices
+                        description = obj.getString("desc");
+
+                        description = description.replaceAll("\\[", "").replaceAll("\\]","").replaceAll("\"","");
+                        return description;
                     }
-                    if (descriptionList.length() > 7)
-                        description += ", etc...";
-                    return description;
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
+            return description;
         }
-        return description;
+        else {
+            try {
+                //Open file, read in, close file
+                InputStream inStream = getAssets().open("equipment_categories.json");
+                int size = inStream.available();
+                byte[] buffer = new byte[size];
+                inStream.read(buffer);
+                inStream.close();
+
+                String json = new String(buffer, "UTF-8");
+                JSONArray jsonArray = new JSONArray(json);
+
+                //Step through JSON array
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject obj = jsonArray.getJSONObject(i);
+                    //Find equipment category
+                    if (obj.getString("name").equalsIgnoreCase(profName)) {
+                        //Get proficiencies choices
+                        JSONArray descriptionList = obj.getJSONArray("equipment");
+                        for (int index = 0; index < 7 && index < descriptionList.length(); index++) {
+                            JSONObject descriptionObj = descriptionList.getJSONObject(index);
+                            description += descriptionObj.getString("name");
+                            if (index < 6 && index < descriptionList.length() - 1) {
+                                description += ", ";
+                            }
+                        }
+                        if (descriptionList.length() > 7)
+                            description += ", etc...";
+                        return description;
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            return description;
+        }
     }
 }

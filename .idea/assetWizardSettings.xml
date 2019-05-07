@@ -147,11 +147,11 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="height" value="945" />
-                            <entry key="outputName" value="ic_shield" />
+                            <entry key="height" value="512" />
+                            <entry key="outputName" value="ic_scroll" />
                             <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\Brandon Jenkins\Downloads\11317624.svg" />
-                            <entry key="width" value="749" />
+                            <entry key="sourceFile" value="C:\Users\Brandon Jenkins\Downloads\scroll-icon-11.svg" />
+                            <entry key="width" value="512" />
                           </map>
                         </option>
                       </PersistentState>

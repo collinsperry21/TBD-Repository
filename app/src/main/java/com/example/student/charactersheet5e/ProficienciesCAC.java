@@ -42,6 +42,7 @@ public class ProficienciesCAC extends AppCompatActivity {
     //character sheet
     private CharSheet charSheet;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -150,6 +151,7 @@ public class ProficienciesCAC extends AppCompatActivity {
                             }
                         }
                     });
+
                     listBuilder.setCancelable(false);
                     listBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -158,6 +160,9 @@ public class ProficienciesCAC extends AppCompatActivity {
                             for (int i = 0; i < userChoices.size(); i++) {
                                 item += "-";
                                 item += optionsList[userChoices.get(i)];
+                                Proficiencies newProf = new Proficiencies();
+                                newProf.setProf(optionsList[userChoices.get(i)]);
+                                charSheet.addToProfList(newProf);
                                 if (i != userChoices.size() - 1) {
                                     item += ",\n";
                                 }
@@ -171,10 +176,16 @@ public class ProficienciesCAC extends AppCompatActivity {
                                     break;
                             }
                         }
+
                     });
-                    //TODO SAVE PROF
+
+
+
+
+
                     AlertDialog dialog = listBuilder.create();
                     dialog.show();
+
                 }
             });
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -192,6 +203,7 @@ public class ProficienciesCAC extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(ProficienciesCAC.this, DescCAC.class);
+
 
                 //send the character sheet to the next activity
                 intent.putExtra("characterSheet", charSheet);
