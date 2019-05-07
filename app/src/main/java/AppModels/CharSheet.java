@@ -26,7 +26,7 @@ public class CharSheet implements Serializable {
 
     private ArrayList<WeaponsRecItem> weaponsListForRec = new ArrayList<>();
     private ArrayList<Equipment> mEquipment;
-    private ArrayList<Proficiencies> mProficiencies;
+    private ArrayList<Proficiencies> mProficiencies = new ArrayList<>();
 
 
     public CharSheet(String xname, Race race, CharClass cCharClass, Stats stats )
@@ -52,7 +52,7 @@ public class CharSheet implements Serializable {
         setCharExp(0);
         setCharStats(new Stats());
         mEquipment = new ArrayList<>();
-        mProficiencies = new ArrayList<>();
+
 
         copper = 0;
         silver = 0;
@@ -172,8 +172,8 @@ public class CharSheet implements Serializable {
         return mProficiencies;
     }
 
-    public void setmProficiencies(ArrayList<Proficiencies> mProficiencies) {
-        this.mProficiencies = mProficiencies;
+    public void addToProfList(Proficiencies newProf) {
+        mProficiencies.add(newProf);
     }
     public void addToWeaponsList(WeaponsRecItem newWeapon)
     {

@@ -1,6 +1,8 @@
 package com.example.student.charactersheet5e;
 
-public class WeaponsRecItem {
+import java.io.Serializable;
+
+public class WeaponsRecItem implements Serializable {
 
 
     private String name;
