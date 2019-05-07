@@ -5,6 +5,9 @@
     android:id="@+id/page_three_layout"
     android:layout_width="match_parent"
     android:background="@color/colorGray"
+    android:fillViewport="true"
+    android:scrollbarSize="10dp"
+    android:scrollbarThumbVertical="@color/colorPrimaryDark"
     android:layout_height="match_parent">
 
     <LinearLayout
