@@ -224,7 +224,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/spell_attack_bonus"
+                    android:id="@+id/Otherspell_attack_bonus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
