@@ -41,7 +41,7 @@ public class ProficienciesRecAdapter extends RecyclerView.Adapter <Proficiencies
     @Override
     public void onBindViewHolder(@NonNull ProficienciesViewHolder proficienciesViewHolder, int i) {
         ProficienciesRecItem currentItem = proficienciesDefaultList.get(i);
-        //proficienciesViewHolder.mImageView.setImageResource(currentItem.getmImageResource());
+        proficienciesViewHolder.mImageView.setImageResource(currentItem.getmImageResource());
         proficienciesViewHolder.mTextView1.setText(currentItem.getmText1());
         proficienciesViewHolder.mTextView2.setText(currentItem.getmText2());
     }

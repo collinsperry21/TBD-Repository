@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout
 xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -21,7 +22,21 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/character_recycler_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.777" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/char_prof"
+        android:layout_width="303dp"
+        android:layout_height="431dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterView2" />
 </android.support.constraint.ConstraintLayout>

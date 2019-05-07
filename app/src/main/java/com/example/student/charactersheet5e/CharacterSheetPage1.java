@@ -80,6 +80,7 @@ public class CharacterSheetPage1 extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Pop_Prof.class);
+                intent.putExtra("characterSheet", charSheet);
                 startActivity(intent);
             }
         });

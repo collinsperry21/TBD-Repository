@@ -12,9 +12,9 @@ public class ProficienciesRecItem {
     private String mText1;
     private String mText2;
 
-    public ProficienciesRecItem(String text1, String text2)
+    public ProficienciesRecItem(String text1, String text2, int imageResource)
     {
-        //mImageResource = imageResource;
+        mImageResource = imageResource;
         mText1 = text1;
         mText2 = text2;
     }
