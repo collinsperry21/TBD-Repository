@@ -1,6 +1,7 @@
 package AppModels;
 
 import com.example.student.charactersheet5e.ProficienciesCAC;
+import com.example.student.charactersheet5e.WeaponsRecItem;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class CharSheet implements Serializable {
     private int gold;
     private int platinum;
 
+    private ArrayList<WeaponsRecItem> weaponsListForRec = new ArrayList<>();
     private ArrayList<Equipment> mEquipment;
     private ArrayList<Proficiencies> mProficiencies;
 
@@ -173,4 +175,12 @@ public class CharSheet implements Serializable {
     public void setmProficiencies(ArrayList<Proficiencies> mProficiencies) {
         this.mProficiencies = mProficiencies;
     }
+    public void addToWeaponsList(WeaponsRecItem newWeapon)
+    {
+        weaponsListForRec.add(newWeapon);
+    }
+    public ArrayList<WeaponsRecItem> getWeaponsListForRec() {
+        return weaponsListForRec;
+    }
+
 }

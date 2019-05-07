@@ -44,6 +44,10 @@
             android:parentActivityName=".MainSwipeActivity"
             android:theme="@style/AppTheme.CustomPopTheme" />
         <activity
+            android:name=".Pop_Add_Equipment"
+            android:parentActivityName=".MainSwipeActivity"
+            android:theme="@style/AppTheme.CustomPopTheme" />
+        <activity
             android:name=".Pop_ReviewHelp"
             android:theme="@style/AppTheme.CustomPopTheme" />
         <activity

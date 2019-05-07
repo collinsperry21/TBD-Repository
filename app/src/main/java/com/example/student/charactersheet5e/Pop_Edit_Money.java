@@ -1,6 +1,5 @@
 package com.example.student.charactersheet5e;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,11 +10,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import AppModels.CharSheet;
-
 public class Pop_Edit_Money extends AppCompatActivity {
 
-    private CharSheet charSheet;
     private TextView editCopper;
     private TextView editSilver;
     private TextView editElectrum;
@@ -44,16 +40,22 @@ public class Pop_Edit_Money extends AppCompatActivity {
 
         getWindow().setAttributes(params);
 
-        charSheet = (CharSheet) (getIntent().getSerializableExtra("charSheet"));
-
         //Connect variables to layout
-        editCopper = findViewById(R.id.editCopper_text);
-        editSilver = findViewById(R.id.editSilver_text);
-        editElectrum = findViewById(R.id.editElectrum_text);
-        editGold = findViewById(R.id.editGold_text);
+        editCopper = findViewById(R.id.addWeaponName_text);
+        editSilver = findViewById(R.id.addWeaponDamage_text);
+        editElectrum = findViewById(R.id.addWeaponWeight_text);
+        editGold = findViewById(R.id.addWeaponProperties_text);
         editPlatinum = findViewById(R.id.editPlatinum_text);
 
-        Button saveButton = findViewById(R.id.Save_button);
+        int[] currentCoins = getIntent().getIntArrayExtra("currentCoinAmounts");
+
+        editCopper.setText(Integer.toString(currentCoins[0]));
+        editSilver.setText(Integer.toString(currentCoins[1]));
+        editElectrum.setText(Integer.toString(currentCoins[2]));
+        editGold.setText(Integer.toString(currentCoins[3]));
+        editPlatinum.setText(Integer.toString(currentCoins[4]));
+
+        Button saveButton = findViewById(R.id.SaveEquipment_button);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override

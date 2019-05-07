@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pop_background"
-    tools:context=".Pop_Help_Activity">>
+    tools:context=".Pop_Add_Equipment">
 
     <TextView
         android:id="@+id/textView42"
@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:text="Coin Purse"
+        android:text="Add Equipment"
         android:background="@color/colorPrimaryDark"
         android:textAlignment="center"
         android:textColor="#FFF"
@@ -25,11 +25,11 @@
 
     <TextView
         android:id="@+id/textView36"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:background="#FFF"
-        android:text="Copper: "
+        android:text="Name: "
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/addWeaponName_text"
@@ -44,18 +44,18 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="#FFF"
-        android:inputType="number"
+        android:hint="Club"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView36"
         app:layout_constraintTop_toBottomOf="@+id/textView42" />
 
     <TextView
         android:id="@+id/textView46"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:background="#FFF"
-        android:text="Silver: "
+        android:text="Damage: "
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/addWeaponDamage_text"
@@ -70,7 +70,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="#FFF"
-        android:inputType="number"
+        android:hint="1d4 bludgeoning"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView46"
@@ -78,11 +78,11 @@
 
     <TextView
         android:id="@+id/textView47"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:background="#FFF"
-        android:text="Electrum: "
+        android:text="Weight: "
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/addWeaponWeight_text"
@@ -97,7 +97,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="#FFF"
-        android:inputType="number"
+        android:hint="2 lb."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView47"
@@ -105,11 +105,11 @@
 
     <TextView
         android:id="@+id/textView49"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:background="#FFF"
-        android:text="Gold: "
+        android:text="Properties: "
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/addWeaponProperties_text"
@@ -124,50 +124,21 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="#FFF"
-        android:inputType="number"
+        android:hint="Light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView49"
         app:layout_constraintTop_toBottomOf="@+id/addWeaponWeight_text" />
-
-    <TextView
-        android:id="@+id/textView50"
-        android:layout_width="100dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:background="#FFF"
-        android:text="Platinum: "
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editPlatinum_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editPlatinum_text" />
-
-    <EditText
-        android:id="@+id/editPlatinum_text"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
-        android:background="#FFF"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/textView50"
-        app:layout_constraintTop_toBottomOf="@+id/addWeaponProperties_text" />
 
     <Button
         android:id="@+id/SaveEquipment_button"
         android:layout_width="70dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/clickable"
         android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPlatinum_text" />
-
+        app:layout_constraintTop_toBottomOf="@+id/addWeaponProperties_text" />
 
 </android.support.constraint.ConstraintLayout>

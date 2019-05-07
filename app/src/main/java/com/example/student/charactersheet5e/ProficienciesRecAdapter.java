@@ -21,8 +21,8 @@ public class ProficienciesRecAdapter extends RecyclerView.Adapter <Proficiencies
         {
             super(itemView);
             mImageView = itemView.findViewById(R.id.defProfImage);
-            mTextView1 = itemView.findViewById(R.id.text01);
-            mTextView2 = itemView.findViewById(R.id.text02);
+            mTextView1 = itemView.findViewById(R.id.lineOne);
+            mTextView2 = itemView.findViewById(R.id.lineTwo);
         }
     }
 

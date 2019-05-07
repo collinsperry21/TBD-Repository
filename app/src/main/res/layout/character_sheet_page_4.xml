@@ -170,7 +170,7 @@
             <ImageView
                 android:id="@+id/Weaponsbackground_image"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
@@ -208,10 +208,25 @@
                 app:layout_constraintTop_toTopOf="@+id/textView43"
                 app:layout_constraintVertical_bias="1.0" />
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/Weapons_Recycler"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimary"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/Weaponsbackground_image"
+                app:layout_constraintEnd_toEndOf="@+id/Weaponsbackground_image"
+                app:layout_constraintStart_toStartOf="@+id/Weaponsbackground_image"
+                app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
             <ImageView
                 android:id="@+id/Armorbackground_image"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
@@ -250,10 +265,25 @@
                 app:layout_constraintTop_toTopOf="@+id/textView44"
                 app:layout_constraintVertical_bias="1.0" />
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/Armor_Recycler"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimary"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/Armorbackground_image"
+                app:layout_constraintEnd_toEndOf="@+id/Armorbackground_image"
+                app:layout_constraintStart_toStartOf="@+id/Armorbackground_image"
+                app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
             <ImageView
                 android:id="@+id/otherbackground_image"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
@@ -291,6 +321,20 @@
                 app:layout_constraintEnd_toEndOf="@+id/textView45"
                 app:layout_constraintTop_toTopOf="@+id/textView45"
                 app:layout_constraintVertical_bias="1.0" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/Other_Recycler"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimary"
+                android:scrollbars="vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/otherbackground_image"
+                app:layout_constraintEnd_toEndOf="@+id/otherbackground_image"
+                app:layout_constraintStart_toStartOf="@+id/otherbackground_image"
+                app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
