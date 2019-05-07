@@ -62,7 +62,7 @@ public class ProficienciesCAC extends AppCompatActivity {
 
         //Connect Recycler view variables
         RecyclerView defaultRecView = findViewById(R.id.defaultProficiencies_Recycler);
-        defaultRecView.setHasFixedSize(true);
+        defaultRecView.setHasFixedSize(false);
         RecyclerView.Adapter RecViewAdapter = new ProficienciesRecAdapter(defaultProficiencies);
         RecyclerView.LayoutManager RecViewManager = new LinearLayoutManager(ProficienciesCAC.this);
         defaultRecView.setLayoutManager(RecViewManager);
@@ -243,7 +243,7 @@ public class ProficienciesCAC extends AppCompatActivity {
                     for (int index = 0; index < defaultsJsonArray.length(); index++) {
                         JSONObject defaultObj = defaultsJsonArray.getJSONObject(index);
                         String profName = defaultObj.getString("name");
-                        defaultProficiencies.add(new ProficienciesRecItem(profName, GetProfDescription(profName)));
+                        defaultProficiencies.add(new ProficienciesRecItem(profName, GetProfDescription(profName), getIcon(profName)));
                     }
                     return;
                 }
@@ -254,6 +254,31 @@ public class ProficienciesCAC extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    private int getIcon(String profName) {
+        switch (profName) {
+            case "All armor":
+                return R.drawable.ic_armor;
+            case "Martial weapons":
+                return R.drawable.ic_weapon;
+            case "Shields":
+                return R.drawable.ic_shield;
+            case "Simple weapons":
+                return R.drawable.ic_weapon;
+            case "Longswords":
+                return R.drawable.ic_weapon;
+            case "Rapiers":
+                return R.drawable.ic_weapon;
+            case "Shortswords":
+                return R.drawable.ic_weapon;
+            case "Crossbows, hand":
+                return R.drawable.ic_weapon;
+            default:
+                return R.drawable.ic_5e_dnd_logo;
+        }
+
+
     }
 
     private String GetProfDescription(String profName) {
