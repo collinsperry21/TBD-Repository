@@ -1,11 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/page_four_layout"
-    android:background="@color/colorGray"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CharacterSheetPage4">
+    android:background="@color/colorGray"
+    android:fillViewport="true"
+    android:scrollbarSize="10dp"
+    android:scrollbarThumbVertical="@color/colorPrimaryDark">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="900dp">
+
+
+            <ImageView
+                android:id="@+id/equipment_pack_image"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/equipment_pack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/GreenBox01"
+                android:layout_width="0dp"
+                android:layout_height="90dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/equipment_pack_image" />
+
+            <ImageButton
+                android:id="@+id/edit_money_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@android:color/background_light"
+                app:layout_constraintBottom_toBottomOf="@+id/electrum_image"
+                app:layout_constraintEnd_toEndOf="@+id/GreenBox01"
+                app:layout_constraintStart_toStartOf="@+id/GreenBox01"
+                app:layout_constraintTop_toTopOf="@+id/electrum_image" />
+
+            <ImageView
+                android:id="@+id/bronze_image"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/bronze"
+                app:layout_constraintBottom_toBottomOf="@+id/GreenBox01"
+                app:layout_constraintStart_toStartOf="@+id/GreenBox01"
+                app:layout_constraintTop_toTopOf="@+id/GreenBox01" />
+
+            <ImageView
+                android:id="@+id/silver_image"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/silver"
+                app:layout_constraintBottom_toBottomOf="@+id/GreenBox01"
+                app:layout_constraintEnd_toStartOf="@+id/electrum_image"
+                app:layout_constraintStart_toEndOf="@+id/bronze_image"
+                app:layout_constraintTop_toTopOf="@+id/GreenBox01" />
+
+            <ImageView
+                android:id="@+id/electrum_image"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:src="@drawable/electrum"
+                app:layout_constraintBottom_toBottomOf="@+id/GreenBox01"
+                app:layout_constraintEnd_toStartOf="@+id/platinum_image"
+                app:layout_constraintStart_toEndOf="@+id/bronze_image"
+                app:layout_constraintTop_toTopOf="@+id/GreenBox01" />
+
+            <ImageView
+                android:id="@+id/gold_image"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:src="@drawable/gold"
+                app:layout_constraintBottom_toBottomOf="@+id/GreenBox01"
+                app:layout_constraintEnd_toStartOf="@+id/platinum_image"
+                app:layout_constraintStart_toEndOf="@+id/electrum_image"
+                app:layout_constraintTop_toTopOf="@+id/GreenBox01" />
+
+            <ImageView
+                android:id="@+id/platinum_image"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/platinum"
+                app:layout_constraintBottom_toBottomOf="@+id/GreenBox01"
+                app:layout_constraintEnd_toEndOf="@+id/GreenBox01"
+                app:layout_constraintTop_toTopOf="@+id/GreenBox01" />
+
+            <TextView
+                android:id="@+id/copper_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100"
+                app:layout_constraintBottom_toBottomOf="@+id/bronze_image"
+                app:layout_constraintEnd_toEndOf="@+id/bronze_image"
+                app:layout_constraintStart_toStartOf="@+id/bronze_image"
+                app:layout_constraintTop_toTopOf="@+id/bronze_image" />
+
+            <TextView
+                android:id="@+id/silver_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="@+id/silver_image"
+                app:layout_constraintEnd_toEndOf="@+id/silver_image"
+                app:layout_constraintStart_toStartOf="@+id/silver_image"
+                app:layout_constraintTop_toTopOf="@+id/silver_image" />
+
+            <TextView
+                android:id="@+id/electrum_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_money_button"
+                app:layout_constraintEnd_toEndOf="@+id/electrum_image"
+                app:layout_constraintStart_toStartOf="@+id/electrum_image"
+                app:layout_constraintTop_toTopOf="@+id/edit_money_button" />
+
+            <TextView
+                android:id="@+id/gold_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="@+id/gold_image"
+                app:layout_constraintEnd_toEndOf="@+id/gold_image"
+                app:layout_constraintStart_toStartOf="@+id/gold_image"
+                app:layout_constraintTop_toTopOf="@+id/gold_image" />
+
+            <TextView
+                android:id="@+id/platinum_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="@+id/platinum_image"
+                app:layout_constraintEnd_toEndOf="@+id/platinum_image"
+                app:layout_constraintStart_toStartOf="@+id/platinum_image"
+                app:layout_constraintTop_toTopOf="@+id/platinum_image" />
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
