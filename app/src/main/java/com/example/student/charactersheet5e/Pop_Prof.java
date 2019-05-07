@@ -29,5 +29,9 @@ public class Pop_Prof extends Activity
         params.y = -20;
 
         getWindow().setAttributes(params);
+        setProfRecView();
+    }
+
+    private void setProfRecView() {
     }
 }
