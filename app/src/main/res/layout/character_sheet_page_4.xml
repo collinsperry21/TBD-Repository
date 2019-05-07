@@ -57,7 +57,7 @@
                 app:layout_constraintTop_toTopOf="@+id/electrum_image" />
 
             <ImageView
-                android:id="@+id/bronze_image"
+                android:id="@+id/copper_image"
                 android:layout_width="50dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
@@ -74,7 +74,7 @@
                 android:src="@drawable/silver"
                 app:layout_constraintBottom_toBottomOf="@+id/GreenBox01"
                 app:layout_constraintEnd_toStartOf="@+id/electrum_image"
-                app:layout_constraintStart_toEndOf="@+id/bronze_image"
+                app:layout_constraintStart_toEndOf="@+id/copper_image"
                 app:layout_constraintTop_toTopOf="@+id/GreenBox01" />
 
             <ImageView
@@ -84,7 +84,7 @@
                 android:src="@drawable/electrum"
                 app:layout_constraintBottom_toBottomOf="@+id/GreenBox01"
                 app:layout_constraintEnd_toStartOf="@+id/platinum_image"
-                app:layout_constraintStart_toEndOf="@+id/bronze_image"
+                app:layout_constraintStart_toEndOf="@+id/copper_image"
                 app:layout_constraintTop_toTopOf="@+id/GreenBox01" />
 
             <ImageView
@@ -112,16 +112,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100"
-                app:layout_constraintBottom_toBottomOf="@+id/bronze_image"
-                app:layout_constraintEnd_toEndOf="@+id/bronze_image"
-                app:layout_constraintStart_toStartOf="@+id/bronze_image"
-                app:layout_constraintTop_toTopOf="@+id/bronze_image" />
+                android:textSize="17sp"
+                android:textColor="#000"
+                app:layout_constraintBottom_toBottomOf="@+id/copper_image"
+                app:layout_constraintEnd_toEndOf="@+id/copper_image"
+                app:layout_constraintStart_toStartOf="@+id/copper_image"
+                app:layout_constraintTop_toTopOf="@+id/copper_image" />
 
             <TextView
                 android:id="@+id/silver_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:textSize="17sp"
+                android:textColor="#000"
                 app:layout_constraintBottom_toBottomOf="@+id/silver_image"
                 app:layout_constraintEnd_toEndOf="@+id/silver_image"
                 app:layout_constraintStart_toStartOf="@+id/silver_image"
@@ -132,6 +136,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:textSize="17sp"
+                android:textColor="#000"
                 app:layout_constraintBottom_toBottomOf="@+id/edit_money_button"
                 app:layout_constraintEnd_toEndOf="@+id/electrum_image"
                 app:layout_constraintStart_toStartOf="@+id/electrum_image"
@@ -142,6 +148,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:textSize="17sp"
+                android:textColor="#000"
                 app:layout_constraintBottom_toBottomOf="@+id/gold_image"
                 app:layout_constraintEnd_toEndOf="@+id/gold_image"
                 app:layout_constraintStart_toStartOf="@+id/gold_image"
@@ -152,10 +160,136 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:textSize="17sp"
+                android:textColor="#000"
                 app:layout_constraintBottom_toBottomOf="@+id/platinum_image"
                 app:layout_constraintEnd_toEndOf="@+id/platinum_image"
                 app:layout_constraintStart_toStartOf="@+id/platinum_image"
                 app:layout_constraintTop_toTopOf="@+id/platinum_image" />
+
+            <ImageView
+                android:id="@+id/Weaponsbackground_image"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/electrum_image" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:background="#FFF"
+                android:text="Weapons"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/Weaponsbackground_image" />
+
+            <ImageButton
+                android:id="@+id/Weapons_add_button"
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/add"
+                app:layout_constraintBottom_toBottomOf="@+id/textView43"
+                app:layout_constraintEnd_toEndOf="@+id/textView43"
+                app:layout_constraintTop_toTopOf="@+id/textView43"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/Armorbackground_image"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Weaponsbackground_image" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="24dp"
+                android:background="#FFF"
+                android:text="Armor"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/Armorbackground_image" />
+
+            <ImageButton
+                android:id="@+id/armor_add_button"
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/add"
+                app:layout_constraintBottom_toBottomOf="@+id/textView44"
+                app:layout_constraintEnd_toEndOf="@+id/textView44"
+                app:layout_constraintTop_toTopOf="@+id/textView44"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/otherbackground_image"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Armorbackground_image" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:background="#FFF"
+                android:text="Other"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/otherbackground_image" />
+
+            <ImageButton
+                android:id="@+id/other_add_button"
+                android:layout_width="20dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/add"
+                app:layout_constraintBottom_toBottomOf="@+id/textView45"
+                app:layout_constraintEnd_toEndOf="@+id/textView45"
+                app:layout_constraintTop_toTopOf="@+id/textView45"
+                app:layout_constraintVertical_bias="1.0" />
 
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
