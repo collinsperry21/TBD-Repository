@@ -8,20 +8,34 @@
     tools:context=".ReviewCAC">
 
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/raceModsListText"
+        app:srcCompat="@color/colorPrimaryDark" />
+
     <android.support.constraint.Group
         android:id="@+id/Strength"
         android:layout_width="1dp"
         android:layout_height="200dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="80dp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="149dp" />
+        tools:layout_editor_absoluteY="144dp" />
 
     <ImageView
         android:id="@+id/strImage"
         android:layout_width="100dp"
         android:layout_height="95dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="@+id/intelligence_score_text"
         app:layout_constraintStart_toStartOf="@+id/intelligence_score_text"
         app:layout_constraintTop_toBottomOf="@+id/raceModsListText"
@@ -57,6 +71,7 @@
         android:layout_width="100dp"
         android:layout_height="95dp"
         android:layout_marginTop="16dp"
+        android:background="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="@+id/Strength"
         app:layout_constraintStart_toStartOf="@+id/Strength"
         app:layout_constraintTop_toBottomOf="@+id/strImage"
@@ -102,7 +117,8 @@
         android:id="@+id/dexImage"
         android:layout_width="100dp"
         android:layout_height="95dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
         app:layout_constraintTop_toBottomOf="@+id/raceModsListText"
@@ -137,6 +153,7 @@
         android:layout_width="100dp"
         android:layout_height="95dp"
         android:layout_marginTop="16dp"
+        android:background="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="@+id/Dexterity"
         app:layout_constraintStart_toStartOf="@+id/Dexterity"
         app:layout_constraintTop_toBottomOf="@+id/dexImage"
@@ -169,17 +186,18 @@
         android:id="@+id/Constitution"
         android:layout_width="0dp"
         android:layout_height="188dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="80dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="142dp" />
+        tools:layout_editor_absoluteY="144dp" />
 
     <ImageView
         android:id="@+id/conImage"
         android:layout_width="100dp"
         android:layout_height="95dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        android:background="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toEndOf="@+id/Constitution"
         app:layout_constraintTop_toBottomOf="@+id/raceModsListText"
@@ -214,6 +232,7 @@
         android:layout_height="95dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:background="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="@+id/Constitution"
         app:layout_constraintStart_toEndOf="@+id/Constitution"
         app:layout_constraintTop_toBottomOf="@+id/conImage"
@@ -272,21 +291,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Hit Dice: "
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intImage" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
         android:id="@+id/hitDie_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/intImage" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
     <ImageButton
         android:background="@drawable/clickable"
         android:id="@+id/navigate_to_next_CAC03"
@@ -304,21 +323,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Hit Points:"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toEndOf="@+id/wisdom_score_text"
-        app:layout_constraintTop_toBottomOf="@+id/wisImage" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
         android:id="@+id/hitPoints_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/wisImage" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
     <Button
         android:id="@+id/reviewHelpButton"
     android:layout_width="60dp"
@@ -332,7 +351,21 @@
     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
     android:textSize="30dp"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent" /><![CDATA[
+    app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="324dp"
+        android:layout_height="324dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Dexterity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dnd_dice" /><![CDATA[
+
+
 
 
 
@@ -347,6 +380,7 @@
 
 
     />
+
 
 
 
