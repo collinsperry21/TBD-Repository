@@ -21,7 +21,8 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/textView36"
@@ -47,7 +48,9 @@
         android:hint="Club"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView36"
-        app:layout_constraintTop_toBottomOf="@+id/textView42" />
+        app:layout_constraintTop_toBottomOf="@+id/textView42"
+        android:imeOptions="actionDone"
+        android:singleLine="true"/>
 
     <TextView
         android:id="@+id/textView46"
@@ -74,7 +77,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView46"
-        app:layout_constraintTop_toBottomOf="@+id/addWeaponName_text" />
+        app:layout_constraintTop_toBottomOf="@+id/addWeaponName_text"
+        android:imeOptions="actionDone"
+        android:singleLine="true"/>
 
     <TextView
         android:id="@+id/textView47"
@@ -101,7 +106,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView47"
-        app:layout_constraintTop_toBottomOf="@+id/addWeaponDamage_text" />
+        app:layout_constraintTop_toBottomOf="@+id/addWeaponDamage_text"
+        android:imeOptions="actionDone"
+        android:singleLine="true"/>
 
     <TextView
         android:id="@+id/textView49"
@@ -128,7 +135,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView49"
-        app:layout_constraintTop_toBottomOf="@+id/addWeaponWeight_text" />
+        app:layout_constraintTop_toBottomOf="@+id/addWeaponWeight_text"
+        android:imeOptions="actionDone"
+        android:singleLine="true"/>
 
     <Button
         android:id="@+id/SaveEquipment_button"
