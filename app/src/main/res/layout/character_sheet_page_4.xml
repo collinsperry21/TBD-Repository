@@ -199,14 +199,12 @@
 
             <ImageButton
                 android:id="@+id/Weapons_add_button"
-                android:layout_width="20dp"
-                android:layout_height="0dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/add"
                 app:layout_constraintBottom_toBottomOf="@+id/textView43"
-                app:layout_constraintEnd_toEndOf="@+id/textView43"
-                app:layout_constraintTop_toTopOf="@+id/textView43"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintEnd_toEndOf="@+id/textView43" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/Weapons_Recycler"
@@ -256,14 +254,12 @@
 
             <ImageButton
                 android:id="@+id/armor_add_button"
-                android:layout_width="20dp"
-                android:layout_height="0dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/add"
                 app:layout_constraintBottom_toBottomOf="@+id/textView44"
-                app:layout_constraintEnd_toEndOf="@+id/textView44"
-                app:layout_constraintTop_toTopOf="@+id/textView44"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintEnd_toEndOf="@+id/textView44" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/Armor_Recycler"
@@ -313,14 +309,12 @@
 
             <ImageButton
                 android:id="@+id/other_add_button"
-                android:layout_width="20dp"
-                android:layout_height="0dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/add"
                 app:layout_constraintBottom_toBottomOf="@+id/textView45"
-                app:layout_constraintEnd_toEndOf="@+id/textView45"
-                app:layout_constraintTop_toTopOf="@+id/textView45"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintEnd_toEndOf="@+id/textView45" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/Other_Recycler"
