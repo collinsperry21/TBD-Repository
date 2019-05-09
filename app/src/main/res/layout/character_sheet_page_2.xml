@@ -21,295 +21,265 @@
             android:layout_width="match_parent"
             android:layout_height="900dp">
 
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="0dp"
+                android:layout_height="128dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@color/colorPrimaryDark" />
+
+            <ImageView
+                android:id="@+id/PlayersImage"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/artorder_concept___silhouettes_by_wdhawthorne" />
+
+            <TextView
+                android:id="@+id/disp_name_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:background="#FFF"
+                android:fontFamily="@font/bilbo_swash_caps"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+            <TextView
+                android:id="@+id/disp_age_text"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/disp_name_text" />
+
+            <TextView
+                android:id="@+id/disp_sex_text"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:background="#FFF"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/disp_name_text" />
+
+            <TextView
+                android:id="@+id/disp_height_text"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/disp_age_text" />
+
+            <TextView
+                android:id="@+id/disp_weight_text"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/disp_sex_text" />
+
+            <TextView
+                android:id="@+id/disp_eyes_text"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/disp_height_text" />
+
+            <TextView
+                android:id="@+id/disp_hair_text"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/disp_weight_text" />
+
+            <TextView
+                android:id="@+id/disp_skin_text"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/disp_eyes_text" />
+
+            <TextView
+                android:id="@+id/display_background_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/disp_skin_text" />
+
+            <TextView
+                android:id="@+id/disp_alignment_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_weight="1"
+                android:background="#FFF"
+                android:textColor="#000"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/display_background_text" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_marginTop="400dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent">
 
-
-                <ImageView
-                    android:id="@+id/hiker"
+                <TextView
+                    android:id="@+id/textView80"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/hiking_char" />
+                    android:layout_height="40dp"
+                    android:text="Allies &amp; Organizations:"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/textView62"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:text=" Background: "
-                        android:textAlignment="viewStart"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/display_background_text"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/edit_allies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart" />
 
-                    <TextView
-                        android:id="@+id/textView58"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:text=" Alignment:"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Features:"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/disp_alignment_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/edit_features"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart" />
 
-                    <TextView
-                        android:id="@+id/textView67"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:text=" Age:"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Personality Traits:"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/disp_age_text"
-                        android:layout_width="0dp"
-                        android:layout_height="30sp"
-                        android:layout_weight="1"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textView69"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:text=" Height:"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/disp_height_text"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/edit_personality"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart" />
 
-                    <TextView
-                        android:id="@+id/textView71"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:text=" Eyes:"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Other Proficiencies &amp; Languages:"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/disp_eyes_text"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textView73"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:text=" Skin:"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/disp_skin_text"
-                        android:layout_width="0dp"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:textColor="@android:color/black"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
+                <EditText
+                    android:id="@+id/editText5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart" />
 
-                    <TextView
-                        android:id="@+id/textView76"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:text=" Weight: "
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/disp_weight_text"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textView78"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:text="Sex:"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/disp_hair_text"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/textView32"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="40dp"
+                    android:text="Ideals:"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/textView80"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="Allies &amp; Organizations:"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/edit_allies"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:textAlignment="viewStart" />
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="Features:"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/edit_features"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:textAlignment="viewStart" />
-
-                    <TextView
-                        android:id="@+id/textView29"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="Personality Traits:"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/edit_personality"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:textAlignment="viewStart" />
-
-                    <TextView
-                        android:id="@+id/textView31"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="Other Proficiencies &amp; Languages:"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/editText5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:textAlignment="viewStart" />
-
-                    <TextView
-                        android:id="@+id/textView32"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="Ideals:"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/editText6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:textAlignment="viewStart" />
-                </LinearLayout>
-
+                <EditText
+                    android:id="@+id/editText6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textAlignment="viewStart" />
             </LinearLayout>
+
         </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 
