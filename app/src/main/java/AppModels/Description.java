@@ -14,6 +14,9 @@ public class Description implements Serializable {
     private String skin;
     private String background;
 
+    public Description(String desc){
+        setBackground(desc);
+    }
 
     public String getAlignment() {
         return alignment;
