@@ -15,9 +15,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         switch (position)
         {
             case 0:
-                return new CharacterSheetPage1(); //CharacterSheetPage1 at position 0
+                return new CharacterSheetPage2(); //CharacterSheetPage1 at position 0
             case 1:
-                return new CharacterSheetPage2(); //CharacterSheetPage2 at position 1
+                return new CharacterSheetPage1(); //CharacterSheetPage2 at position 1
             case 2:
                 return new CharacterSheetPage3(); //CharacterSheetPage3 at position 2
             case 3:
@@ -33,7 +33,22 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        String title = "Page " + Integer.toString(position + 1);
+        String title = "";
+        switch(position)
+        {
+            case 0:
+                title = "Background";
+                break;
+            case 1:
+                title = "Stats";
+                break;
+            case 2:
+                title = "Attacks and Spells";
+                break;
+            case 3:
+                title = "Equipment";
+                break;
+        }
         return title.subSequence(title.lastIndexOf(".") + 1, title.length());
     }
 }
