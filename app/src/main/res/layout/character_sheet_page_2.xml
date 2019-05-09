@@ -192,8 +192,9 @@
                 <TextView
                     android:id="@+id/textView80"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:text="Allies &amp; Organizations:"
+                    android:background="#FFF"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp"
@@ -210,8 +211,9 @@
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:text="Features:"
+                    android:background="#FFF"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp"
@@ -228,8 +230,9 @@
                 <TextView
                     android:id="@+id/textView29"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:text="Personality Traits:"
+                    android:background="#FFF"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp"
@@ -246,8 +249,9 @@
                 <TextView
                     android:id="@+id/textView31"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:text="Other Proficiencies &amp; Languages:"
+                    android:background="#FFF"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp"
@@ -264,7 +268,8 @@
                 <TextView
                     android:id="@+id/textView32"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF"
                     android:text="Ideals:"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
