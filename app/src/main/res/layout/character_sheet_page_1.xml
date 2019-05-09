@@ -551,7 +551,7 @@
                 android:id="@+id/display_ProfBonus_text"
                 android:layout_width="160dp"
                 android:layout_height="70dp"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:background="#FFF"
                 android:paddingTop="8dp"
@@ -580,7 +580,7 @@
                 android:layout_width="160dp"
                 android:layout_height="70dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
+                android:layout_marginEnd="24dp"
                 android:background="#FFF"
                 android:paddingTop="8dp"
                 android:textAlignment="center"
@@ -614,6 +614,35 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/display_passiveWisdom_text" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                style="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/checkBox2"
+                app:layout_constraintTop_toTopOf="@+id/checkBox2" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                style="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/display_DeathSaves_text"
+                app:layout_constraintEnd_toEndOf="@+id/display_DeathSaves_text"
+                app:layout_constraintStart_toStartOf="@+id/display_DeathSaves_text"
+                app:layout_constraintTop_toTopOf="@+id/textView23"
+                app:layout_constraintVertical_bias="0.90999997" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                style="@android:style/Widget.DeviceDefault.Light.CompoundButton.RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/checkBox2"
+                app:layout_constraintTop_toTopOf="@+id/checkBox2" />
 
         </android.support.constraint.ConstraintLayout>
 

@@ -57,6 +57,7 @@ public class CharacterSheetPage1 extends Fragment {
 
 
     private TextView prof;
+    private TextView pasWis;
 
     private Button profBon;
 
@@ -107,7 +108,8 @@ public class CharacterSheetPage1 extends Fragment {
 
         hitDie = rootView.findViewById(R.id.display_HitDice_text);
 
-        //prof = rootView.findViewById(R.id.display_DeathSaves_text);
+        prof = rootView.findViewById(R.id.display_ProfBonus_text);
+        pasWis = rootView.findViewById(R.id.display_passiveWisdom_text);
 
         //SetText
         characterName.setText("Name: " + charSheet.getCharacterName());
@@ -132,7 +134,9 @@ public class CharacterSheetPage1 extends Fragment {
 
         hitDie.setText("\n" + charSheet.getCharStats().getHitDie());
 
-        //prof.setText("+" + Integer.toString(charSheet.getCharStats().getProfBonus()));
+        prof.setText("+" + Integer.toString(charSheet.getCharStats().getProfBonus()));
+
+        pasWis.setText(Integer.toString(10 + charSheet.getCharStats().getWisdom()/2 -5));
 
 
     }
