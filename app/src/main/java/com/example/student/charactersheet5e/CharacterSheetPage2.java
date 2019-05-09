@@ -13,9 +13,11 @@ import AppModels.CharSheet;
 
 public class CharacterSheetPage2 extends Fragment {
 
+    private TextView name;
     private TextView age;
     private TextView sex;
     private TextView eyes;
+    private TextView hair;
     private TextView weight;
     private TextView height;
     private TextView skin;
@@ -40,24 +42,27 @@ public class CharacterSheetPage2 extends Fragment {
     }
 
     private void setUpDesc(View rootView) {
+        name = rootView.findViewById(R.id.disp_name_text);
         age = rootView.findViewById(R.id.disp_age_text);
-        sex = rootView.findViewById(R.id.disp_hair_text);
+        sex = rootView.findViewById(R.id.disp_sex_text);
         eyes = rootView.findViewById(R.id.disp_eyes_text);
+        hair = rootView.findViewById(R.id.disp_hair_text);
         skin = rootView.findViewById(R.id.disp_skin_text);
         height = rootView.findViewById(R.id.disp_height_text);
         weight = rootView.findViewById(R.id.disp_weight_text);
         bg = rootView.findViewById(R.id.display_background_text);
         align = rootView.findViewById(R.id.disp_alignment_text);
 
-
-        age.setText(charSheet.getCharacterDescription().getAge());
-        sex.setText(charSheet.getCharacterDescription().getGender());
-        eyes.setText(charSheet.getCharacterDescription().getEyeColor());
-        skin.setText(charSheet.getCharacterDescription().getSkin());
-        height.setText(charSheet.getCharacterDescription().getHeight());
-        weight.setText(charSheet.getCharacterDescription().getWeight());
-        bg.setText(charSheet.getCharacterDescription().getBackground());
-        align.setText(charSheet.getCharacterDescription().getAlignment());
+        name.setText(charSheet.getCharacterName() + ", the" + charSheet.getCharClass().getClassName());
+        age.setText("Age: " + charSheet.getCharacterDescription().getAge());
+        sex.setText("Gender: " + charSheet.getCharacterDescription().getGender());
+        eyes.setText("Eyes: " + charSheet.getCharacterDescription().getEyeColor());
+        hair.setText("Hair: " + charSheet.getCharacterDescription().getHair());
+        skin.setText("Skin: " + charSheet.getCharacterDescription().getSkin());
+        height.setText("Height: " + charSheet.getCharacterDescription().getHeight());
+        weight.setText("Weight: " + charSheet.getCharacterDescription().getWeight());
+        bg.setText("Background: " + charSheet.getCharacterDescription().getBackground());
+        align.setText("Alignment: " + charSheet.getCharacterDescription().getAlignment());
 
 
 
