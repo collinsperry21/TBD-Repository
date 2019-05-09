@@ -85,6 +85,7 @@ public class Pop_Edit_Money extends AppCompatActivity {
                 Intent intent = new Intent(getBaseContext(), CharacterSheetPage4.class);
                 intent.putExtra("result", coinAmounts);
                 setResult(1505, intent);
+                finish();
 
             }
         });
