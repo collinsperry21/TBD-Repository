@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 
 import AppModels.CharSheet;
 import AppModels.CharacterCardView;
+import AppModels.Description;
 import IO.WriteObject;
 
 public class DescCAC extends AppCompatActivity {
@@ -22,8 +24,18 @@ public class DescCAC extends AppCompatActivity {
 
     private Spinner lawfulSpinner;
     private Spinner goodSpinner;
+    private EditText age;
+    private EditText sex;
+    private EditText eyes;
+    private EditText hair;
+    private EditText weight;
+    private EditText height;
+    private EditText skin;
+    private EditText bg;
+
 
     private ImageButton endCAC;
+    private Description description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +47,7 @@ public class DescCAC extends AppCompatActivity {
 
         //Set a new character sheet from the old one
         charSheet = (CharSheet) (getIntent().getSerializableExtra("characterSheet"));
+        description = new Description("Background");
 
         name = findViewById(R.id.character_name_text2);
         name.setText(charSheet.getCharacterName());
@@ -72,7 +85,27 @@ public class DescCAC extends AppCompatActivity {
     }
 
     private void setDescription() {
+        age = findViewById(R.id.editAge);
+        sex = findViewById(R.id.editSex);
+        hair = findViewById(R.id.editHair);
+        eyes = findViewById(R.id.editEyes);
+        skin = findViewById(R.id.editSkin);
+        height = findViewById(R.id.editHeight);
+        weight = findViewById(R.id.editWeight);
+        bg = findViewById(R.id.editBackground);
 
+        description.setAge(age.getText().toString());
+        description.setGender(sex.getText().toString());
+        description.setHair(hair.getText().toString());
+        description.setEyeColor(eyes.getText().toString());
+        description.setSkin(skin.getText().toString());
+        description.setHeight(height.getText().toString());
+        description.setWeight(weight.getText().toString());
+        description.setBackground(bg.getText().toString());
+
+        description.setAlignment(lawfulSpinner.getSelectedItem().toString() + " " + goodSpinner.getSelectedItem().toString());
+
+        charSheet.setCharacterDescription(description);
 
     }
 
@@ -87,6 +120,8 @@ public class DescCAC extends AppCompatActivity {
         goodList.add("Good");
         goodList.add("Neutral");
         goodList.add("Evil");
+        lawfulSpinner = findViewById(R.id.law_spinner);
+        goodSpinner = findViewById(R.id.good_spinner);
 
         ArrayAdapter<String> lawfulAdapter = new ArrayAdapter<String>(getApplicationContext(),
                 android.R.layout.simple_spinner_dropdown_item, lawfulList);

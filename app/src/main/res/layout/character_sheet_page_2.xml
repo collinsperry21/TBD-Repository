@@ -54,7 +54,7 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -80,7 +80,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/black"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -105,7 +105,7 @@
                         android:layout_width="0dp"
                         android:layout_height="30sp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -124,7 +124,7 @@
                         android:layout_width="0dp"
                         android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/black"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -144,11 +144,11 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView72"
+                        android:id="@+id/disp_eyes_text"
                         android:layout_width="0dp"
                         android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/black"
                         android:textStyle="bold" />
 
                     <TextView
@@ -166,7 +166,7 @@
                         android:layout_width="0dp"
                         android:layout_height="30dp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -191,7 +191,7 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/black"
                         android:textStyle="bold" />
 
                     <TextView
@@ -199,7 +199,7 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:text=" Hair:"
+                        android:text="Sex:"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -209,7 +209,7 @@
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@android:color/black"
                         android:textStyle="bold" />
                 </LinearLayout>
 

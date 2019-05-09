@@ -29,7 +29,7 @@ public class CharSheet implements Serializable {
     private ArrayList<Proficiencies> mProficiencies = new ArrayList<>();
 
 
-    public CharSheet(String xname, Race race, CharClass cCharClass, Stats stats )
+    public CharSheet(String xname, Race race, CharClass cCharClass, Stats stats)
     {
         setCharRace(race);
         setCharClass(cCharClass);
@@ -43,6 +43,7 @@ public class CharSheet implements Serializable {
         electrum = 0;
         gold = 0;
         platinum = 0;
+
     }
     //Default constructor
     public CharSheet() {
@@ -52,6 +53,7 @@ public class CharSheet implements Serializable {
         setCharExp(0);
         setCharStats(new Stats());
         mEquipment = new ArrayList<>();
+        setCharacterDescription(new Description("Desc"));
 
 
         copper = 0;
