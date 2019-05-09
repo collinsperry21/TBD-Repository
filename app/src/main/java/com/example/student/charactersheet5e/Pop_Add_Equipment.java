@@ -73,6 +73,7 @@ public class Pop_Add_Equipment extends AppCompatActivity {
                 Intent intent = new Intent(getBaseContext(), CharacterSheetPage4.class);
                 intent.putExtra("result", addWeaponStrings);
                 setResult(1606, intent);
+                finish();
 
             }
         });
